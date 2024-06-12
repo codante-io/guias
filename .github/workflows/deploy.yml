@@ -1,0 +1,40 @@
+name: Deploy to production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - uses: actions/cache@v4
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - run: pnpm install
+      - run: pnpm -r run build
+
+      - name: Deploy with rsync next-auth
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -avzr --quiet --delete
+          path: ./docs-workshop/dist/
+          remote_path: /var/www/guias/next-auth/
+          remote_host: ${{ secrets.HOST }}
+          remote_user: ${{ secrets.USERNAME }}
+          remote_key: ${{ secrets.SSH_KEY }}
+
+      - name: Deploy with rsync teste
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -avzr --quiet --delete
+          path: ./teste/dist/
+          remote_path: /var/www/guias/teste/
+          remote_host: ${{ secrets.HOST }}
+          remote_user: ${{ secrets.USERNAME }}
+          remote_key: ${{ secrets.SSH_KEY }}

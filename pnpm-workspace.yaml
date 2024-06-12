@@ -1,0 +1,101 @@
+packages:
+  - ./packages/*
+  - ./apps/*
+# Optional: Specify the root directory of your workspace
+# root: ./path/to/root
+
+# Optional: Specify the version of pnpm to use
+# pnpmVersion: 6.14.0
+
+# Optional: Specify the registry URL
+# registry: https://registry.npmjs.org
+
+# Optional: Specify the store directory
+# storeDir: ./path/to/store
+
+# Optional: Specify the virtual store directory
+# virtualStoreDir: ./path/to/virtual-store
+
+# Optional: Specify the package import method
+# packageImportMethod: auto
+
+# Optional: Specify the package import method for nested workspaces
+# packageImportMethodForNestedProjects: auto
+
+# Optional: Specify the hoisting strategy
+# hoistPattern: "*"
+
+# Optional: Specify the ignore patterns
+# ignore:
+#   - node_modules
+#   - .git
+
+# Optional: Specify the link workspace packages strategy
+# linkWorkspacePackages: true
+
+# Optional: Specify the lockfile directory
+# lockfileDir: ./path/to/lockfile
+
+# Optional: Specify the hooks directory
+# hooks:
+#   readPackage: ./path/to/readPackage.js
+#   afterAllResolved: ./path/to/afterAllResolved.js
+#   beforeAllResolved: ./path/to/beforeAllResolved.js
+#   afterWorkspaceDependencyAdd: ./path/to/afterWorkspaceDependencyAdd.js
+#   beforeWorkspaceDependencyAdd: ./path/to/beforeWorkspaceDependencyAdd.js
+#   afterWorkspaceDependencyRemove: ./path/to/afterWorkspaceDependencyRemove.js
+#   beforeWorkspaceDependencyRemove: ./path/to/beforeWorkspaceDependencyRemove.js
+#   afterWorkspacePackageAdd: ./path/to/afterWorkspacePackageAdd.js
+#   beforeWorkspacePackageAdd: ./path/to/beforeWorkspacePackageAdd.js
+#   afterWorkspacePackageRemove: ./path/to/afterWorkspacePackageRemove.js
+#   beforeWorkspacePackageRemove: ./path/to/beforeWorkspacePackageRemove.js
+#   afterWorkspacePackageChange: ./path/to/afterWorkspacePackageChange.js
+#   beforeWorkspacePackageChange: ./path/to/beforeWorkspacePackageChange.js
+#   afterWorkspacePackageReplace: ./path/to/afterWorkspacePackageReplace.js
+#   beforeWorkspacePackageReplace: ./path/to/beforeWorkspacePackageReplace.js
+#   afterWorkspacePackageSet: ./path/to/afterWorkspacePackageSet.js
+#   beforeWorkspacePackageSet: ./path/to/beforeWorkspacePackageSet.js
+#   afterWorkspacePackageUnset: ./path/to/afterWorkspacePackageUnset.js
+#   beforeWorkspacePackageUnset: ./path/to/beforeWorkspacePackageUnset.js
+#   afterWorkspacePackageUninstall: ./path/to/afterWorkspacePackageUninstall.js
+#   beforeWorkspacePackageUninstall: ./path/to/beforeWorkspacePackageUninstall.js
+#   afterWorkspacePackageInstall: ./path/to/afterWorkspacePackageInstall.js
+#   beforeWorkspacePackageInstall: ./path/to/beforeWorkspacePackageInstall.js
+#   afterWorkspacePackageUpgrade: ./path/to/afterWorkspacePackageUpgrade.js
+#   beforeWorkspacePackageUpgrade: ./path/to/beforeWorkspacePackageUpgrade.js
+#   afterWorkspacePackageReinstall: ./path/to/afterWorkspacePackageReinstall.js
+#   beforeWorkspacePackageReinstall: ./path/to/beforeWorkspacePackageReinstall.js
+#   afterWorkspacePackageMove: ./path/to/afterWorkspacePackageMove.js
+#   beforeWorkspacePackageMove: ./path/to/beforeWorkspacePackageMove.js
+#   afterWorkspacePackageLink: ./path/to/afterWorkspacePackageLink.js
+#   beforeWorkspacePackageLink: ./path/to/beforeWorkspacePackageLink.js
+#   afterWorkspacePackageUnlink: ./path/to/afterWorkspacePackageUnlink.js
+#   beforeWorkspacePackageUnlink: ./path/to/beforeWorkspacePackageUnlink.js
+#   afterWorkspacePackageImport: ./path/to/afterWorkspacePackageImport.js
+#   beforeWorkspacePackageImport: ./path/to/beforeWorkspacePackageImport.js
+#   afterWorkspacePackageExport: ./path/to/afterWorkspacePackageExport.js
+#   beforeWorkspacePackageExport: ./path/to/beforeWorkspacePackageExport.js
+#   afterWorkspacePackageRun: ./path/to/afterWorkspacePackageRun.js
+#   beforeWorkspacePackageRun: ./path/to/beforeWorkspacePackageRun.js
+#   afterWorkspacePackageTest: ./path/to/afterWorkspacePackageTest.js
+#   beforeWorkspacePackageTest: ./path/to/beforeWorkspacePackageTest.js
+#   afterWorkspacePackageLint: ./path/to/afterWorkspacePackageLint.js
+#   beforeWorkspacePackageLint: ./path/to/beforeWorkspacePackageLint.js
+#   afterWorkspacePackageBuild: ./path/to/afterWorkspacePackageBuild.js
+#   beforeWorkspacePackageBuild: ./path/to/beforeWorkspacePackageBuild.js
+#   afterWorkspacePackageBundle: ./path/to/afterWorkspacePackageBundle.js
+#   beforeWorkspacePackageBundle: ./path/to/beforeWorkspacePackageBundle.js
+#   afterWorkspacePackagePublish: ./path/to/afterWorkspacePackagePublish.js
+#   beforeWorkspacePackagePublish: ./path/to/beforeWorkspacePackagePublish.js
+#   afterWorkspacePackageInstallCheck: ./path/to/afterWorkspacePackageInstallCheck.js
+#   beforeWorkspacePackageInstallCheck: ./path/to/beforeWorkspacePackageInstallCheck.js
+#   afterWorkspacePackageInstallTest: ./path/to/afterWorkspacePackageInstallTest.js
+#   beforeWorkspacePackageInstallTest: ./path/to/beforeWorkspacePackageInstallTest.js
+#   afterWorkspacePackageInstallLint: ./path/to/afterWorkspacePackageInstallLint.js
+#   beforeWorkspacePackageInstallLint: ./path/to/beforeWorkspacePackageInstallLint.js
+#   afterWorkspacePackageInstallBuild: ./path/to/afterWorkspacePackageInstallBuild.js
+#   beforeWorkspacePackageInstallBuild: ./path/to/beforeWorkspacePackageInstallBuild.js
+#   afterWorkspacePackageInstallBundle: ./path/to/afterWorkspacePackageInstallBundle.js
+#   beforeWorkspacePackageInstallBundle: ./path/to/beforeWorkspacePackageInstallBundle.js
+#   afterWorkspacePackageInstallPublish: ./path/to/afterWorkspacePackageInstallPublish.js
+#   beforeWorkspacePackageInstallPublish: ./path/to/beforeWorkspacePackageInstallPublish.js
