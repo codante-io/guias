@@ -12,7 +12,7 @@ export default defineConfig({
       title: 'Next.js Introdutório',
       editLink: {
         baseUrl:
-          'https://github.com/codante-io/guias/next-introdutorio/next-introdutorio/edit/main/',
+          'https://github.com/codante-io/guias/edit/main/apps/next-introdutorio/',
       },
       social: {
         github: 'https://github.com/robertotcestari',

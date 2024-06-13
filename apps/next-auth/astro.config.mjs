@@ -12,7 +12,7 @@ export default defineConfig({
       title: 'Next Auth',
       editLink: {
         baseUrl:
-          'https://github.com/codante-io/workshop-next-auth-guia/edit/main/',
+          'https://github.com/codante-io/guias/edit/main/apps/next-auth/',
       },
       social: {
         github: 'https://github.com/robertotcestari',
