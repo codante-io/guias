@@ -32,7 +32,8 @@ jobs:
           name: build-artifacts
           path: |
             apps/next-auth/dist/
-            apps/teste/dist/
+            apps/home/dist/
+            apps/next-introdutorio/dist/
 
   deploy:
     runs-on: ubuntu-latest
