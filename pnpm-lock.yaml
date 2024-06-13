@@ -108,6 +108,33 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  apps/ts-no-react:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.4.1
+        version: 0.4.1(typescript@5.4.5)
+      '@astrojs/starlight':
+        specifier: ^0.17.2
+        version: 0.17.4(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))
+      '@astrojs/starlight-tailwind':
+        specifier: ^2.0.1
+        version: 2.0.3(@astrojs/starlight@0.17.4(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5)))(@astrojs/tailwind@5.1.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))(tailwindcss@3.4.4))(tailwindcss@3.4.4)
+      '@astrojs/tailwind':
+        specifier: ^5.1.0
+        version: 5.1.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))(tailwindcss@3.4.4)
+      astro:
+        specifier: ^4.2.1
+        version: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
+      sharp:
+        specifier: ^0.32.5
+        version: 0.32.6
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.4
+      typescript:
+        specifier: ^5.3.3
+        version: 5.4.5
+
 packages:
 
   '@alloc/quick-lru@5.2.0':
