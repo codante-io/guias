@@ -20,7 +20,15 @@ jobs:
       - run: pnpm -r run build
 
       - name: Verify Build Output
-        run: ls -la ./apps/next-auth/dist/ && ls -la ./apps/teste/dist/
+        run: |
+          echo "Listing build directory for next-auth:"
+          ls -la ./apps/next-auth/dist/
+          echo "Listing build directory for teste:"
+          ls -la ./apps/teste/dist/
+          echo "Listing the entire apps directory:"
+          ls -la ./apps
+          echo "Checking if any dist directories are present within apps/*:"
+          find ./apps -type d -name dist -exec ls -la {} +
 
   deploy:
     runs-on: ubuntu-latest
