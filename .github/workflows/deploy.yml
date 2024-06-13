@@ -11,24 +11,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
 
       - name: List All Files before build
         run: find . -type d -name node_modules -prune -o -type f -print
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - run: pnpm install
 
       - name: Build Projects
         run: pnpm -r run build
-
-      - name: List All Files After Build (excluding node_modules)
-        run: find . -type d -name node_modules -prune -o -type f -print
-
-      - name: List Directories After Build (excluding node_modules)
-        run: find . -type d -name node_modules -prune -o -type d -print
 
       - name: Verify Specific Build Outputs
         run: |
@@ -54,10 +51,10 @@ jobs:
       matrix:
         app:
           - name: 'next-auth'
-            path: '/next-auth/dist/'
+            path: './next-auth/dist/'
             remote_path: '/var/www/guias/next-auth/'
           - name: 'teste'
-            path: '/teste/dist/'
+            path: './teste/dist/'
             remote_path: '/var/www/guias/teste/'
           # Add more apps as needed
 
