@@ -19,6 +19,9 @@ jobs:
       - run: pnpm install
       - run: pnpm -r run build
 
+      - name: Verify Build Output
+        run: ls -la ./apps/next-auth/dist/ && ls -la ./apps/teste/dist/
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -26,18 +29,30 @@ jobs:
       matrix:
         app:
           - name: 'next-auth'
-            path: './apps/next-auth/dist/'
+            path: 'apps/next-auth/dist/'
             remote_path: '/var/www/guias/next-auth/'
           - name: 'teste'
-            path: './apps/teste/dist/'
+            path: 'apps/teste/dist/'
             remote_path: '/var/www/guias/teste/'
           # Add more apps as needed
 
     steps:
-      - name: Console log
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print working directory and list files
         run: |
-          echo ${{ matrix.app.path }}
+          echo "Working directory:"
+          pwd
+          echo "Content of repository root:"
           ls -la
+
+      - name: Print matrix app path and list files in it
+        run: |
+          echo "Matrix app path: ${{ matrix.app.path }}"
+          echo "Contents of the path:"
+          ls -la ${{ matrix.app.path }}
+
       - name: Deploy with rsync
         uses: burnett01/rsync-deployments@5.2
         with:
