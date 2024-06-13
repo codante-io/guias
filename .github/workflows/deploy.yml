@@ -25,7 +25,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: apps/home/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.json') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-
 
@@ -37,7 +37,7 @@ jobs:
             apps/next-auth/dist
             apps/next-introdutorio/node_modules
             apps/next-introdutorio/dist
-          key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.json') }}
+          key: ${{ runner.os }}-astro-${{ hashFiles('pnpm-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-astro-
 
@@ -51,7 +51,9 @@ jobs:
         with:
           name: build-artifacts
           path: |
-            apps/**/dist/
+            apps/home/dist/
+            apps/next-auth/dist/
+            apps/next-introdutorio/dist/
 
   deploy:
     runs-on: ubuntu-latest
