@@ -51,9 +51,7 @@ jobs:
         with:
           name: build-artifacts
           path: |
-            apps/next-auth/dist/
-            apps/home/dist/
-            apps/next-introdutorio/dist/
+            apps/**/dist/
 
   deploy:
     runs-on: ubuntu-latest
@@ -77,7 +75,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-artifacts
-          path: .
+          path: ./${{ matrix.app.name }}/dist
 
       - name: List All Files after downloading artifacts (excluding node_modules)
         run: find . -type d -name node_modules -prune -o -type f -print
