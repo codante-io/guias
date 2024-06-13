@@ -21,11 +21,11 @@ jobs:
       - name: Build Projects
         run: pnpm -r run build
 
-      - name: List All Files After Build
-        run: find . -type f -print
+      - name: List All Files After Build (excluding node_modules)
+        run: find . -type d -name node_modules -prune -o -type f -print
 
-      - name: List Directories After Build
-        run: find . -type d -print
+      - name: List Directories After Build (excluding node_modules)
+        run: find . -type d -name node_modules -prune -o -type d -print
 
       - name: Verify Specific Build Outputs
         run: |
@@ -64,21 +64,21 @@ jobs:
           name: build-artifacts
           path: .
 
-      - name: List All Files after downloading artifacts
-        run: find . -type f -print
+      - name: List All Files after downloading artifacts (excluding node_modules)
+        run: find . -type d -name node_modules -prune -o -type f -print
 
-      - name: Print working directory and list files
+      - name: Print working directory and list files (excluding node_modules)
         run: |
           echo "Working directory:"
           pwd
           echo "Content of repository root:"
-          ls -la
+          find . -type d -name node_modules -prune -o -type f -print
 
-      - name: Print matrix app path and list files in it
+      - name: Print matrix app path and list files in it (excluding node_modules)
         run: |
           echo "Matrix app path: ${{ matrix.app.path }}"
           echo "Contents of the path:"
-          ls -la ${{ matrix.app.path }}
+          find ${{ matrix.app.path }} -type d -name node_modules -prune -o -type f -print
 
       - name: Deploy with rsync
         uses: burnett01/rsync-deployments@5.2
