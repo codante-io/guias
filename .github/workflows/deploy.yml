@@ -39,8 +39,11 @@ jobs:
 
     steps:
       - name: Console log
-        run: echo ${{ matrix.app.path }} && echo ls -la
-      - name: Deploy with rsync
+        - name: Console log
+          run: |
+            echo ${{ matrix.app.path }}
+            ls -la
+        - name: Deploy with rsync
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --quiet --delete
