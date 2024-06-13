@@ -17,18 +17,24 @@ jobs:
         run: npm install -g pnpm
 
       - run: pnpm install
-      - run: pnpm -r run build
 
-      - name: Verify Build Output
+      - name: Build Projects
+        run: pnpm -r run build
+
+      - name: List All Files After Build
+        run: find . -type f -print
+
+      - name: List Directories After Build
+        run: find . -type d -print
+
+      - name: Verify Specific Build Outputs
         run: |
           echo "Listing build directory for next-auth:"
-          ls -la ./apps/next-auth/dist/
+          ls -la ./apps/next-auth
           echo "Listing build directory for teste:"
-          ls -la ./apps/teste/dist/
-          echo "Listing the entire apps directory:"
-          ls -la ./apps
-          echo "Checking if any dist directories are present within apps/*:"
-          find ./apps -type d -name dist -exec ls -la {} +
+          ls -la ./apps/teste
+          echo "Listing dist directories in entire repository:"
+          find . -type d -name dist
 
   deploy:
     runs-on: ubuntu-latest
