@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-nextjs-
 
       - name: Cache Astro build files
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             apps/next-auth/node_modules
@@ -47,7 +47,7 @@ jobs:
         run: pnpm -r run build
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: |
@@ -74,7 +74,7 @@ jobs:
 
     steps:
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           path: ./${{ matrix.app.name }}/dist
