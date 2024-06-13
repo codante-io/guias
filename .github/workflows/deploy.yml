@@ -21,6 +21,26 @@ jobs:
         with:
           cache: 'pnpm'
 
+      - name: Cache Next.js build files
+        uses: actions/cache@v3
+        with:
+          path: apps/home/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-
+
+       - name: Cache Astro build files
+        uses: actions/cache@v3
+        with:
+          path: |
+            apps/next-auth/node_modules
+            apps/next-auth/dist
+            apps/next-introdutorio/node_modules
+            apps/next-introdutorio/dist
+          key: ${{ runner.os }}-astro-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-astro-
+
       - run: pnpm install
 
       - name: Build Projects
