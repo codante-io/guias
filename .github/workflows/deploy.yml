@@ -36,6 +36,14 @@ jobs:
           echo "Listing dist directories in entire repository:"
           find . -type d -name dist
 
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            apps/next-auth/dist/
+            apps/teste/dist/
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -47,16 +55,18 @@ jobs:
             remote_path: '/var/www/guias/next-auth/'
           - name: 'teste'
             path: 'apps/teste/dist/'
-            remote_path: '/var/www/guias/teste/'
           # Add more apps as needed
 
     steps:
-      - name: List All Files before checkout
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: .
+
+      - name: List All Files after downloading artifacts
         run: find . -type f -print
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: List All Files After checkout
-        run: find . -type f -print
+
       - name: Print working directory and list files
         run: |
           echo "Working directory:"
