@@ -13,79 +13,82 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - run: pnpm install
-
-      - name: Build Projects
-        run: pnpm -r run build
-
-      - name: List All Files After Build (excluding node_modules)
+      - name: List All Files before build
         run: find . -type d -name node_modules -prune -o -type f -print
 
-      - name: List Directories After Build (excluding node_modules)
-        run: find . -type d -name node_modules -prune -o -type d -print
+      # - name: Install pnpm
+      #   run: npm install -g pnpm
 
-      - name: Verify Specific Build Outputs
-        run: |
-          echo "Listing build directory for next-auth:"
-          ls -la ./apps/next-auth
-          echo "Listing build directory for teste:"
-          ls -la ./apps/teste
-          echo "Listing dist directories in entire repository:"
-          find . -type d -name dist
+      # - run: pnpm install
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifacts
-          path: |
-            apps/next-auth/dist/
-            apps/teste/dist/
+      # - name: Build Projects
+      #   run: pnpm -r run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    strategy:
-      matrix:
-        app:
-          - name: 'next-auth'
-            path: 'apps/next-auth/dist/'
-            remote_path: '/var/www/guias/next-auth/'
-          - name: 'teste'
-            path: 'apps/teste/dist/'
-          # Add more apps as needed
+      # - name: List All Files After Build (excluding node_modules)
+      #   run: find . -type d -name node_modules -prune -o -type f -print
 
-    steps:
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-          path: .
+      # - name: List Directories After Build (excluding node_modules)
+      #   run: find . -type d -name node_modules -prune -o -type d -print
 
-      - name: List All Files after downloading artifacts (excluding node_modules)
-        run: find . -type d -name node_modules -prune -o -type f -print
+      # - name: Verify Specific Build Outputs
+      #   run: |
+      #     echo "Listing build directory for next-auth:"
+      #     ls -la ./apps/next-auth
+      #     echo "Listing build directory for teste:"
+      #     ls -la ./apps/teste
+      #     echo "Listing dist directories in entire repository:"
+      #     find . -type d -name dist
 
-      - name: Print working directory and list files (excluding node_modules)
-        run: |
-          echo "Working directory:"
-          pwd
-          echo "Content of repository root:"
-          find . -type d -name node_modules -prune -o -type f -print
+      # - name: Upload build artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: build-artifacts
+      #     path: |
+      #       apps/next-auth/dist/
+      #       apps/teste/dist/
 
-      - name: Print matrix app path and list files in it (excluding node_modules)
-        run: |
-          echo "Matrix app path: ${{ matrix.app.path }}"
-          echo "Contents of the path:"
-          find ${{ matrix.app.path }} -type d -name node_modules -prune -o -type f -print
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   strategy:
+  #     matrix:
+  #       app:
+  #         - name: 'next-auth'
+  #           path: 'apps/next-auth/dist/'
+  #           remote_path: '/var/www/guias/next-auth/'
+  #         - name: 'teste'
+  #           path: 'apps/teste/dist/'
+  #         # Add more apps as needed
 
-      - name: Deploy with rsync
-        uses: burnett01/rsync-deployments@5.2
-        with:
-          switches: -avzr --quiet --delete
-          path: ${{ matrix.app.path }}
-          remote_path: ${{ matrix.app.remote_path }}
-          remote_host: ${{ secrets.HOST }}
-          remote_user: ${{ secrets.USERNAME }}
-          remote_key: ${{ secrets.SSH_KEY }}
+  #   steps:
+  #     - name: Download build artifacts
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: build-artifacts
+  #         path: .
+
+  #     - name: List All Files after downloading artifacts (excluding node_modules)
+  #       run: find . -type d -name node_modules -prune -o -type f -print
+
+  #     - name: Print working directory and list files (excluding node_modules)
+  #       run: |
+  #         echo "Working directory:"
+  #         pwd
+  #         echo "Content of repository root:"
+  #         find . -type d -name node_modules -prune -o -type f -print
+
+  #     - name: Print matrix app path and list files in it (excluding node_modules)
+  #       run: |
+  #         echo "Matrix app path: ${{ matrix.app.path }}"
+  #         echo "Contents of the path:"
+  #         find ${{ matrix.app.path }} -type d -name node_modules -prune -o -type f -print
+
+  #     - name: Deploy with rsync
+  #       uses: burnett01/rsync-deployments@5.2
+  #       with:
+  #         switches: -avzr --quiet --delete
+  #         path: ${{ matrix.app.path }}
+  #         remote_path: ${{ matrix.app.remote_path }}
+  #         remote_host: ${{ secrets.HOST }}
+  #         remote_user: ${{ secrets.USERNAME }}
+  #         remote_key: ${{ secrets.SSH_KEY }}

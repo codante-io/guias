@@ -1,5 +1,4 @@
 packages:
-  - ./packages/*
   - ./apps/*
 # Optional: Specify the root directory of your workspace
 # root: ./path/to/root
