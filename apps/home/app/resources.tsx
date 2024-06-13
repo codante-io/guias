@@ -26,7 +26,8 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
-    href: '/next-introdutorio',
+    // full href
+    href: 'https://guias.codante.io/next-introdutorio',
     name: 'Next.js Introdutório',
     description:
       'Aprenda os fundamentos do Next.js, como criar páginas, roteamento, estilos, data fetching e mais.',
@@ -40,7 +41,8 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/next-auth',
+    // full href
+    href: 'https://guias.codante.io/next-auth',
     name: 'Next Auth',
     description:
       'Aprenda como adicionar autenticação ao seu aplicativo Next.js usando o NextAuth.js.',
@@ -54,7 +56,8 @@ const resources: Array<Resource> = [
     },
   },
   {
-    href: '/typescript-no-react',
+    // full href 
+    href: 'https://guias.codante.io/typescript-no-react',
     name: 'Typescript no React',
     description:
       'Aprenda como adicionar TypeScript ao seu aplicativo React existente. Workshop (e guia) baseado em exercícios',
