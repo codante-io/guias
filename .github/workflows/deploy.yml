@@ -36,20 +36,16 @@ jobs:
               remote_path: '/var/www/guias/teste/',
             }
           # Add more apps as needed
-          steps:
-            run: echo ls -la
-            run: echo $PWD
-            run: echo ${{ matrix.app.path }}
-            run: echo ${{ matrix.app.remote_path }}
 
-            - name: Deploy with rsync
-            uses: burnett01/rsync-deployments@5.2
-            with:
-              switches: -avzr --quiet --delete
-              path: ${{ matrix.app.path }}
-              remote_path: ${{ matrix.app.remote_path }}
-              remote_host: ${{ secrets.HOST }}
-              remote_user: ${{ secrets.USERNAME }}
-              remote_key: ${{ secrets.SSH_KEY }}
-            - name: Console current folder
-            run: echo $PWD
+    steps:
+      - name: Console log
+        run: echo ${{ matrix.app.path }} && echo ls -la
+      - name: Deploy with rsync
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -avzr --quiet --delete
+          path: ${{ matrix.app.path }}
+          remote_path: ${{ matrix.app.remote_path }}
+          remote_host: ${{ secrets.HOST }}
+          remote_user: ${{ secrets.USERNAME }}
+          remote_key: ${{ secrets.SSH_KEY }}
