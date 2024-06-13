@@ -51,8 +51,8 @@ package-lock.json
 yarn.lock
 
 # Ignore output of various build tools
-lib/
-lib-cov/
+# lib/
+# lib-cov/
 *.seed
 *.pid
 *.pid.lock

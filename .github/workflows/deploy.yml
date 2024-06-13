@@ -40,12 +40,15 @@ jobs:
     strategy:
       matrix:
         app:
+          - name: 'home'
+            path: './home/dist/'
+            remote_path: '/var/www/guias/home/'
           - name: 'next-auth'
             path: './next-auth/dist/'
             remote_path: '/var/www/guias/next-auth/'
-          - name: 'teste'
-            path: './teste/dist/'
-            remote_path: '/var/www/guias/teste/'
+          - name: 'next-introdutorio'
+            path: './next-introdutorio/dist/'
+            remote_path: '/var/www/guias/next-introdutorio/'
           # Add more apps as needed
 
     steps:
