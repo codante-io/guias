@@ -27,25 +27,25 @@ jobs:
       - name: List All Files After Build (excluding node_modules)
         run: find . -type d -name node_modules -prune -o -type f -print
 
-      # - name: List Directories After Build (excluding node_modules)
-      #   run: find . -type d -name node_modules -prune -o -type d -print
+      - name: List Directories After Build (excluding node_modules)
+        run: find . -type d -name node_modules -prune -o -type d -print
 
-      # - name: Verify Specific Build Outputs
-      #   run: |
-      #     echo "Listing build directory for next-auth:"
-      #     ls -la ./apps/next-auth
-      #     echo "Listing build directory for teste:"
-      #     ls -la ./apps/teste
-      #     echo "Listing dist directories in entire repository:"
-      #     find . -type d -name dist
+      - name: Verify Specific Build Outputs
+        run: |
+          echo "Listing build directory for next-auth:"
+          ls -la ./apps/next-auth
+          echo "Listing build directory for teste:"
+          ls -la ./apps/teste
+          echo "Listing dist directories in entire repository:"
+          find . -type d -name dist
 
-      # - name: Upload build artifacts
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: build-artifacts
-      #     path: |
-      #       apps/next-auth/dist/
-      #       apps/teste/dist/
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            apps/next-auth/dist/
+            apps/teste/dist/
 
   # deploy:
   #   runs-on: ubuntu-latest
