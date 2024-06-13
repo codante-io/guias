@@ -21,22 +21,10 @@ jobs:
         with:
           cache: 'pnpm'
 
-      - name: List All Files before build
-        run: find . -type d -name node_modules -prune -o -type f -print
-
       - run: pnpm install
 
       - name: Build Projects
         run: pnpm -r run build
-
-      - name: Verify Specific Build Outputs
-        run: |
-          echo "Listing build directory for next-auth:"
-          ls -la ./apps/next-auth
-          echo "Listing build directory for teste:"
-          ls -la ./apps/teste
-          echo "Listing dist directories in entire repository:"
-          find . -type d -name dist
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -69,19 +57,6 @@ jobs:
 
       - name: List All Files after downloading artifacts (excluding node_modules)
         run: find . -type d -name node_modules -prune -o -type f -print
-
-      - name: Print working directory and list files (excluding node_modules)
-        run: |
-          echo "Working directory:"
-          pwd
-          echo "Content of repository root:"
-          find . -type d -name node_modules -prune -o -type f -print
-
-      - name: Print matrix app path and list files in it (excluding node_modules)
-        run: |
-          echo "Matrix app path: ${{ matrix.app.path }}"
-          echo "Contents of the path:"
-          find ${{ matrix.app.path }} -type d -name node_modules -prune -o -type f -print
 
       - name: Deploy with rsync
         uses: burnett01/rsync-deployments@5.2
