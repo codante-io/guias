@@ -54,10 +54,11 @@ jobs:
       matrix:
         app:
           - name: 'next-auth'
-            path: 'apps/next-auth/dist/'
+            path: '/next-auth/dist/'
             remote_path: '/var/www/guias/next-auth/'
           - name: 'teste'
-            path: 'apps/teste/dist/'
+            path: '/teste/dist/'
+            remote_path: '/var/www/guias/teste/'
           # Add more apps as needed
 
     steps:
