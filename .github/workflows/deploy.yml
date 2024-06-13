@@ -6,8 +6,9 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,22 +20,33 @@ jobs:
       - run: pnpm install
       - run: pnpm -r run build
 
-      - name: Deploy with rsync next-auth
-        uses: burnett01/rsync-deployments@5.2
-        with:
-          switches: -avzr --quiet --delete
-          path: ./docs-workshop/dist/
-          remote_path: /var/www/guias/next-auth/
-          remote_host: ${{ secrets.HOST }}
-          remote_user: ${{ secrets.USERNAME }}
-          remote_key: ${{ secrets.SSH_KEY }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    strategy:
+      matrix:
+        app:
+          - {
+              name: 'next-auth',
+              path: './docs-workshop/dist/',
+              remote_path: '/var/www/guias/next-auth/',
+            }
+          - {
+              name: 'teste',
+              path: './teste/dist/',
+              remote_path: '/var/www/guias/teste/',
+            }
+          # Add more apps as needed
 
-      - name: Deploy with rsync teste
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy with rsync
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --quiet --delete
-          path: ./teste/dist/
-          remote_path: /var/www/guias/teste/
+          path: ${{ matrix.app.path }}
+          remote_path: ${{ matrix.app.remote_path }}
           remote_host: ${{ secrets.HOST }}
           remote_user: ${{ secrets.USERNAME }}
           remote_key: ${{ secrets.SSH_KEY }}
