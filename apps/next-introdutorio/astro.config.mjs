@@ -5,6 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  base: '/next-introdutorio/',
   integrations: [
     starlight({
       favicon: '/favicon.ico',
@@ -17,7 +18,7 @@ export default defineConfig({
       title: 'Next.js Introdutório',
       editLink: {
         baseUrl:
-          'https://github.com/codante-io/workshop-next-auth-guia/edit/main/',
+          'https://github.com/codante-io/guias/next-introdutorio/next-introdutorio/edit/main/',
       },
       social: {
         github: 'https://github.com/robertotcestari',
