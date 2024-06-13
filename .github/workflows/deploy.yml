@@ -51,9 +51,12 @@ jobs:
           # Add more apps as needed
 
     steps:
+      - name: List All Files before checkout
+        run: find . -type f -print
       - name: Checkout code
         uses: actions/checkout@v4
-
+      - name: List All Files After checkout
+        run: find . -type f -print
       - name: Print working directory and list files
         run: |
           echo "Working directory:"
