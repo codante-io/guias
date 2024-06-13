@@ -27,12 +27,12 @@ jobs:
         app:
           - {
               name: 'next-auth',
-              path: '/apps/next-auth/dist/',
+              path: 'apps/next-auth/dist/',
               remote_path: '/var/www/guias/next-auth/',
             }
           - {
               name: 'teste',
-              path: '/apps/teste/dist/',
+              path: 'apps/teste/dist/',
               remote_path: '/var/www/guias/teste/',
             }
           # Add more apps as needed
