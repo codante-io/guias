@@ -9,12 +9,6 @@ export default defineConfig({
   integrations: [
     starlight({
       favicon: '/favicon.ico',
-      locales: {
-        root: {
-          label: 'Português',
-          lang: 'pt-BR',
-        },
-      },
       title: 'Next.js Introdutório',
       editLink: {
         baseUrl:

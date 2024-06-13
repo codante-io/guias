@@ -56,7 +56,7 @@ Aqui simplesmente pegamos os handlers que exportamos do nosso arquivo de configu
 
 Agora, adicione a seguinte chave no `.env`:
 
-```env title=".env"
+```bash title=".env"
 AUTH_SECRET="qualquer-coisa-aqui"
 ```
 
