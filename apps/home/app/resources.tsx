@@ -57,7 +57,7 @@ const resources: Array<Resource> = [
   },
   {
     // full href 
-    href: 'https://guias.codante.io/typescript-no-react',
+    href: 'https://guias.codante.io/ts-no-react',
     name: 'Typescript no React',
     description:
       'Aprenda como adicionar TypeScript ao seu aplicativo React existente. Workshop (e guia) baseado em exercícios',
