@@ -2,55 +2,34 @@
 title: Conteúdo do Workshop
 ---
 
-TODO: REFAZER
+Vamos mergulhar em profundidade nas principais funcionalidades do framework e ecossistema do Next. 
 
+## 01. App Router
 
-Vamos começar? Antes de mais nada, um overview do que iremos tratar no Workshop de hoje. Vamos em todo o workshop utilizar uma única aplicação que possuirá **várias formas de autenticação utilizando a biblioteca Auth.js (NextAuth)**.
-
-## O que vamos aprender hoje?
-
-Os principais tópicos que iremos ver são:
-
-#### 01. Intro ao NextAuth.js
-
-- A nova versão 5 (auth.js)
-- O que são sessões
-- O que são providers
-- O que são adapters
-- O que são callbacks
-- O que são eventos
-
-
-#### 02. Setup do NextAuth.js no projeto
-
-- Instalando o NextAuth
-- Instalando a base de dados (Prisma)
-- Configurando o NextAuth
-- Entendendo o fluxo de login
-- Login nativo / simples com credenciais 
-
-#### 03. Login com credenciais Server e Client Side
-
-- Página de login customizada
+- Roteamento
+- Layouts
 - Erros
-- Client e Server Side (server components)
+- Loading State
 
-#### 04. Login com Github
+## 02. Client e Server Components
 
-- Criando um app OAuth no Github
-- Adicionando o provider Github
-- Configurando o form e action
+Vamos entender as diferenças e casos de uso para componentes de cliente e componentes de servidor. 
 
-#### 05. Login com Magic Link (email)
+## 03. Ecossistema Oficial
 
-- Adicionando um provedor de email
-- Configurando o formulário e action
+O Next.js traz algumas bibliotecas para tanto facilitar o desenvolvimento como para melhorar performance das páginas como um todo. 
 
-#### 06. Usando dados da Sessão
+- `next/link`
+- `next/image`
+- `next/font`
+- `metadata`
+  
 
-- Exibindo dados do usuário
-- Protegendo rotas
+## 04. Data fetching e Server Actions
 
-#### 07. Callbacks para adicionarmos mais dados na sessão
+- Fetch de dados dinâmicos
+- Mutação de dados usando `server actions`. 
 
-- Adicionando dados adicionais do GitHub na sessão
+## 05. Básico de Estilização
+
+Para estilização vamos utilizar *tailwindcss* para nossa aplicação - mas podemos utilizar quaisquer estratégias que quisermos

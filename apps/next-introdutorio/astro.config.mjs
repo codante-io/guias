@@ -32,7 +32,7 @@ export default defineConfig({
         {
           label: 'Intro ao NextAuth',
           autogenerate: {
-            directory: '01-intro-nextauth',
+            directory: '01-intro-next',
           },
         },
         {
