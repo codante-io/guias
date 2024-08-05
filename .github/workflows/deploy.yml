@@ -54,6 +54,7 @@ jobs:
             apps/next-auth/dist/
             apps/next-introdutorio/dist/
             apps/ts-no-react/dist/
+          # Add more apps as needed
 
   deploy:
     runs-on: ubuntu-latest
