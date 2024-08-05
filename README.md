@@ -1,5 +1,7 @@
 # Guias Codante.io
 
+🚀 [Deploy - Live](https://guias.codante.io)
+
 Seja bem vindo ao monorepo dos Guias do Codante! Esse é um monorepo `pnpm` em que cada um dos guias é um repositório construído em cima do Starlight (framework que usa Astro por baixo dos panos). Esse repo é open-source, então está aberto para PRs e novos guias. 
 
 
