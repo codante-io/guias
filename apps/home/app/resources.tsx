@@ -12,6 +12,7 @@ import { GridPattern } from '@/components/GridPattern';
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon';
 import { NextJsIcon } from '@/components/icons/NextJsIcon';
 import { UsersIcon } from '@/components/icons/UsersIcon';
+import { SiZod } from '@icons-pack/react-simple-icons';
 
 interface Resource {
   href: string;
@@ -56,7 +57,7 @@ const resources: Array<Resource> = [
     },
   },
   {
-    // full href 
+    // full href
     href: 'https://guias.codante.io/ts-no-react',
     name: 'Typescript no React',
     description:
@@ -66,6 +67,21 @@ const resources: Array<Resource> = [
       y: -6,
       squares: [
         [-1, 2],
+        [1, 3],
+      ],
+    },
+  },
+  {
+    // full href
+    href: 'https://guias.codante.io/zod',
+    name: 'Zod',
+    description:
+      'Aprenda a biblioteca mais popular de validação e criação de schemas em TypeScript.',
+    icon: SiZod,
+    pattern: {
+      y: -6,
+      squares: [
+        [0, 2],
         [1, 3],
       ],
     },

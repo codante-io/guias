@@ -20,5 +20,9 @@ Seja bem vindo ao monorepo dos Guias do Codante! Esse é um monorepo `pnpm` em q
 
    2. Siga as configs de outros guias ou a [documentação oficial](https://starlight.astro.build/)
       
-6. Para deploy, altere a matriz na github action para fazer o deploy do app específico
-   1. Altere também a parte de artifacts na action
+6. Para deploy, altere também o deploy.yml
+   1. Altere o Cache
+   2. Altere os build artifacts
+   1. Altere a matriz de build
+
+7. Dentro do app `home`, adicione o link para o novo app no componente `<Resources>`. 

@@ -36,6 +36,7 @@ jobs:
             apps/next-auth/node_modules/.astro
             apps/next-introdutorio/node_modules/.astro
             apps/ts-no-react/node_modules/.astro
+            apps/zod/node_modules/.astro
           key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-astro-
@@ -54,6 +55,7 @@ jobs:
             apps/next-auth/dist/
             apps/next-introdutorio/dist/
             apps/ts-no-react/dist/
+            apps/zod/dist/
           # Add more apps as needed
 
   deploy:
@@ -74,6 +76,9 @@ jobs:
           - name: 'ts-no-react'
             path: './ts-no-react/dist/'
             remote_path: '/var/www/guias/ts-no-react/'
+          - name: 'zod'
+            path: './zod/dist/'
+            remote_path: '/var/www/guias/zod/'
           # Add more apps as needed
 
     steps:

@@ -9,15 +9,19 @@ export default defineConfig({
   integrations: [
     starlight({
       favicon: '/favicon.ico',
+      locales: {
+        root: {
+          label: 'Português',
+          lang: 'pt-BR',
+        },
+      },
       title: 'Zod',
       editLink: {
         baseUrl: 'https://github.com/codante-io/guias/edit/main/apps/zod/',
       },
       social: {
-        github: 'https://github.com/robertotcestari',
-        'x.com': 'https://x.com/robertotcestari',
-        linkedin: 'https://www.linkedin.com/in/robertotcestari/',
-        email: 'mailto:robertotcestari@gmail.com',
+        github: 'https://github.com/mechamobau',
+        'x.com': 'https://x.com/mechamobau',
       },
       customCss: ['./src/tailwind.css'],
       sidebar: [
