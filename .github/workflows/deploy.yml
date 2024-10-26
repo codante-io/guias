@@ -37,6 +37,7 @@ jobs:
             apps/next-introdutorio/node_modules/.astro
             apps/ts-no-react/node_modules/.astro
             apps/zod/node_modules/.astro
+            apps/react-hook-form/node_modules/.astro
           key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-astro-
@@ -56,6 +57,7 @@ jobs:
             apps/next-introdutorio/dist/
             apps/ts-no-react/dist/
             apps/zod/dist/
+            apps/react-hook-form/dist/
           # Add more apps as needed
 
   deploy:
@@ -79,6 +81,9 @@ jobs:
           - name: 'zod'
             path: './zod/dist/'
             remote_path: '/var/www/guias/zod/'
+          - name: 'react-hook-form'
+            path: './react-hook-form/dist/'
+            remote_path: '/var/www/guias/react-hook-form/'
           # Add more apps as needed
 
     steps:
