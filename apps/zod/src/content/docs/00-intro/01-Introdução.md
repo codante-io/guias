@@ -1,6 +1,6 @@
 ---
 title: Boas Vindas
-description: Boas vindas ao workshop de Next Auth (Auth.js)
+description: Boas vindas ao workshop de Zod!
 ---
 
 Boas vindas ao nosso Workshop de Zod!
