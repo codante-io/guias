@@ -106,8 +106,11 @@ const resources: Array<Resource> = [
     description: 'Aprenda o frameworks frontend mais popular do zero!',
     icon: SiReact,
     pattern: {
-      y: 32,
-      squares: [[0, 2]],
+      y: 6,
+      squares: [
+        [1, 2],
+        [1, 3],
+      ],
     },
   },
   // {
