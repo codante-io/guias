@@ -9,15 +9,14 @@ import {
 import Link from 'next/link';
 
 import { GridPattern } from '@/components/GridPattern';
-import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon';
 import { NextJsIcon } from '@/components/icons/NextJsIcon';
 import { UsersIcon } from '@/components/icons/UsersIcon';
 import {
+  SiReact,
   SiReacthookform,
   SiTypescript,
   SiZod,
 } from '@icons-pack/react-simple-icons';
-import { SiReact } from '@icons-pack/react-simple-icons';
 
 interface Resource {
   href: string;
