@@ -8,10 +8,14 @@ Vamos começar? Antes de mais nada, um overview do que iremos tratar no Workshop
 
 Os principais tópicos que iremos ver são:
 
-#### 01. Intro ao React
+#### Conteúdo
 
-- O que é React
-- O que é JSX
-- Componentes
-- Props
-- Estado
+@todo colocar os tópicos
+
+#### Vamos construir uma aplicação
+
+Nesse workshop, vamos construir uma aplicação do zero. Vamos começar com um exemplo bem simples e ir adicionando novas funcionalidades conforme vamos aprendendo os novos conceitos.
+
+Você pode acessar o design da aplicação no Figma: [https://www.figma.com/community/file/1432049109831051738](https://www.figma.com/community/file/1432049109831051738)
+
+![Exemplo da aplicação](../../../assets/app.webp)

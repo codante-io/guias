@@ -39,6 +39,36 @@ export default defineConfig({
             directory: "02-por-tras-dos-panos",
           },
         },
+        {
+          label: "Configurando um app React",
+          autogenerate: {
+            directory: "03-configurando-um-app-react",
+          },
+        },
+        {
+          label: "Componentes no React",
+          autogenerate: {
+            directory: "04-componentes-no-react",
+          },
+        },
+        {
+          label: "Aprendendo JSX",
+          autogenerate: {
+            directory: "05-aprendendo-jsx",
+          },
+        },
+        {
+          label: "Implementando os componentes",
+          autogenerate: {
+            directory: "06-implementando-os-componentes",
+          },
+        },
+        {
+          label: "Aprofundando no React",
+          autogenerate: {
+            directory: "07-aprofundando-no-react",
+          },
+        },
       ],
     }),
     tailwind({ applyBaseStyles: false }),
