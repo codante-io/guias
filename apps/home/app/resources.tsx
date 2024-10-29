@@ -12,7 +12,7 @@ import { GridPattern } from '@/components/GridPattern';
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon';
 import { NextJsIcon } from '@/components/icons/NextJsIcon';
 import { UsersIcon } from '@/components/icons/UsersIcon';
-import { SiZod } from '@icons-pack/react-simple-icons';
+import { SiReacthookform, SiZod } from '@icons-pack/react-simple-icons';
 import { SiReact } from '@icons-pack/react-simple-icons';
 
 interface Resource {
@@ -93,6 +93,17 @@ const resources: Array<Resource> = [
     name: 'React Hook Form',
     description:
       'Aprenda a biblioteca mais popular de validação e criação de formulários em React.',
+    icon: SiReacthookform,
+    pattern: {
+      y: 32,
+      squares: [[0, 2]],
+    },
+  },
+  {
+    // full href
+    href: 'https://guias.codante.io/react-intro',
+    name: 'React Introdutório',
+    description: 'Aprenda o frameworks frontend mais popular do zero!',
     icon: SiReact,
     pattern: {
       y: 32,
