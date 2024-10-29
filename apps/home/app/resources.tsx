@@ -12,7 +12,11 @@ import { GridPattern } from '@/components/GridPattern';
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon';
 import { NextJsIcon } from '@/components/icons/NextJsIcon';
 import { UsersIcon } from '@/components/icons/UsersIcon';
-import { SiReacthookform, SiZod } from '@icons-pack/react-simple-icons';
+import {
+  SiReacthookform,
+  SiTypescript,
+  SiZod,
+} from '@icons-pack/react-simple-icons';
 import { SiReact } from '@icons-pack/react-simple-icons';
 
 interface Resource {
@@ -29,45 +33,14 @@ interface Resource {
 const resources: Array<Resource> = [
   {
     // full href
-    href: 'https://guias.codante.io/next-introdutorio',
-    name: 'Next.js Introdutório',
-    description:
-      'Aprenda os fundamentos do Next.js, como criar páginas, roteamento, estilos, data fetching e mais.',
-    icon: NextJsIcon,
+    href: 'https://guias.codante.io/react-intro',
+    name: 'React Introdutório',
+    description: 'Aprenda o frameworks frontend mais popular do zero!',
+    icon: SiReact,
     pattern: {
-      y: 32,
+      y: 6,
       squares: [
-        [0, 2],
-        [1, 4],
-      ],
-    },
-  },
-  {
-    // full href
-    href: 'https://guias.codante.io/next-auth',
-    name: 'Next Auth',
-    description:
-      'Aprenda como adicionar autenticação ao seu aplicativo Next.js usando o NextAuth.js.',
-    icon: UsersIcon,
-    pattern: {
-      y: 16,
-      squares: [
-        [0, 1],
-        [1, 3],
-      ],
-    },
-  },
-  {
-    // full href
-    href: 'https://guias.codante.io/ts-no-react',
-    name: 'Typescript no React',
-    description:
-      'Aprenda como adicionar TypeScript ao seu aplicativo React existente. Workshop (e guia) baseado em exercícios',
-    icon: ChatBubbleIcon,
-    pattern: {
-      y: -6,
-      squares: [
-        [-1, 2],
+        [1, 2],
         [1, 3],
       ],
     },
@@ -101,43 +74,49 @@ const resources: Array<Resource> = [
   },
   {
     // full href
-    href: 'https://guias.codante.io/react-intro',
-    name: 'React Introdutório',
-    description: 'Aprenda o frameworks frontend mais popular do zero!',
-    icon: SiReact,
+    href: 'https://guias.codante.io/next-auth',
+    name: 'Next Auth',
+    description:
+      'Aprenda como adicionar autenticação ao seu aplicativo Next.js usando o NextAuth.js.',
+    icon: UsersIcon,
     pattern: {
-      y: 6,
+      y: 16,
       squares: [
-        [1, 2],
+        [0, 1],
         [1, 3],
       ],
     },
   },
-  // {
-  //   href: '/messages',
-  //   name: 'Mensagens',
-  //   description:
-  //     'Saiba mais sobre o modelo de mensagem e como criar, recuperar, atualizar, excluir e listar mensagens.',
-  //   icon: EnvelopeIcon,
-  //   pattern: {
-  //     y: 32,
-  //     squares: [
-  //       [0, 2],
-  //       [1, 4],
-  //     ],
-  //   },
-  // },
-  // {
-  //   href: '/groups',
-  //   name: 'Grupos',
-  //   description:
-  //     'Saiba mais sobre o modelo de grupo e como criar, recuperar, atualizar, excluir e listar grupos.',
-  //   icon: UsersIcon,
-  //   pattern: {
-  //     y: 22,
-  //     squares: [[0, 1]],
-  //   },
-  // },
+  {
+    // full href
+    href: 'https://guias.codante.io/ts-no-react',
+    name: 'Typescript no React',
+    description:
+      'Aprenda como adicionar TypeScript ao seu aplicativo React existente. Workshop (e guia) baseado em exercícios',
+    icon: SiTypescript,
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+  },
+
+  {
+    href: 'https://guias.codante.io/next-introdutorio',
+    name: 'Next.js Introdutório',
+    description:
+      'Aprenda os fundamentos do Next.js, como criar páginas, roteamento, estilos, data fetching e mais.',
+    icon: NextJsIcon,
+    pattern: {
+      y: 32,
+      squares: [
+        [0, 2],
+        [1, 4],
+      ],
+    },
+  },
 ];
 
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {
