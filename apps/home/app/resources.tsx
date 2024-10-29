@@ -13,6 +13,7 @@ import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon';
 import { NextJsIcon } from '@/components/icons/NextJsIcon';
 import { UsersIcon } from '@/components/icons/UsersIcon';
 import { SiZod } from '@icons-pack/react-simple-icons';
+import { SiReact } from '@icons-pack/react-simple-icons';
 
 interface Resource {
   href: string;
@@ -84,6 +85,18 @@ const resources: Array<Resource> = [
         [0, 2],
         [1, 3],
       ],
+    },
+  },
+  {
+    // full href
+    href: 'https://guias.codante.io/react-hook-form',
+    name: 'React Hook Form',
+    description:
+      'Aprenda a biblioteca mais popular de validação e criação de formulários em React.',
+    icon: SiReact,
+    pattern: {
+      y: 32,
+      squares: [[0, 2]],
     },
   },
   // {
