@@ -10,7 +10,13 @@ Os principais tópicos que iremos ver são:
 
 #### Conteúdo
 
-@todo colocar os tópicos
+1. Introdução
+2. Por trás dos panos do React
+3. Configurando um app React
+4. Componentes no React
+5. Aprendendo JSX
+6. Implementando os componentes
+7. Aprofundando no React
 
 #### Vamos construir uma aplicação
 
