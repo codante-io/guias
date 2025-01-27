@@ -33,8 +33,9 @@ Vamos falar mais tarde em detalhes, mas não custa listar aqui quais são os arq
 7. `route.ts`
 8. `middleware.ts`
 
-> [!NOTE]
-> Neste Workshop de Next Introdutório vamos ver apenas os arquivos `page.tsx`, `layout.tsx`, `error.tsx`, `not-found.tsx`, `icon.ts` / `favicon.ico`. Os outros arquivos farão parte de um Workshop mais avançado.
+:::note
+Neste Workshop de Next Introdutório vamos ver apenas os arquivos `page.tsx`, `layout.tsx`, `error.tsx`, `not-found.tsx`, `icon.ts` / `favicon.ico`. Os outros arquivos farão parte de um Workshop mais avançado.
+:::
 
 ## Os arquivos de configuração
 

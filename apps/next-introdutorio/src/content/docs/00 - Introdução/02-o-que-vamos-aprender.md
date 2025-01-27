@@ -9,10 +9,14 @@ Se você não consegue esperar, já pode ir olhando no nosso Figma para ver a ap
 
 Os principais tópicos que iremos ver são:
 
-## 01. Setup de um Projeto `Next.js`
+## 00. Apresentação
 
 - O que é o `Next.js`
 - Por que `Next.js`
+- Um pouco de história
+
+## 01. Setup de um Projeto `Next.js`
+
 - Apresentando o CodanteVagas
 - Criando o projeto `Next.js`
 - A estrutura de pastas de um projeto `Next.js`

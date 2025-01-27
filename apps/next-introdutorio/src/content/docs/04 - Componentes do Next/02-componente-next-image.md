@@ -13,10 +13,11 @@ Resolvemos esses problemas quando usamos o `next/image`.
 
 Podemos usar o componente `<Image>` em nossas próprias imagens que estão no nosso projeto como também em imagens que estão hospedadas remotamente.
 
->[!WARNING]
-> Quando usamos imagens remotas, precisamos configurar uma "whitelist/allow list" para explicitamente determinarmos quais domínios permitimos.
->
-> Além disso, quando usamos imagens externas, precisamos determinar explicitamente qual é a largura e altura da imagem para evitarmos layout shift - isso não é necessário quando as imagens são próprias.
+:::caution
+Quando usamos imagens remotas, precisamos configurar uma "whitelist/allow list" para explicitamente determinarmos quais domínios permitimos.
+
+Além disso, quando usamos imagens externas, precisamos determinar explicitamente qual é a largura e altura da imagem para evitarmos layout shift - isso não é necessário quando as imagens são próprias.
+:::
 
 ## Tamanho das imagens
 

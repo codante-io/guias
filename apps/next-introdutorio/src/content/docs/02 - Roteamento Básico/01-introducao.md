@@ -7,8 +7,9 @@ Agora vamos começar a mergulhar mais a fundo em nossa aplicação e entender co
 
 Mas lembrando que existem duas formas de lidar com rotas no Next.js: (i.) usando a pasta `app`, que é a forma mais moderna; ou (ii.) usando a pasta `pages`, que é a forma mais antiga.
 
-> [!IMPORTANT]
-> Neste workshop vamos apenas trabalhar com a forma mais moderna do Next.js, isto é, com o `app router`.
+:::note
+Neste workshop vamos apenas trabalhar com a forma mais moderna do Next.js, isto é, com o `app router`.
+:::
 
 ## Criando as primeiras rotas
 
@@ -54,8 +55,9 @@ Queremos criar respectivamente as seguintes rodas:
 
 Os nomes são autoexplicativos para cada uma delas. Uma rota vai sempre basear na estrutura de pastas do nosso projeto.
 
-> [!TIP]
-> Cada rota, no fim das contas, é um componente React. A diferença neste componente é que ele deve estar localizado e nomeado de acordo com a convenção do Next.js. Dessa forma o framework usa esse componente para criar uma rota específica a partir dele.
+:::tip
+Cada rota, no fim das contas, é um componente React. A diferença neste componente é que ele deve estar localizado e nomeado de acordo com a convenção do Next.js. Dessa forma o framework usa esse componente para criar uma rota específica a partir dele.
+:::
 
 Uma rota obrigatoriamente deverá ser nomeada dentro da pasta que a representa, com o nome `page.tsx`, `page.jsx` `page.js`.
 
