@@ -21,6 +21,7 @@ Para evitar repetição e HTMLs muito longos, podemos extrair os *labels* e esti
 O código deste componente está abaixo:
 
 ```typescript
+// app/vagas/cadastro/form-item.tsx
 import { Label } from "@/components/ui/label";
 
 export default function FormItem({
@@ -47,18 +48,20 @@ export default function FormItem({
 Juntando tudo, o código final da página de Cadastro é esse:
 
 ```typescript
+// app/vagas/cadastro/page.tsx
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import FormItem from "./form-item";
+import { createJob } from "@/lib/actions";
 
 export default function Cadastro() {
   return (
     <main>
       <h2 className="font-display mb-12 text-2xl font-bold">Cadastrar Vaga</h2>
       <Card className="mx-auto w-full py-8">
-        <form>
+        <form action={createJob}>
           <CardContent className="space-y-6">
             <FormItem
               name="Título da Vaga"
@@ -89,8 +92,8 @@ export default function Cadastro() {
             >
               <Input
                 className="rounded-xs border-gray-500"
-                id="website"
-                name="website"
+                id="company_website"
+                name="company_website"
                 type="url"
               />
             </FormItem>
@@ -110,11 +113,14 @@ export default function Cadastro() {
               name="Período"
               description="Escolha entre meio-período ou período integral"
             >
-              <Input
+              <select
                 className="rounded-xs border-gray-500"
-                id="period"
-                name="period"
-              />
+                id="schedule"
+                name="schedule"
+              >
+                <option value="full-time">Período Integral</option>
+                <option value="part-time">Meio-Período</option>
+              </select>
             </FormItem>
 
             <FormItem name="Salário" description="Salário mensal">
@@ -122,6 +128,17 @@ export default function Cadastro() {
                 className="rounded-xs border-gray-500"
                 id="salary"
                 name="salary"
+              />
+            </FormItem>
+
+            <FormItem
+              name="Quantidade de Vagas"
+              description="Quantas vagas abertas existem para esta posição"
+            >
+              <Input
+                className="rounded-xs border-gray-500"
+                id="number_of_positions"
+                name="number_of_positions"
               />
             </FormItem>
 
