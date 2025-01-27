@@ -25,7 +25,7 @@ export default defineConfig({
         {
           label: 'Intro ao Workshop',
           autogenerate: {
-            directory: '00 - Introdução',
+            directory: '00 - introducao',
           },
         },
 

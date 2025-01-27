@@ -4,8 +4,6 @@ title: Um pouco de história
 
 Por qual razão o Next.js se tornou um dos frameworks _frontend_ mais populares dos últimos anos? E porque é utilizado sem ressalvas nas maiores aplicações em produção?
 
-## Um pouco de história
-
 O Next.js surgiu em 2016 e fez parte de um movimento natural da web.
 
 ### A era das páginas estáticas (1990 - 1999)
