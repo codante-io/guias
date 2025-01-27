@@ -19,60 +19,65 @@ Os principais tópicos que iremos ver são:
 
 - Apresentando o CodanteVagas
 - Criando o projeto `Next.js`
-- A estrutura de pastas de um projeto `Next.js`
+- Next.js sem projeto nenhum é possível também
 - A estrutura de pastas de um projeto `Next.js`
 - O que é o `turbopack`?
 
 ## 02. Roteamento Básico no `Next.js`
 
 - Roteamento com a pasta `app`.
-- Como era antes?
 - Os nomes *reservados* do roteamento no `Next.js`.
 - Criando as páginas do *CodanteVagas*
   - Home Page
   - Página de About/Sobre
   - Página de Vagas
   - Página de Cadastro de Vagas
+- Rota 404
 
 ## 03. Estilização
 
 - TailwindCSS
 - Usando uma biblioteca de componentes: `shadcn/ui`.
-- E CSS Puro?
+- Estilizando nossa 404
 
-## 03A. Roteamento dinâmico e layouts
+## 04. Layouts e Páginas
 
 - Criando nosso layout
-- Criando a página de vaga individual
+- Layouts sem rota
+- Home e Sobre
+- Página de Vagas
+- Página de Cadastro
 
-## 04. Componentes do `Next.js`
+## 05. Componentes do `Next.js`
 
 - next/link
-- next/image
 - next/font
+- next/image
 - next/script
-- next/meta
+- next/form
 
-## 05. A teoria dos Server Components do React
+## 06. A teoria dos Server Components do React
 
+- O que são server components
 - `use client` vs `use server`
-- Componente Cliente vs Componente de Servidor
-- Fetch de dados - *cliente* vs *servidor*
-- Server Actions
-- Hooks auxiliares
+- Regras dos server components
 
-## 06. Fetch de Dados - Página de vagas
+## 07. Fetch de Dados e Rotas Dinâmicas
 
+- Brincando com nossa API
 - Listando as vagas conectando com a API
+- Criando detalhes da vaga individual
+- Criando a página da vaga individual
 
-## 07. Formulário e Server Actions
+## 08. Formulário e Server Actions
 
-- Criando o Formulário
-- Server Actions para enviar o formulário
-- Erros e validação
+- Nossa primeira server action
+- Apagando uma vaga
+- Inserindo nova vaga
+- Loading State e Erros
 
-## 08. Responsividade da nossa aplicação
+## 09. Responsividade da nossa aplicação
 
 - Vamos ajustar tudo para ficar responsivo.
 
-## 09. Finalização
+## 10. Finalização
