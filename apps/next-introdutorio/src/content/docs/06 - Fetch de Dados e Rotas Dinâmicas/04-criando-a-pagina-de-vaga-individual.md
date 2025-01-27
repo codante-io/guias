@@ -8,6 +8,8 @@ Agora que já temos os dados da vaga na nossa página, precisamos construir a UI
 ## Código da página de vaga individual
 
 ```typescript
+// app/vagas/[id]/page.tsx
+
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -54,6 +56,7 @@ export default async function JobPosting({
 ## Código do componente `<JobPostingCard />`
 
 ```typescript
+// app/vagas/[id]/job-posting-card.tsx
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";

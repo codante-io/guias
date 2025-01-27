@@ -9,8 +9,7 @@ Nesta seção, vamos modificar a página de vagas para buscar dados da API e exi
 
 O primeiro passo é modificar o componente `<JobItem />` para que ele possa receber os dados da vaga como propriedades. Assim, ele poderá ser reutilizado para exibir diferentes vagas.
 
-```typescript
-// app/components/cards/job-item.tsx
+```typescript title="app/components/cards/job-item.tsx"
 import { Button } from "../ui/button";
 
 type Job = {

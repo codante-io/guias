@@ -23,6 +23,8 @@ Se não houver vaga com aquele endpoint, então iremos retornar lançar a funç�
 Vamos mostrar as infos do job na tela com `JSON.stringify()`. O código vai ficar, por enquanto assim:
 
 ```typescript
+// app/vagas/[id]/page.tsx
+
 import { notFound } from "next/navigation";
 
 async function fetchJob(jobId: string) {
