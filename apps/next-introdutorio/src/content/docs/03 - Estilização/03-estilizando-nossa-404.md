@@ -13,13 +13,13 @@ Uma das primeiras coisas que vamos fazer é estilizar as fontes. No Figma perceb
 
 Para isso, vamos importar no topo do `app/globals.css` a fonte `Maven Pro`:
 
-```css
+```css title="app/globals.css"
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
 ```
 
 Feito isso, ainda no `globals.css`, vamos adicionar dentro da diretiva `@theme` nossa fonte que terá o nome de "display":
 
-```css
+```css title="app/globals.css"
 @theme {
   --font-display: 'Maven Pro', cursive;
   /* ... */

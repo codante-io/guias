@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/next-introdutorio/',
   integrations: [
     starlight({
-      favicon: '/favicon.ico',
+      favicon: '/favicon.png',
       title: 'Next.js Introdutório',
       editLink: {
         baseUrl:

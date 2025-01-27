@@ -37,7 +37,7 @@ Feito isso, o céu é o limite. Temos um componente logo que agora irá aceitar 
 
 ### Código final do componente `<Logo>`
 
-```typescript
+```typescript title="components/layout/logo.tsx"
 import * as React from 'react';
 import { SVGProps } from 'react';
 
@@ -73,7 +73,8 @@ O componente `<Navbar>` será feito de acordo com o Figma:
 
 ### Código do componente `<Navbar>`
 
-```typescript
+```typescript title="components/layout/navbar.tsx"
+
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '../ui/button';
 import Logo from './logo';
