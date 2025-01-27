@@ -1,14 +1,12 @@
 ---
-title: O que vamos construir neste Workshop
+title: A Aplicação
 ---
 
-Vamos criar um *job board*. Essa será uma aplicação em que um usuário será capaz de procurar vagas, cadastrar novas vagas e visualizar detalhes de vagas de emprego. Além de páginas estáticas `home` e `sobre`. 
-
+Vamos criar um *job board*. Essa será uma aplicação em que um usuário será capaz de procurar vagas, cadastrar novas vagas e visualizar detalhes de vagas de emprego. Além de páginas estáticas `home` e `sobre`.
 
 ## Protótipos
 
 É mais fácil entender com os protótipos:
-
 
 ### Home
 
@@ -17,7 +15,6 @@ Esta é a raiz da aplicação, a landing page. Note que há basicamente três se
 - Navbar
 - Main
 - Footer
-
 
 ![Home](./Home.png)
 
@@ -41,6 +38,6 @@ Esta seção trará tudo sobre Server Actions! Vamos fazer *mutação* de dados 
 
 ### Detalhes de Vaga
 
-Aqui vamos deixar nossa aplicação mais funcional - nosso usuário precisa de mais informações sobre a vaga - e é isso que iremos trazer aqui. 
+Aqui vamos deixar nossa aplicação mais funcional - nosso usuário precisa de mais informações sobre a vaga - e é isso que iremos trazer aqui.
 
 ![Job](./Job.png)

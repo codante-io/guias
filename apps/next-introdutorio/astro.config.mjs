@@ -25,51 +25,69 @@ export default defineConfig({
         {
           label: 'Intro ao Workshop',
           autogenerate: {
-            directory: '00-intro',
+            directory: '00 - Introdução',
           },
         },
 
         {
-          label: 'Intro ao NextAuth',
+          label: 'Setup do Projeto',
           autogenerate: {
-            directory: '01-intro-next',
+            directory: '01 - Setup do Projeto',
           },
         },
         {
-          label: '1. Setup do NextAuth na Aplicação',
+          label: 'Básico de Roteamento',
           autogenerate: {
-            directory: '02-setup-next-auth',
+            directory: '02 - Roteamento Básico',
           },
         },
 
         {
-          label: '2. Login com Credenciais',
+          label: 'Estilização',
           autogenerate: {
-            directory: '03-login-com-credenciais',
+            directory: '03 - Estilização',
           },
         },
         {
-          label: '3. Login com Github',
+          label: 'Layouts e Páginas',
           autogenerate: {
-            directory: '04-login-com-github',
+            directory: '03a - Layouts e Páginas',
           },
         },
         {
-          label: '4. Login com Magic Link',
+          label: 'Componentes do Next',
           autogenerate: {
-            directory: '05-login-com-magic-link',
+            directory: '04 - Componentes do Next',
           },
         },
         {
-          label: '5. Dashboard e Logout',
+          label: 'Teoria dos Server Components',
           autogenerate: {
-            directory: '06-dashboard-e-logout',
+            directory: '05 - Teoria dos Server Components',
           },
         },
         {
-          label: '6. Callbacks: mais dados na sessão',
+          label: 'Fetch de Dados e Rotas Dinâmicas',
           autogenerate: {
-            directory: '07-mais-dados-na-sessao-callbacks',
+            directory: '06 - Fetch de Dados e Rotas Dinâmicas',
+          },
+        },
+        {
+          label: 'Server Actions e Formulários',
+          autogenerate: {
+            directory: '07 - Server Actions e Formulários',
+          },
+        },
+        {
+          label: 'Responsividade da Aplicação',
+          autogenerate: {
+            directory: '08 - Responsividade da Aplicação',
+          },
+        },
+        {
+          label: 'Finalização',
+          autogenerate: {
+            directory: '09 - Finalização',
           },
         },
       ],
