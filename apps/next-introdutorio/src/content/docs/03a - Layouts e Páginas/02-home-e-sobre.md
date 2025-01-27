@@ -18,7 +18,7 @@ Precisamos criar uma nova variante de botão. Vamos alterar a variação outline
 
 Dentro da variante `outline`, vamos deixar com essas classes:
 
-```typescript
+```typescript title="components/ui/button.tsx"
 {
   // ...
     outline:

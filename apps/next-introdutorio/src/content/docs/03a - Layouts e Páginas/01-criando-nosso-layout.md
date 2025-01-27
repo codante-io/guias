@@ -122,7 +122,7 @@ O componente `<Footer>` será feito de acordo com o Figma:
 
 ### Código do componente `<Footer>`
 
-```typescript
+```typescript title="components/layout/footer.tsx"
 import { Github, Instagram, LetterText, Mail } from 'lucide-react';
 import Logo from './logo';
 
@@ -172,7 +172,7 @@ Um ponto importante é que, para cada página ou layout, podemos exportar um [ob
 
 ### Código do componente `<Layout />`
 
-```typescript
+```typescript title="app/layout.tsx"
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";

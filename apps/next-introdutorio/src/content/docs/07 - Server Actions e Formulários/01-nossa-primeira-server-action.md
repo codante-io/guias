@@ -33,7 +33,7 @@ Agora com RSC, não é mais tão banal fazermos interatividade.
 
 Vamos tentar adicionar o `console.log`:
 
-```typescript
+```typescript title="app/vagas/[id]/page.tsx" ins={3-5}
 <Button
   variant="destructive"
   onClick={() => {
@@ -59,7 +59,7 @@ Para converter o componente para cliente, basta colocarmos uma diretiva `use cli
 
 Fazendo isso, o erro desaparece. Mas não é isso que queremos nesse caso. Vamos manter o componente como cliente e vamos colocar a diretiva `use server` na função que passamos para o `onClick`:
 
-```typescript
+```typescript title="app/vagas/[id]/page.tsx" ins={4}
 <Button
   variant="destructive"
   onClick={() => {
@@ -77,10 +77,11 @@ Agora temos outro erro:
 
 Precisamos transformar essa função em função assíncrona também:
 
-```typescript
+```diff lang="typescript" title="app/vagas/[id]/page.tsx"
 <Button
   variant="destructive"
-  onClick={async () => {
+-  onClick={() => {
++  onClick={async () => {
     "use server";
     console.log("Apagando vaga...");
   }}

@@ -43,7 +43,7 @@ Para conseguirmos o layout da forma idêntica ao informado pelo Figma, vamos ent
 
 O layout global vai ser responsável por ser aplicado a todas as páginas. Ele servirá para apenas uma coisa por enquanto: agrupar a Navbar, o conteúdo e o Footer. Por isso ele possui essa estrutura:
 
-```typescript
+```typescript title="app/layout.tsx"
 // ...
 <html lang="en">
   <body>

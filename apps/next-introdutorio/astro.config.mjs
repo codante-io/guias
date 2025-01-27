@@ -21,6 +21,9 @@ export default defineConfig({
         email: 'mailto:robertotcestari@gmail.com',
       },
       customCss: ['./src/tailwind.css'],
+      expressiveCode: {
+        themes: ['github-light'],
+      },
       sidebar: [
         {
           label: 'Intro ao Workshop',

@@ -16,7 +16,7 @@ Para recuperar um dado de um `FormData`, podemos usar a função `FormData.get()
 FormData é uma API Web, e não é uma funcionalidade específica ao Next.js
 :::
 
-```typescript
+```typescript title="lib/actions.tsx"
 "use server";
 
 export async function deleteJob(formData: FormData) {
@@ -32,6 +32,8 @@ export async function deleteJob(formData: FormData) {
   if (!res.ok) {
     throw new Error("Failed to delete job");
   }
+
+  redirect("/vagas");
 }
 ```
 
@@ -41,7 +43,7 @@ Vamos usar nossa Server Action em nosso componente. Como agora o Next.js preza p
 
 E para passarmos a variável que desejamos (que é o `id` da vaga), vamos usar um `input:hidden` para a tarefa.
 
-```typescript
+```typescript title="app/vagas/[id]/page.tsx"
 // ...
 import Form from "next/form";
 
