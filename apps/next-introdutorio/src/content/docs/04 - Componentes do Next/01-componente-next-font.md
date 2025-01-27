@@ -35,6 +35,7 @@ const mavenPro = Maven_Pro({
 // ...
 ```
 
+<!-- markdownlint-disable-next-line -->
 5. Agora, vamos aplicar a fonte no nosso arquivo `globals.css`:
 
 ```css
@@ -43,6 +44,7 @@ const mavenPro = Maven_Pro({
 }
 ```
 
+<!-- markdownlint-disable-next-line -->
 6. Podemos remover as importações do Google Fonts, caso existam.
 
 Ótimo! Agora podemos utilizar qualquer fonte do Google Fonts. O mais interessante é que ela estará hospedada juntamente com os arquivos estáticos do nosso projeto, eliminando a necessidade de chamadas ao servidor do Google quando a aplicação estiver em execução.

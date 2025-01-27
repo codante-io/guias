@@ -1,5 +1,5 @@
 ---
-title: Links - repo, api, aplicação e figma
+title: Links - Repo, API, Aplicação e Figma
 ---
 
 Como já falamos por aqui, vamos usar uma aplicação simples em que teremos poucas páginas:
@@ -13,17 +13,15 @@ Como já falamos por aqui, vamos usar uma aplicação simples em que teremos pou
 ## Link da aplicação funcionando
 
 <!-- TODO: Adicionar aplicação funcionando -->
-Você poderá ver uma aplicação pronta funcionando [aqui nessa URL]()
+Você poderá ver uma aplicação pronta funcionando [aqui nessa URL](https://job-board-six-gamma.vercel.app/)
 
 ## Link do Figma do design do projeto
 
-<!-- TODO: Adicionar aplicação funcionando -->
-Você poderá ver o Figma da aplicação [aqui nessa URL]()
+Você poderá ver o Figma da aplicação [aqui nessa URL](https://www.figma.com/design/bzOxaC7cA5Y69VnWYAqApP/Next-Intro?node-id=27-302&t=S7ZRnDDCrRPAGXJy-1)
 
 ## Repositório final
 
-<!-- TODO:  Adicionar repositório -->
-Se você quiser consultar o repositório da aplicação pronta funcionando, [esse é o repositório]()
+Se você quiser consultar o repositório da aplicação pronta funcionando, [esse é o repositório](https://github.com/codante-io/ws-next-intro-app-final)
 
 ## API utilizada
 
