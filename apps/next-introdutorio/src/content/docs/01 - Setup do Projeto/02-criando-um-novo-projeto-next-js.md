@@ -22,6 +22,6 @@ Os passos são esses:
 
 ![alt text](image.png)
 
-Vamos atualizar com o nome do nosso projeto e *voilá*, temos um novo projeto Next.js.
+Vamos atualizar com o nome do nosso projeto e *voilà*, temos um novo projeto Next.js.
 
 Agora, o próximo passo é explorar o que um projeto novo traz para nós.

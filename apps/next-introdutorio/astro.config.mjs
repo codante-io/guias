@@ -61,9 +61,9 @@ export default defineConfig({
           },
         },
         {
-          label: 'Teoria dos Server Components',
+          label: 'A Teoria dos Server Components',
           autogenerate: {
-            directory: '05 - Teoria dos Server Components',
+            directory: '05 - teoria dos server components',
           },
         },
         {

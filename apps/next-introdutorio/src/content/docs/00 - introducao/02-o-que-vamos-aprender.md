@@ -20,6 +20,7 @@ Os principais tópicos que iremos ver são:
 - Apresentando o CodanteVagas
 - Criando o projeto `Next.js`
 - A estrutura de pastas de um projeto `Next.js`
+- A estrutura de pastas de um projeto `Next.js`
 - O que é o `turbopack`?
 
 ## 02. Roteamento Básico no `Next.js`

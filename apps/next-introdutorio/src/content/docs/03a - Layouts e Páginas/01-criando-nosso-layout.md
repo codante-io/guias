@@ -26,7 +26,7 @@ No caso da nossa aplicação, se prestarmos atenção ao design proposto, o logo
 
 ### Extraindo o logo para um componente React
 
-1. Vamos exportar o svg do logo do figma
+1. Vamos exportar o svg do logo do Figma
 2. Vamos *passar* o svg pelo [svgomg](https://svgomg.net/) (que é uma aplicação útil para fazer uma "limpeza", garantir boas práticas e compressão no nosso *svg*)
 3. Por fim vamos usar a ferramenta [svgr](https://react-svgr.com/playground/?typescript=true) para transformar nosso SVG em um componente React.
 
