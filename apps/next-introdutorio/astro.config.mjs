@@ -7,6 +7,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   base: '/next-introdutorio/',
   integrations: [
+    tailwind({ applyBaseStyles: false }),
     starlight({
       favicon: '/favicon.png',
       title: 'Next.js Introdutório',
@@ -20,7 +21,7 @@ export default defineConfig({
         linkedin: 'https://www.linkedin.com/in/robertotcestari/',
         email: 'mailto:robertotcestari@gmail.com',
       },
-      customCss: ['./src/tailwind.css'],
+      customCss: ['./src/custom.css'],
       expressiveCode: {
         themes: ['github-light'],
       },
