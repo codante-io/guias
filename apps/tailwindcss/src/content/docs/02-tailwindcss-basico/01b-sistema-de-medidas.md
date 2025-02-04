@@ -32,7 +32,7 @@ Vale a pena consultar a [página de espaçamento padrão da documentação](http
 
 ![alt text](image-3.png)
 
-Na documentação, os valores vão até 64, mas também existem os valores 72, 80 e 96!
+Na documentação, os valores vão até 64, mas **a partir da v4** você pode usar *qualquer valor*
 
 Com isso em mente, vamos começar a codar!
 
