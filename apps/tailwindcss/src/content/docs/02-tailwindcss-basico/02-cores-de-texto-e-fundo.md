@@ -8,21 +8,21 @@ O "Hello World" de qualquer CSS é mudar a cor - seja da borda, seja do fundo/ba
 - Para mudar a cor do texto, usamos a classe `text-*`.
 - Para mudar a cor de uma borda, usamos a classe `border-*`.
 
-Lembrando que essas classes devem ser utilizadas em conjunção com as cores, então por exemplo, `bg-red-500`.
+Lembre-se de que essas classes devem ser utilizadas em conjunto com as cores, por exemplo, `bg-red-500`.
 
-A documentação mostra todas as classes que usam cores [nesse link](<https://tailwindcss.com/docs/colors#using-color-utilities>):
+A documentação mostra todas as classes que usam cores [neste link](https://tailwindcss.com/docs/colors#using-color-utilities):
 
 ![alt text](image-5.png)
 
 ### Exercício 02
 
-Existem dois botões e precisamos deixá-los igual ao design abaixo:
+Temos dois botões e precisamos deixá-los iguais ao design abaixo:
 
 <!-- TODO pegar o FIGMA -->
 
 ![alt text](image-4.png)
 
-Copie e cole o código abaixo em um arquivo novo chamado `exercicio02.html`
+Copie e cole o código abaixo em um arquivo novo chamado `exercicio02.html`.
 
 ```html
 <>

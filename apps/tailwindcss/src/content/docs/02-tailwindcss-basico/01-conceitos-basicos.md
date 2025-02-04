@@ -8,7 +8,7 @@ Vamos tentar entender "*o mínimo necessário para utilizar o TailwindCSS de uma
 
 Essa seção é dedicada a isso: quais são as classes importantes que precisamos conhecer para começarmos a prototipar com a biblioteca?
 
-E já dando um *spoiler* aqui: a documentação é sua melhor amiga: e por sorte o TailwindCSS tem uma documentação fantástica.
+E já dando um *spoiler* aqui: a documentação é sua melhor amiga e, por sorte, o TailwindCSS tem uma documentação fantástica.
 
 ### O que vamos fazer nessa seção?
 

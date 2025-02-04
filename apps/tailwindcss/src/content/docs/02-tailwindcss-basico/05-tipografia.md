@@ -26,21 +26,21 @@ Para mudar a fonte no TailwindCSS, a partir da V4, basta utilizar variáveis CSS
 
 O TailwindCSS já vem com 3 tipos de fonte: *sans-serif*, *serif* e *monospace* (classes respectivas: `font-sans`, `font-serif` e `font-mono`). Elas estão configuradas para ser as fontes do próprio sistema (*ui-sans-serif, ui-serif, ui-monospace*).
 
-Você tem a opção ou de (i.) trocar uma dessas 3 fontes; ou (ii.) criar outras classes para outras fontes.
+Você tem a opção de (i.) trocar uma dessas 3 fontes; ou (ii.) criar outras classes para outras fontes.
 
 Para qualquer um dos casos, você deverá criar uma variável dentro da diretiva `@theme` em algum lugar no seu CSS. Vamos alterar o padrão da `font-sans`:
 
 ```css title="tailwind.css"
 @theme {
-  --font-sans: "Open Sans", "ui-sans-serif" 
+  --font-sans: "Open Sans", "ui-sans-serif"
 }
 ```
 
-Agora, se quisermos criar uma nova classe para uma nova fonte, podemos fazer da mesma forma
+Agora, se quisermos criar uma nova classe para uma nova fonte, podemos fazer da mesma forma:
 
 ```css title="tailwind.css" ins={3}
 @theme {
-  --font-sans: "Open Sans", "ui-sans-serif" 
+  --font-sans: "Open Sans", "ui-sans-serif"
   --font-codante: "Lexend", "ui-sans-serif"
 }
 ```
@@ -51,12 +51,12 @@ Agora teremos uma classe customizada `font-codante` que trará a família *Lexen
 
 Se formos testar esse código, vamos ver que a `font-codante` traz uma fonte serifada padrão - ou seja, não funcionou. Isso porque não instalamos a fonte em nosso projeto.
 
-Para instalarmos, basta seguirmos as orientações e temos duas opções
+Para instalarmos, basta seguirmos as orientações e temos duas opções:
 
 1. Usar a diretiva `@import` no CSS
 2. Importar diretamente no HTML
 
-Feito isso nossa fonte estará funcionando!
+Feito isso, nossa fonte estará funcionando!
 
 ### Peso da Fonte (weight)
 
@@ -80,7 +80,7 @@ Espaçamento de linha também é uma *arte*, para fontes cada vez maiores - ou m
 
 Não basta o tradicional 1.5x o tamanho da fonte. Quanto maior a fonte, menor deve ser o multiplicador do line height. Quanto menor a fonte, maior o multiplicador.
 
-Para uma fonte 16px padrão provavelmente 1.5x é ideal. Mas para uma fonte 5xl, provavalmente 1x ficará melhor, enquanto que, para uma fonte xs, provavelmente 1.75x será melhor.
+Para uma fonte 16px padrão, provavelmente 1.5x é ideal. Mas para uma fonte 5xl, provavelmente 1x ficará melhor, enquanto que, para uma fonte xs, provavelmente 1.75x será melhor.
 
 De novo, aqui o TailwindCSS faz esse trabalho por nós. Quando mudamos o tamanho da fonte no Tailwind, além do tamanho da fonte mudar, o espaçamento de linha também muda 🤩
 
@@ -93,7 +93,7 @@ De qualquer forma, você pode alterar manualmente isso:
 - `leading-relaxed`
 - `leading-none`
 
-Também é possível alterar o tamanho do espaçamento de linha junto com o tamanho da fonte: `text-2xl/5` note que o número após a `/` usa a escala do espaçamento.
+Também é possível alterar o tamanho do espaçamento de linha junto com o tamanho da fonte: `text-2xl/5`. Note que o número após a `/` usa a escala do espaçamento.
 
 ### Outras classes interessantes
 
