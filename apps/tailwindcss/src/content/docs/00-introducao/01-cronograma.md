@@ -2,7 +2,7 @@
 title: O que vamos aprender
 ---
 
-Antes de mais nada, vamos apresentar esse workshop
+Antes de mais nada, vamos apresentar este workshop.
 
 ### Introdução e Apresentação
 
@@ -18,7 +18,7 @@ Antes de mais nada, vamos apresentar esse workshop
 - Brincando no Tailwind Playground
 - Trazendo para o VSCode
   - Extensão oficial
-  - Prettier plugin
+  - Plugin Prettier
 
 ### Tailwind Básico
 
@@ -42,14 +42,14 @@ Antes de mais nada, vamos apresentar esse workshop
 
 ### Dark mode com TailwindCSS
 
-### Plugins: Tipografia, container queries e Forms
+### Plugins: Tipografia, Container Queries e Forms
 
 ### Recursos Avançados
 
-- funções e diretivas
+- Funções e Diretivas
 - Quero CSS PURO!
-  - arbitrary properties
-  - arbitrary variants (como lidar com whitespace)
+  - Arbitrary properties
+  - Arbitrary variants (como lidar com whitespace)
 - Classes mágicas
   - container
   - size-4
@@ -76,10 +76,10 @@ Antes de mais nada, vamos apresentar esse workshop
 
 - tailwind-merge
 - clsx
-- nossa função utilitária (`cn()`)
+- Nossa função utilitária (`cn()`)
 
 ### Outras Ferramentas
 
 - Headless components
-- Ferramenta: nearest tailwind colors
-- Bibliotecas: Tailwindui, headlessui, catalyst, tremor, daisyui, tremor, tailblocksk, shadcn,
+- Ferramenta: Nearest Tailwind Colors
+- Bibliotecas: Tailwindui, headlessui, catalyst, tremor, daisyui, tremor, tailblocksk, shadcn

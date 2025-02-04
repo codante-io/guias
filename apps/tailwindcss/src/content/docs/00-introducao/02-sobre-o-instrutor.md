@@ -4,12 +4,12 @@ title: Quem sou eu?
 
 ### Roberto Cestari
 
-- Fui Tech Lead de Front-end e responsável pelo currículo de Front-end bem como liderança técnica de um time de mais de 20 pessoas em uma das maiores empresas de educação do país.
+- Fui Tech Lead de Front-end e responsável pelo currículo de Front-end, bem como pela liderança técnica de um time de mais de 20 pessoas em uma das maiores empresas de educação do país.
 - Fui professor de Front-End para mais de 400 alunos em turmas formadas em uma grande escola de programação.
 - Fundador e Professor do Codante
 - Fundador e CTO do Trilhante, uma das maiores plataformas de ensino de direito do Brasil.
-- Já tive experiência como fundador de outras empresas e startups. Sou graduado em Administração de Empresas pela EAESP-FGV, e graduado e mestre em Direito pela USP
-- Criador de scripts nas horas vagas
+- Já tive experiência como fundador de outras empresas e startups. Sou graduado em Administração de Empresas pela EAESP-FGV, e graduado e mestre em Direito pela USP.
+- Criador de scripts nas horas vagas.
 
 ### Minha Stack
 
@@ -20,12 +20,12 @@ title: Quem sou eu?
   
 ### Uses
 
-- Editor - VScode com tema One Dark Pro Darker
+- Editor - VSCode com tema One Dark Pro Darker
 - Terminal - iTerm2
 - Font: Fira Code
 - Browser: Arc
 - VSCode Icon Theme
-- Macbook Pro M4 Pro - 48gb Ram + 512GB SSD
+- Macbook Pro M4 Pro - 48GB Ram + 512GB SSD
 - Monitores: Samsung 28" 4k e LG 34" 4k
 - MX Keys Mechanical
 - MX Master 3s
