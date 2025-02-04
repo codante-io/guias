@@ -2,21 +2,21 @@
 title: Afinal, o que é TailwindCSS
 ---
 
-Se você ainda nunca usou o TailwindCSS provavelmente se pergunta o que exatamente é toda a *hype* ao redor do Workshop.
+Se você ainda nunca usou o TailwindCSS, provavelmente se pergunta o que exatamente é toda a *hype* ao redor do Workshop.
 
-Afinal de contas, o código *fica feio pra caramba*. Mas um *spoiler* aqui: No fim a gente acaba gostando disso tudo 🙄.
+Afinal de contas, o código *fica feio pra caramba*. Mas um *spoiler* aqui: No fim, a gente acaba gostando disso tudo 🙄.
 
 ### Definição técnica
 
- A definição técnica do TailwindCSS é que ele é um framework CSS baseado em classes de utilidades (*utility classes*).
+A definição técnica do TailwindCSS é que ele é um framework CSS baseado em classes de utilidades (*utility classes*).
 
-O Tailwind pode substituir, por exemplo, o [Bootstrap](https://getbootstrap.com/). Ou ainda, **coexistir** com esses frameworks - pois, a princípio, não há colisão de classes (e se houver, você pode configurar um *prefixo* para as classes do tailwind - por exemplo `tw-bg-white`)
+O Tailwind pode substituir, por exemplo, o [Bootstrap](https://getbootstrap.com/). Ou ainda, **coexistir** com esses frameworks, pois, a princípio, não há colisão de classes (e se houver, você pode configurar um *prefixo* para as classes do Tailwind, por exemplo, `tw-bg-white`).
 
 ### Por que TailwindCSS?
 
-Existem várias vantagens que poderiam ser listadas para se usar TailwindCSS. Mas pra mim a mais importante é a *velocidade* e *produtividade* que o framework proporciona para quem está usando.
+Existem várias vantagens que poderiam ser listadas para se usar TailwindCSS. Mas, para mim, a mais importante é a *velocidade* e a *produtividade* que o framework proporciona para quem está usando.
 
-Resumo da ópera - é muito mais fácil escrever CSS usando Tailwind. E mais - aqui uma opinião polêmica - acho que o TailwindCSS **não apenas será um framework mas a forma moderna de escrever a web**.
+Resumo da ópera: é muito mais fácil escrever CSS usando Tailwind. E mais, aqui uma opinião polêmica, acho que o TailwindCSS **não apenas será um framework, mas a forma moderna de escrever a web**.
 
 Apenas para não deixar passar, outras vantagens do TailwindCSS são:
 

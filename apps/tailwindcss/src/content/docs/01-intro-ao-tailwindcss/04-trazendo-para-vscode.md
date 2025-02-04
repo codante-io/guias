@@ -4,31 +4,31 @@ title: Trazendo para o VSCode
 
 Vamos agora instalar um projeto simples com TailwindCSS.
 
-Não vou focar muito em instalação do projeto aqui, uma vez que, para cada framework há uma documentação para instalação.
+Não vou focar muito na instalação do projeto aqui, uma vez que, para cada framework, há uma documentação para instalação.
 
-Para todos nossos exercícios, vamos usar o Vite com HTML simples.
+Para todos os nossos exercícios, vamos usar o Vite com HTML simples.
 
 ### Criando o projeto com Vite
 
-para isso, vamos criar nosso HTML
+Para isso, vamos criar nosso HTML:
 
 ```bash
 mkdir vite-tailwindcss
 ```
 
-depois, vamos iniciar um projeto com npm
+Depois, vamos iniciar um projeto com npm:
 
 ```bash
 npm init -y
 ```
 
-e, por fim, instalar o vite
+E, por fim, instalar o vite:
 
 ```bash
 npm i vite -D
 ```
 
-Vamos criar um `index.html` na raiz do projeto e no nosso `package.json`, inserir o seguinte na seção de `scripts`:
+Vamos criar um `index.html` na raiz do projeto e, no nosso `package.json`, inserir o seguinte na seção de `scripts`:
 
 ```json
 // package.json
@@ -37,7 +37,7 @@ Vamos criar um `index.html` na raiz do projeto e no nosso `package.json`, inseri
   },
 ```
 
-Agora, basta colocarmos algum conteúdo no nosso `index.html` e rodar o script `npm run dev`
+Agora, basta colocarmos algum conteúdo no nosso `index.html` e rodar o script `npm run dev`.
 
 ```html
 <!-- index.html -->
@@ -68,7 +68,7 @@ Vamos instalar dois pacotes: `tailwindcss` e `@tailwindcss/vite`.
 npm i tailwindcss @tailwindcss/vite
 ```
 
-Vamos adicionar um arquivo de *config* do vite:
+Vamos adicionar um arquivo de *config* do Vite:
 
 ```javascript
 // vite.config.js
@@ -81,7 +81,7 @@ export default defineConfig({
 })
 ```
 
-Vamos criar agora um arquivo de css - podemos chamar de `tailwind.css` e dentro vamos simplesmente importar o nosso pacote:
+Vamos criar agora um arquivo de CSS. Podemos chamá-lo de `tailwind.css` e, dentro, vamos simplesmente importar o nosso pacote:
 
 ```css
 @import 'tailwindcss';
@@ -105,24 +105,24 @@ E não vamos esquecer de fazer o link com nosso CSS:
 </html>
 ```
 
-Se o nosso "Olá Mundo" está com um fundo vermelho, então nosso tailwind está funcionando perfeitamente!
+Se o nosso "Olá Mundo" está com um fundo vermelho, então nosso Tailwind está funcionando perfeitamente!
 
 ![alt text](image-6.png)
 
-### Instalando a extensão ofical do TailwindCSS
+### Instalando a extensão oficial do TailwindCSS
 
-Uma das mais indispensáveis ferramentas para se usar qunado estamos trabalhando com TailwindCSS e código é a [extensão oficial do Tailwind Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
+Uma das ferramentas mais indispensáveis para se usar quando estamos trabalhando com TailwindCSS e código é a [extensão oficial do Tailwind Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).
 
-Basta instalar ela traz algumas coisas importantes:
+Basta instalar que ela traz algumas coisas importantes:
 
 - Autocomplete
 - Lint (mostra erro quando a classe está em conflito, errada)
 - Preview do CSS puro no hover
-- Uma nova linguagem para o VSCode - ao invés do CSS, você pode escolher a linguagem TailwindCSS que não dá erro com as diretivas específicas do Tailwind.
+- Uma nova linguagem para o VSCode: ao invés do CSS, você pode escolher a linguagem TailwindCSS que não dá erro com as diretivas específicas do Tailwind.
 
 ### Configurando o Prettier com o TailwindCSS
 
-Vamos instalar um plugin do prettier:
+Vamos instalar um plugin do Prettier:
 
 ```bash
 npm install -D prettier prettier-plugin-tailwindcss
