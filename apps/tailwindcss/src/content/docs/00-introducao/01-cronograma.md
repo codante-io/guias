@@ -1,9 +1,15 @@
 ---
-title: O Que vamos Aprender
+title: O que vamos aprender
 ---
 
+Antes de mais nada, vamos apresentar esse workshop
 
 ### Introdução e Apresentação
+
+- Boas Vindas
+- Cronograma
+- Requisitos
+- Sobre o Instrutor
 
 ### Introdução ao TailwindCSS
 
@@ -14,26 +20,36 @@ title: O Que vamos Aprender
   - Extensão oficial
   - Prettier plugin
 
-### CSS Básico
+### Tailwind Básico
 
-- Quero CSS PURO!
-- Background,
-- text,
-- margin e paddings,
-- Fontes
-- Criando um Card de testimonial
+- Conceitos básicos
+- Cores de Texto e Fundo
+- Margin e Padding
+- Largura e Altura
+- Flexbox
+- Tipografia
+- Exercício - Card de Testimonial
 
 ### Variantes e Estados
 
+- Exercício
+
 ### Layouts Responsivos
 
+- Exercício
+
 ### Estendendo seu tema
+
+### Dark mode com TailwindCSS
 
 ### Plugins: Tipografia, container queries e Forms
 
 ### Recursos Avançados
 
 - funções e diretivas
+- Quero CSS PURO!
+  - arbitrary properties
+  - arbitrary variants (como lidar com whitespace)
 - Classes mágicas
   - container
   - size-4
@@ -43,6 +59,18 @@ title: O Que vamos Aprender
   - divide-zinc-400
   - gradientes (from, to, via)
 - Animações
+- Diretivas
+  - @import
+  - @theme
+  - @source
+  - @utility
+  - @variant
+  - @custom-variant
+  - @apply
+  - @reference
+- Regras do Tailwind
+  - Não construa as classes dinamicamente
+  - Não use props para construir classes dinamicamente
 
 ### Ferramentas importantes
 
@@ -54,5 +82,4 @@ title: O Que vamos Aprender
 
 - Headless components
 - Ferramenta: nearest tailwind colors
-
-Bibliotecas: Tailwindui, headlessui, catalyst, tremor, daisyui, tremor, tailblocksk, shadcn,
+- Bibliotecas: Tailwindui, headlessui, catalyst, tremor, daisyui, tremor, tailblocksk, shadcn,

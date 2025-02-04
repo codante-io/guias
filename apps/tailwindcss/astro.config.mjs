@@ -33,31 +33,44 @@ export default defineConfig({
         {
           label: 'Intro ao TailwindCSS',
           autogenerate: {
-            directory: '01-basico-do-tailwindcss',
+            directory: '01-intro-ao-tailwindcss',
           },
         },
-				{
+        {
+          label: 'TailwindCSS Básico',
+          autogenerate: {
+            directory: '02-tailwindcss-basico',
+          },
+        },
+        {
           label: 'Variantes e Estados',
           autogenerate: {
-            directory: '02-css-basico',
+            directory: '03-variantes-e-estados',
           },
         },
-				{
+        {
           label: 'Layouts Responsivos',
           autogenerate: {
-            directory: '02-css-basico',
+            directory: '04-layouts-responsivos',
           },
         },
-				{
-          label: 'Plugins',
+        {
+          label: 'Tailwind Avançado',
           autogenerate: {
-            directory: '02-css-basico',
+            directory: '05-tailwind-avancado',
           },
         },
-				{
-          label: 'Recursos Avançados',
+        {
+          label: 'Plugins: Tipografia e Forms',
           autogenerate: {
-            directory: '02-css-basico',
+            directory: '06-plugins-tipografia-e-forms',
+          },
+        },
+     
+        {
+          label: 'Outras Ferramentas',
+          autogenerate: {
+            directory: '07-outras-ferramentas',
           },
         },
       ],
