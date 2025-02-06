@@ -23,19 +23,24 @@ Antes de mais nada, vamos apresentar este workshop.
 ### Tailwind Básico
 
 - Conceitos básicos
+- Sistema de Cores
+- Sistema de Medidas
 - Cores de Texto e Fundo
 - Margin e Padding
 - Largura e Altura
-- Flexbox
 - Tipografia
-- Exercício - Card de Testimonial
+- Flexbox
+- Exercício - Do Figma ao código: Card de Testimonial
 
 ### Variantes e Estados
 
+- Variantes e Estado
+- Pseudo-classes
 - Exercício
 
 ### Layouts Responsivos
 
+- Breakpoints
 - Exercício
 
 ### Estendendo seu tema

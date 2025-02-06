@@ -8,4 +8,4 @@ Este workshop é ideal para devs front-end que querem aumentar a produtividade e
 
 O TailwindCSS pode ser utilizado com **qualquer framework** frontend. O único pré-requisito deste workshop é que você tenha certa proficiência em HTML e CSS.
 
-Se você ainda não sabe razoavelmente bem HTML e CSS, provavelmente terá dificuldade em acompanhar o ritmo do workshop, mas sinta-se à vontade para tentar!
+Se você ainda não sabe razoavelmente bem HTML e CSS, é possível que você possa ter dificuldade em acompanhar o ritmo do workshop, mas sinta-se à vontade para tentar!

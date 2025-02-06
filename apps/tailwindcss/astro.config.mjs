@@ -25,53 +25,69 @@ export default defineConfig({
       customCss: ['./src/custom.css'],
       sidebar: [
         {
-          label: 'Intro ao Workshop',
-          autogenerate: {
-            directory: '00-introducao',
-          },
-        },
-        {
-          label: 'Intro ao TailwindCSS',
-          autogenerate: {
-            directory: '01-intro-ao-tailwindcss',
-          },
-        },
-        {
-          label: 'TailwindCSS Básico',
-          autogenerate: {
-            directory: '02-tailwindcss-basico',
-          },
-        },
-        {
-          label: 'Variantes e Estados',
-          autogenerate: {
-            directory: '03-variantes-e-estados',
-          },
-        },
-        {
-          label: 'Layouts Responsivos',
-          autogenerate: {
-            directory: '04-layouts-responsivos',
-          },
+          label: 'Tailwind Básico',
+          items: [
+            {
+              label: 'Intro ao Workshop',
+              autogenerate: {
+                directory: '00-introducao',
+              },
+            },
+            {
+              label: 'Intro ao TailwindCSS',
+              autogenerate: {
+                directory: '01-intro-ao-tailwindcss',
+              },
+            },
+            {
+              label: 'TailwindCSS Básico',
+              autogenerate: {
+                directory: '02-tailwindcss-basico',
+              },
+            },
+            {
+              label: 'Variantes e Estados',
+              autogenerate: {
+                directory: '03-variantes-e-estados',
+              },
+            },
+            {
+              label: 'Layouts Responsivos',
+              autogenerate: {
+                directory: '04-layouts-responsivos',
+              },
+            },
+            {
+              label: 'Exercício Final',
+              autogenerate: {
+                directory: '04a-exercicios',
+              },
+            },
+          ],
         },
         {
           label: 'Tailwind Avançado',
-          autogenerate: {
-            directory: '05-tailwind-avancado',
-          },
-        },
-        {
-          label: 'Plugins: Tipografia e Forms',
-          autogenerate: {
-            directory: '06-plugins-tipografia-e-forms',
-          },
-        },
-     
-        {
-          label: 'Outras Ferramentas',
-          autogenerate: {
-            directory: '07-outras-ferramentas',
-          },
+          items: [
+            {
+              label: 'Tailwind Avançado',
+              autogenerate: {
+                directory: 'proximo-workshop',
+              },
+            },
+            {
+              label: 'Plugins: Tipografia e Forms',
+              autogenerate: {
+                directory: 'proximo-workshop',
+              },
+            },
+
+            {
+              label: 'Outras Ferramentas',
+              autogenerate: {
+                directory: 'proximo-workshop',
+              },
+            },
+          ],
         },
       ],
     }),

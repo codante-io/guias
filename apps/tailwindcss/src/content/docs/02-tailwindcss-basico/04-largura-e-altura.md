@@ -9,5 +9,3 @@ Importante notar que, além do sistema de medidas tradicional (representado por 
 1. Largura e altura, com `w-*` e `h-*` respectivamente.
 2. Largura e altura mínima, com `min-w-*` e `min-h-*`.
 3. Largura e altura máxima, com `max-w-*` e `max-h-*`.
-
-### Exercício
