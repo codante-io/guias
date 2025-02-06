@@ -109,6 +109,37 @@ Se o nosso "Olá Mundo" está com um fundo vermelho, então nosso Tailwind está
 
 ![alt text](image-6.png)
 
+#### Fazendo o "Hot Reload" Funcionar
+
+O `vite` foi feito para ser um app que busca um único ponto de entrada. Se você perceber, o *hmr* está funcionando para o `index.html` (ponto de entrada), mas não está funcionando para as outras páginas.
+
+Vamos ajustar o arquivo de configurações do Vite para ficar igual ao código abaixo. Basicamente estamos "criando" um plugin novo.
+
+```javascript
+// vite.config.js
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+export default defineConfig({
+  plugins: [tailwindcss(), hmr()],
+});
+
+function hmr() {
+  return {
+    name: 'custom-hmr',
+    enforce: 'post',
+    handleHotUpdate({ file, server }) {
+      if (file.endsWith('.html')) {
+        console.log('reloading html file...');
+        server.ws.send({
+          type: 'full-reload',          
+          path: '*'
+        });
+      }
+    },
+  }
+}
+```
+
 ### Instalando a extensão oficial do TailwindCSS
 
 Uma das ferramentas mais indispensáveis para se usar quando estamos trabalhando com TailwindCSS e código é a [extensão oficial do Tailwind Intellisense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss).

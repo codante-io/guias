@@ -16,16 +16,29 @@ A documentação mostra todas as classes que usam cores [neste link](https://tai
 
 ### Exercício 02
 
-Temos dois botões e precisamos deixá-los iguais ao design abaixo:
-
-<!-- TODO pegar o FIGMA -->
+Temos dois botões e precisamos deixá-los iguais ao design do nosso Figma [link](https://www.figma.com/design/eZhlJehlg7pQNTb2ghaKmt/TailwindCSS---Exerc%C3%ADcios?node-id=0-1&m=dev&t=kDraca2deIecUPoQ-1):
 
 ![alt text](image-4.png)
 
-Copie e cole o código abaixo em um arquivo novo chamado `exercicio02.html`.
+Copie e cole o código abaixo em um arquivo novo chamado `exercicios/02-inicio.html`. Lembrando que estamos usando a configuração do Vite usado no início do Workshop.
 
 ```html
-<>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 02</title>
+    <link href="../tailwind.css" rel="stylesheet" />
+    <!-- Referencie aqui o TailwindCSS -->
+  </head>
+  <body class="flex min-h-screen items-center justify-center">
+    <div class="flex gap-4 px-10 py-6">
+      <button class="px-6 py-2">Inscreva-se</button>
+      <button class="px-6 py-2">Sair</button>
+    </div>
+  </body>
+</html>
 ```
 
 ### Resolução do Exercício 02
