@@ -2,7 +2,9 @@
 title: Para quem é esse workshop
 ---
 
-Este workshop é ideal para devs front-end que querem aumentar a produtividade e melhorar a organização do CSS em seus projetos. Se você já possui conhecimentos básicos de HTML e CSS e deseja aprender a estilizar interfaces de forma eficiente com Tailwind CSS, este workshop é para você.
+Este workshop é ideal para Devs front-end que querem aumentar a produtividade e melhorar a organização do CSS em seus projetos. Se você já possui conhecimentos básicos de HTML e CSS e deseja aprender a estilizar interfaces de forma eficiente com Tailwind CSS, este workshop é para você.
+
+Ele está dividido em duas partes: **Tailwind Básico** e **Tailwind Avançado**. O nome é autoexplicativo, então não precisamos de muitas explicações adicionais (😅).
 
 ### Pré-requisitos do Workshop
 

@@ -1,5 +1,5 @@
 ---
-title: Truncate
+title: Exercício Extra - Final
 ---
 
 <https://tailwindcss.com/docs/max-width#using-the-container-scale>
