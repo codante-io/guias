@@ -17,6 +17,7 @@ import {
   SiTypescript,
   SiZod,
 } from '@icons-pack/react-simple-icons';
+import { TailwindCSSIcon } from '@/components/icons/TailwindCSSIcon';
 
 interface Resource {
   href: string;
@@ -113,6 +114,21 @@ const resources: Array<Resource> = [
       squares: [
         [0, 2],
         [1, 4],
+      ],
+    },
+  },
+  {
+    href: 'https://guias.codante.io/tailwindcss',
+    name: 'TailwindCSS (v4)',
+    description:
+      'Aprenda, do zero ao avançado, a biblioteca CSS mais popular do mundo!',
+    icon: TailwindCSSIcon,
+    pattern: {
+      y: 20,
+      squares: [
+        [0, 1],
+        [2, 3],
+        [3, 4],
       ],
     },
   },
