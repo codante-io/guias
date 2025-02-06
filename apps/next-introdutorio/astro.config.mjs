@@ -21,7 +21,7 @@ export default defineConfig({
         linkedin: 'https://www.linkedin.com/in/robertotcestari/',
         email: 'mailto:robertotcestari@gmail.com',
       },
-      customCss: ['./src/custom.css'],
+      // customCss: ['./src/custom.css'],
       expressiveCode: {
         themes: ['github-light'],
       },

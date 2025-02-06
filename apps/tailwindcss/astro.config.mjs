@@ -22,7 +22,7 @@ export default defineConfig({
       expressiveCode: {
         themes: ['github-light'],
       },
-      customCss: ['./src/custom.css'],
+      // customCss: ['./src/custom.css'],
       sidebar: [
         {
           label: 'Tailwind Básico',
