@@ -27,7 +27,7 @@ O mesmo exercício que o anterior, só que dessa vez vamos usar `margin` e `padd
 #### Código Inicial
 
 ```html
-<!-- exercicios/03a-inicio -->
+<!-- exercicios/03a-inicio.html -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -52,7 +52,7 @@ O mesmo exercício que o anterior, só que dessa vez vamos usar `margin` e `padd
 #### Resolução do Exercício 03a
 
 ```html
-<!-- exercicios/03a-final -->
+<!-- exercicios/03a-final.html -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -89,7 +89,7 @@ Dessa vez o código vai ser mais simples, sem os formulários e os botões, apen
 #### Código inicial do Exercício 03b
 
 ```html
-<!-- exercicios/03b-inicio -->
+<!-- exercicios/03b-inicio.html -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -108,7 +108,7 @@ Dessa vez o código vai ser mais simples, sem os formulários e os botões, apen
 #### Resolução do Exercício 03b
 
 ```html
-<!-- exercicios/03b-final -->
+<!-- exercicios/03b-final.html -->
  <!doctype html>
 <html lang="en">
   <head>

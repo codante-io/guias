@@ -36,7 +36,6 @@ Antes de mais nada, vamos apresentar este workshop.
 
 - Variantes e Estado
 - Pseudo-classes
-- Exercício
 
 ### Layouts Responsivos
 

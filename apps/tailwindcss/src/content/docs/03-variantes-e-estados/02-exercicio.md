@@ -1,4 +1,0 @@
----
-title: Exercício 05
----
-
