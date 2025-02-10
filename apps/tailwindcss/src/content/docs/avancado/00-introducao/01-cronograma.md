@@ -2,88 +2,88 @@
 title: O que vamos aprender
 ---
 
-Antes de mais nada, vamos apresentar este workshop.
 
-### Introdução e Apresentação
+Antes de mais nada, vamos apresentar este workshop. *Nós já fizemos um Workshop de TailwindCSS Básico que cobriu* os seguintes tópicos:
 
-- Boas Vindas
-- Cronograma
-- Requisitos
-- Sobre o Instrutor
+- Introdução e Apresentação
+- Introdução ao TailwindCSS
+- Tailwind Básico
+- Variantes e Estados
+- Layouts Responsivos
 
-### Introdução ao TailwindCSS
+Agora, o objetivo é o aprofundamento com tópicos mais complexos - e mais interessantes também 👀
 
-- O que é o TailwindCSS
-- Utility First
-- Brincando no Tailwind Playground
-- Trazendo para o VSCode
-  - Extensão oficial
-  - Plugin Prettier
+O cronograma deste Workshop (TailwindCSS Avançado) está abaixo:
 
-### Tailwind Básico
+### Classes e Dicas Interessantes
 
-- Conceitos básicos
-- Sistema de Cores
-- Sistema de Medidas
-- Cores de Texto e Fundo
-- Margin e Padding
-- Largura e Altura
-- Tipografia
-- Flexbox
-- Exercício - Do Figma ao código: Card de Testimonial
-
-### Variantes e Estados
-
-- Variantes e Estado
-- Pseudo-classes
-
-### Layouts Responsivos
-
-- Breakpoints
-- Exercício
-
-### Estendendo seu tema
-
-### Dark mode com TailwindCSS
-
-### Plugins: Tipografia, Container Queries e Forms
-
-### Recursos Avançados
-
-- Funções e Diretivas
-- Quero CSS PURO!
-  - Arbitrary properties
-  - Arbitrary variants (como lidar com whitespace)
-- Classes mágicas
+- Peer, Group e In
+  - peer
+    - Namespacing peer modifiers
+  - group
+  - in
+- Arbitrary properties
+- Arbitrary variants (como lidar com whitespace)
+- Classes que fazem "mágica":
   - container
   - size-4
   - space-y-4
   - line-clamp-3
+  - truncate
   - sr-only
   - divide-zinc-400
   - gradientes (from, to, via)
-- Animações
-- Diretivas
-  - @import
-  - @theme
-  - @source
-  - @utility
-  - @variant
-  - @custom-variant
-  - @apply
-  - @reference
 - Regras do Tailwind
   - Não construa as classes dinamicamente
   - Não use props para construir classes dinamicamente
 
+### Diretivas e Funções
+
+- Diretivas no TailwindCSS
+- Diretiva `@theme` - Estendendo Temas
+- Outras diretivas
+  - `@import`
+  - `@source`
+  - `@utility`
+  - `@variant`
+  - `@apply`
+- Funções do TailwindCSS
+
+### Dark mode com TailwindCSS
+
+- Dark mode como variante
+- preference-based dark mode
+- Exercício
+
+### Trabalhando com Transições e Animações
+
+- Transições
+- Animações existentes
+- Criando e registrando animações
+
+### Plugins do TailwindCSS: Tipografia e Forms
+
+- Instalando Plugins
+- Plugin de Formulário
+- Plugin de Tipografia
+
 ### Ferramentas importantes
 
 - tailwind-merge
-- clsx
-- Nossa função utilitária (`cn()`)
+- `clsx` e `classnames`
+- cva e tailwind-variants
+- Nossa função utilitária (`cn()`) inspirada pelo `shadcn`.
 
 ### Outras Ferramentas
 
-- Headless components
-- Ferramenta: Nearest Tailwind Colors
-- Bibliotecas: Tailwindui, headlessui, catalyst, tremor, daisyui, tremor, tailblocksk, shadcn
+- Headless components <https://github.com/hevar/awesome-react-headless-ui-components>
+  - Headless UI
+  - Radix
+  - React Aria
+- Bibliotecas de Componentes
+  - TailwindUI
+  - Catalyst
+  - Tremor
+  - DaisyUi
+  - TailBlocks
+  - Shadcn
