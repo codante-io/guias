@@ -30,37 +30,37 @@ export default defineConfig({
             {
               label: 'Intro ao Workshop',
               autogenerate: {
-                directory: '00-introducao',
+                directory: 'basico/00-introducao',
               },
             },
             {
               label: 'Intro ao TailwindCSS',
               autogenerate: {
-                directory: '01-intro-ao-tailwindcss',
+                directory: 'basico/01-intro-ao-tailwindcss',
               },
             },
             {
               label: 'TailwindCSS Básico',
               autogenerate: {
-                directory: '02-tailwindcss-basico',
+                directory: 'basico/02-tailwindcss-basico',
               },
             },
             {
               label: 'Variantes e Estados',
               autogenerate: {
-                directory: '03-variantes-e-estados',
+                directory: 'basico/03-variantes-e-estados',
               },
             },
             {
               label: 'Layouts Responsivos',
               autogenerate: {
-                directory: '04-layouts-responsivos',
+                directory: 'basico/04-layouts-responsivos',
               },
             },
             {
               label: 'Exercício Final',
               autogenerate: {
-                directory: '04a-exercicios',
+                directory: 'basico/04a-exercicios',
               },
             },
           ],
@@ -68,6 +68,12 @@ export default defineConfig({
         {
           label: 'Tailwind Avançado',
           items: [
+            {
+              label: 'Intro ao Workshop',
+              autogenerate: {
+                directory: 'avancado/00-introducao',
+              },
+            },
             {
               label: 'Tailwind Avançado',
               autogenerate: {
