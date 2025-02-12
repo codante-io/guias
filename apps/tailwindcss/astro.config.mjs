@@ -81,6 +81,12 @@ export default defineConfig({
               },
             },
             {
+              label: 'Diretivas e Funções',
+              autogenerate: {
+                directory: 'avancado/02-diretivas-e-funcoes',
+              },
+            },
+            {
               label: 'Plugins: Tipografia e Forms',
               autogenerate: {
                 directory: 'proximo-workshop',
