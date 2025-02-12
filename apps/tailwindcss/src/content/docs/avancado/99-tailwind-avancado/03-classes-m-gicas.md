@@ -2,3 +2,4 @@
 title: Classes mágicas
 ---
 
+size

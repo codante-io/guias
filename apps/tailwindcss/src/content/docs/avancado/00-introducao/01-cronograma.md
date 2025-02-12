@@ -2,7 +2,6 @@
 title: O que vamos aprender
 ---
 
-
 Antes de mais nada, vamos apresentar este workshop. *Nós já fizemos um Workshop de TailwindCSS Básico que cobriu* os seguintes tópicos:
 
 - Introdução e Apresentação
@@ -17,13 +16,13 @@ O cronograma deste Workshop (TailwindCSS Avançado) está abaixo:
 
 ### Classes e Dicas Interessantes
 
-- Peer, Group e In
-  - peer
-    - Namespacing peer modifiers
+- Group, In, Peer e Has()
   - group
   - in
-- Arbitrary properties
-- Arbitrary variants (como lidar com whitespace)
+  - peer
+  - has
+- Propriedades arbitrárias
+- Variantes arbitrárias (como lidar com whitespace)
 - Classes que fazem "mágica":
   - container
   - size-4
@@ -49,7 +48,7 @@ O cronograma deste Workshop (TailwindCSS Avançado) está abaixo:
   - `@apply`
 - Funções do TailwindCSS
 
-### Dark mode com TailwindCSS
+### Dark Mode com TailwindCSS
 
 - Dark mode como variante
 - preference-based dark mode
@@ -66,8 +65,9 @@ O cronograma deste Workshop (TailwindCSS Avançado) está abaixo:
 - Instalando Plugins
 - Plugin de Formulário
 - Plugin de Tipografia
+- Tailwind-animate
 
-### Ferramentas importantes
+### Ferramentas Importantes
 
 - tailwind-merge
 - `clsx` e `classnames`
@@ -84,6 +84,6 @@ O cronograma deste Workshop (TailwindCSS Avançado) está abaixo:
   - TailwindUI
   - Catalyst
   - Tremor
-  - DaisyUi
+  - DaisyUI
   - TailBlocks
   - Shadcn

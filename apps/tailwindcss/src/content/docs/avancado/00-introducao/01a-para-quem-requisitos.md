@@ -6,7 +6,7 @@ Este workshop - **TailwindCSS Avançado** é ideal para quem já sabe TailwindCS
 
 ### Pré-requisitos do Workshop
 
-Para acompanhar este workshop é necessário que você:
+Para acompanhar este workshop **é necessário que você:**
 
 - Tenha certa proficiência em HTML e CSS.
 - Saiba o básico de TailwindCSS, como instalação, uso, variantes, responsividade, etc.

@@ -75,9 +75,9 @@ export default defineConfig({
               },
             },
             {
-              label: 'Tailwind Avançado',
+              label: 'Dicas e Classes Interessantes',
               autogenerate: {
-                directory: 'proximo-workshop',
+                directory: 'avancado/01-dicas-e-classes-interessantes',
               },
             },
             {
