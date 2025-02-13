@@ -33,8 +33,7 @@ O cronograma deste Workshop (TailwindCSS Avançado) está abaixo:
   - divide-zinc-400
   - gradientes (from, to, via)
 - Regras do Tailwind
-  - Não construa as classes dinamicamente
-  - Não use props para construir classes dinamicamente
+- TailwindCSS por trás dos panos
 
 ### Diretivas e Funções
 
@@ -51,28 +50,27 @@ O cronograma deste Workshop (TailwindCSS Avançado) está abaixo:
 ### Dark Mode com TailwindCSS
 
 - Dark mode como variante
-- preference-based dark mode
-- Exercício
+- Instalando dark mode
 
 ### Trabalhando com Transições e Animações
 
 - Transições
-- Animações existentes
-- Criando e registrando animações
+- Animações
+- Componentes prontos
 
 ### Plugins do TailwindCSS: Tipografia e Forms
 
 - Instalando Plugins
 - Plugin de Formulário
 - Plugin de Tipografia
-- Tailwind-animate
 
 ### Ferramentas Importantes
 
+- Componentes Headless
+- Biblioteca de Componentes
 - tailwind-merge
-- `clsx` e `classnames`
-- cva e tailwind-variants
 - Nossa função utilitária (`cn()`) inspirada pelo `shadcn`.
+- `cva` e `tailwind-variants`
 
 ### Outras Ferramentas
 

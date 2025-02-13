@@ -2,8 +2,8 @@
 title: Links Úteis
 ---
 
-Ao longo do workshop vamos fazer 5 exercícios.
+Ao longo do workshop vamos fazer alguns exercícios.
 
-#### Link do Figma
+#### Link do Repositório
 
-O design dos exercícios estão nesse [arquivo do Figma](https://www.figma.com/design/eZhlJehlg7pQNTb2ghaKmt/TailwindCSS---Exerc%C3%ADcios?node-id=0-1&t=kDraca2deIecUPoQ-1).
+O repositório com o código inicial/final dos exercícios está [neste link](https://github.com/codante-io/workshop-tailwindcss-exemplos-exercicios).

@@ -1,5 +1,0 @@
----
-title: Próximo Workshop
---- 
-
-TODO
