@@ -2,13 +2,13 @@
 title: Classes que fazem mágica
 ---
 
-Além das tradicionais classes utilitárias, o TailwindCSS também traz para nós algumas classes que fazem mais do que uma coisa - mas em casos bem específicos em que a solução nativa não é tão elegante.
+Além das tradicionais classes utilitárias, o TailwindCSS também traz algumas classes que fazem mais de uma coisa - mas em casos bem específicos em que a solução nativa não é tão elegante.
 
-Essas classes *mágicas* nada mais são do que um encapsulamento de padrões comuns de estilo e layout. Usar elas reduz seu código e deixa ele mais limpo e fácil de manter.
+Essas classes *mágicas* nada mais são do que um encapsulamento de padrões comuns de estilo e layout. Usá-las reduz seu código e o deixa mais limpo e fácil de manter.
 
 ### A classe `container`
 
-A classe [container](https://tailwindcss.com/docs/max-width#using-breakpoints-container) nada mais faz do que aplicar um `width` de `100%` e limita o tamanho máximo dependendo do breakpoint em que está.
+A classe [container](https://tailwindcss.com/docs/max-width#using-breakpoints-container) apenas aplica um `width` de `100%` e limita o tamanho máximo dependendo do breakpoint em que está.
 
 É uma forma simples de deixar seu conteúdo responsivo baseado em um *set* limitado de tamanhos.
 
@@ -44,7 +44,7 @@ A classe `line-clamp-*` resolve um problema muito comum na web: truncar texto em
 
 ### A classe `truncate`
 
-truncate é a versão de linha única de `line-clamp`. Ele simplesmente corta o texto que ultrapassa a largura do *container* com reticências `(...)`. Ele é um atalho para as propriedades CSS `overflow: hidden`, `text-overflow: ellipsis`, e `white-space: nowrap`. Serve em situações que você tem um espaço limitado e precisa garantir que o texto não quebre o layout.
+`truncate` é a versão de linha única de `line-clamp`. Ele simplesmente corta o texto que ultrapassa a largura do *container* com reticências `(...)`. Ele é um atalho para as propriedades CSS `overflow: hidden`, `text-overflow: ellipsis`, e `white-space: nowrap`. Serve em situações que você tem um espaço limitado e precisa garantir que o texto não quebre o layout.
 
 ![alt text](image-1.png)
 
@@ -52,7 +52,7 @@ truncate é a versão de linha única de `line-clamp`. Ele simplesmente corta o 
 
 A classe `sr-only` é importante para acessibilidade. Ela esconde visualmente um elemento, mas o mantém acessível para leitores de tela.
 
-A classe aplica um conjunto de propriedades CSS que remove o elemento do fluxo visual, mas o mantém no DOM e acessível para tecnologias assistivas. O contrário dessa classe, not-sr-only, reverte esse efeito, tornando o elemento visível novamente.
+A classe aplica um conjunto de propriedades CSS que remove o elemento do fluxo visual, mas o mantém no DOM e acessível para tecnologias assistivas. O contrário dessa classe, `not-sr-only`, reverte esse efeito, tornando o elemento visível novamente.
 
 O CSS gerado pela classe é esse:
 

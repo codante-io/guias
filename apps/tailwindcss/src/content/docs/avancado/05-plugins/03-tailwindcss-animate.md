@@ -4,9 +4,9 @@ title: TailwindCSS Animate
 
 O plugin Typography do Tailwind CSS fornece estilos padronizados para conteúdos de texto, como artigos e posts de blogs. Ele aplica classes utilitárias predefinidas a elementos HTML comuns (p, h1, h2, ul, ol, etc.), garantindo que o texto tenha uma aparência consistente.
 
-O **problema que esse plugin resolve** é a estilização de texto dinâmico e que muitas vezes não sabemos a estrutura (vem de um CMS, por exemplo)
+O **problema que este plugin resolve** é a estilização de texto dinâmico e que muitas vezes não sabemos a estrutura (vem de um CMS, por exemplo).
 
-Para utilizar precisamos registrar o plugin:
+Para utilizar, precisamos registrar o plugin:
 
 ```css
 @plugin "@tailwindcss/typography";
@@ -14,7 +14,7 @@ Para utilizar precisamos registrar o plugin:
 
 ### Versão 04 do TailwindCSS
 
-No momento da gravação do Workshop o plugin é plenamente funcional com a versão 4, mas não é extensível. Para estender funcionalidades é necessário utilizar o arquivo de configurações `tailwind.config.js`.
+No momento da gravação do Workshop, o plugin é plenamente funcional com a versão 4, mas não é extensível. Para estender funcionalidades, é necessário utilizar o arquivo de configurações `tailwind.config.js`.
 
 ![alt text](image.png)
 
@@ -24,7 +24,7 @@ Para utilizar o plugin, após a instalação, basta utilizarmos a classe `prose`
 
 ### Exercício
 
-Transforme esse código *html* em um post de blog com mínimo esforço usando o plugin `typography` do TailwindCSS.
+Transforme este código *html* em um post de blog com o mínimo esforço usando o plugin `typography` do TailwindCSS.
 
 #### Código Inicial
 
@@ -98,7 +98,7 @@ Transforme esse código *html* em um post de blog com mínimo esforço usando o 
 
 #### Código Final
 
-Primeiro precisamos instalar o plugin com o comando `npm i @tailwindcss/typography`. Em seguida devemos registrar nosso plugin:
+Primeiro, precisamos instalar o plugin com o comando `npm i @tailwindcss/typography`. Em seguida, devemos registrar nosso plugin:
 
 ```css
 @plugin '@tailwindcss/typography';

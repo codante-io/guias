@@ -2,10 +2,10 @@
 title: Forms
 ---
 
-O plugin de formulário é um plugin simples que traz estilizações básicas para itens de formulário. Além disso é um *reset* de formulário para que seja fácil adicionar estilos adicionais a itens de formulário
+O plugin de formulário é um plugin simples que traz estilizações básicas para itens de formulário. Além disso, é um *reset* de formulário para que seja fácil adicionar estilos adicionais a itens de formulário.
 
 :::tip
-Segundo a documentação oficial esse plugin deve ser encarado mais como um *form reset* do que como uma coleção de estilos de formulário.
+Segundo a documentação oficial, esse plugin deve ser encarado mais como um *form reset* do que como uma coleção de estilos de formulário.
 :::
 
 ### Instalação

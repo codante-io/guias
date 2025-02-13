@@ -26,7 +26,7 @@ function Button({ color, children }) {
 
 Isso ocorre porque o Tailwind CSS não faz o *parse* dos seus arquivos como código. Ele irá ler o código acima como um arquivo de texto.
 
-E, como arquivo de texto, nenhuma classe foi encontrada...
+E, como arquivo de texto, nenhuma classe foi encontrada.
 
 ### O que fazer
 
