@@ -1,5 +1,0 @@
----
-title: Classes mágicas
----
-
-size

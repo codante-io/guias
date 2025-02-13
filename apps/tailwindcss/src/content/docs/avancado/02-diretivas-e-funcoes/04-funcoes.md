@@ -12,7 +12,7 @@ A segunda serve para gerar valor de espaçamento de acordo com o tema.
 
 Da documentação
 
-```CSS
+```css
 .my-element {
   color: --alpha(var(--color-lime-300) / 50%);
 }
@@ -22,7 +22,7 @@ Da documentação
 
 Da documentação:
 
-```CSS
+```css
 .my-element {
   margin: --spacing(4);
 }
@@ -44,7 +44,7 @@ Basicamente o que ela fazia é recuperar valores - e usava a notação de pontos
 
 Da documentação:
 
-```CSS
+```css
 .my-element {
   margin: theme(spacing.12);
 }

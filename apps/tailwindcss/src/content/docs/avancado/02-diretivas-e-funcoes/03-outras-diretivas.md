@@ -18,7 +18,7 @@ Você pode adicionar classes utilitárias novas usando `@utility`.
 
 Por exemplo:
 
-```CSS
+```css
 @utility lalaland {
   font-size: 10rem;
 }
@@ -26,7 +26,7 @@ Por exemplo:
 
 Mas por que não utilizar apenas uma classe com css tradicional? Por que não fazer o que está abaixo?
 
-```CSS
+```css
 .lalaland {
   font-size: 10rem;
 }
@@ -52,7 +52,7 @@ A diretiva `@variant` tem como finalidade preponderante o uso de uma variante de
 
 O exemplo da documentação:
 
-```CSS
+```css
 .my-element {
   background: white;
   @variant dark {
@@ -69,7 +69,7 @@ Da mesma forma que a `@variant`, a diretiva `@apply` serve para aplicar CSS cust
 
 Um exemplo de botão:
 
-```CSS
+```css
 .btn {
   @apply p-4 bg-black text white rounded-lg shadow-md;
 }

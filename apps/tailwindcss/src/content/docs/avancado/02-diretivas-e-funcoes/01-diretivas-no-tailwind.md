@@ -6,7 +6,7 @@ Diretivas no TailwindCSS são `at-rules` customizadas - ou seja, que não existe
 
 `At-rules` fazem parte da linguagem do CSS e possuem a seguinte sintaxe:
 
-```CSS
+```css
 /* Estrutura */
 @identifier (RULE);
 
@@ -59,6 +59,16 @@ Abaixo estão todas as **diretivas** do TailwindCSS:
 @plugin;
 ```
 
-## @theme
-
 ## @layer
+
+O `@layer` é uma `at-rule` que é relativamente importante para quem usa TailwindCSS já que a biblioteca é construída em cima deles.
+
+os layers utilizados pelo `TailwindCSS` são:
+
+```css
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+```

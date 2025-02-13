@@ -1,4 +1,0 @@
----
-title: Regras do Tailwind
----
-

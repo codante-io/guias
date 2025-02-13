@@ -87,16 +87,28 @@ export default defineConfig({
               },
             },
             {
-              label: 'Plugins: Tipografia e Forms',
+              label: 'Dark Mode',
               autogenerate: {
-                directory: 'proximo-workshop',
+                directory: 'avancado/03-dark-mode',
+              },
+            },
+            {
+              label: 'Transições e Animações',
+              autogenerate: {
+                directory: 'avancado/04-transicoes-e-animacoes',
+              },
+            },
+            {
+              label: 'Plugins',
+              autogenerate: {
+                directory: 'avancado/05-plugins',
               },
             },
 
             {
               label: 'Outras Ferramentas',
               autogenerate: {
-                directory: 'proximo-workshop',
+                directory: 'avancado/06-outras-ferramentas',
               },
             },
           ],

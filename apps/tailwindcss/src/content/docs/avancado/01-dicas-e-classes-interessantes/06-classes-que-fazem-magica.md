@@ -56,7 +56,7 @@ A classe aplica um conjunto de propriedades CSS que remove o elemento do fluxo v
 
 O CSS gerado pela classe é esse:
 
-```CSS
+```css
 .sr-only {
   position: absolute;
   width: 1px;

@@ -1,4 +1,0 @@
----
-title: funções e diretivas
----
-
