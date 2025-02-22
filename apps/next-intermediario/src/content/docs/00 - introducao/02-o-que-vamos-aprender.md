@@ -18,6 +18,13 @@ title: O que vamos aprender hoje
 
 - Adicionando um Modo de Manutenção
 
+## 03. Loading e Suspense
+
+- O problema do SSR - "tudo ou nada"
+  - Data fetching tem que ser completado antes de renderizar o HTML no servidor
+  - O javascript tem que ser fully loaded para o processo de hydration
+  - Todos os componentes precisam ser hydrated antes de serem interativos
+
 ## 02. Roteamento Básico no `Next.js`
 
 - Roteamento com a pasta `app`.

@@ -53,6 +53,12 @@ export default defineConfig({
           },
         },
         {
+          label: 'Loading e Suspense',
+          autogenerate: {
+            directory: '03a-loading-e-suspense',
+          },
+        },
+        {
           label: 'Rotas de API no Next.js',
           autogenerate: {
             directory: '03a - Layouts e Páginas',
