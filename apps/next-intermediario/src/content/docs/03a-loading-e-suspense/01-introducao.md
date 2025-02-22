@@ -41,9 +41,15 @@ No momento desse workshop Partial Prerendering ainda está em _beta_ e não est�
 
 ### Como utilizar Streaming?
 
-Existem duas formas de utilizar Streaming no Next.js quando utilizamos Server Components.
+Existem duas formas de utilizar Streaming no Next.js quando utilizamos Server Components. Usando o arquivo especial `loading.tsx` ou usando o componente `<Suspense>` do _React_.
 
-- A primeira - e mais simples - é basicamente utilizar o arquivo especial `loading.tsx`. Basicamente o que o loading faz é envelopar a página em um `<Suspense>`
+#### Usando o `loading.tsx` (mais fácil)
+
+Além de arquivos como o `page.tsx`, `layout.tsx`, o Next.js também traz para nós, de graça, o `loading.tsx`. Esse arquivo especial (que sempre deverá possuir esse nome) **cria automaticamente uma UI com Suspense**.
+
+Aqui é basicamente utilizar o arquivo especial `loading.tsx`. O que o loading faz por trás dos panos é envelopar a página em um `<Suspense>`
+
+![alt text](image.png)
 
 Quando você usa o arquivo `loading` algo como isso abaixo acontece:
 
@@ -57,12 +63,8 @@ Quando você usa o arquivo `loading` algo como isso abaixo acontece:
 Veja que o `loading.tsx` funciona hierarquizado da mesma forma que o `layout.tsx`. Ou seja, mesmo se você estiver trabalhando em uma página aninhada, o Next.js vai automaticamente procurar o `loading.tsx` no nível hierárquico superior mais próximo.
 :::
 
-- A segunda é **você controlar** os limites do Suspense, envelopando as partes que quer usar especificamente o streaming. Basta usar o `<Suspense>` "embrulhando" o código que será "streamado" para o cliente - e que se tornará "não blocante".
+Veja que **a UI do `loading.tsx` irá substituir completamente o conteúdo da página até que tudo tenha sido carregado**. Ou seja, só faz mesmo sentido se a página estiver dentro de um layout. Ou se você quiser um fallback para mostrar enquanto a tela não carrega.
 
-### Utilizando o `loading.tsx`
+#### Usando o `<Suspense>` (mais controle)
 
-Além de arquivos como o `page.tsx`, `layout.tsx`, o Next.js também traz para nós, de graça, o `loading.tsx`. Esse arquivo especial (que sempre deverá possuir esse nome) **cria automaticamente uma UI com Suspense**.
-
-![alt text](image.png)
-
-Veja que essa UI irá substituir completamente o conteúdo da página até que tudo tenha sido carregado.
+A segunda forma de fazer streaming é **você controlar** os limites do Suspense, envelopando as partes que quer usar especificamente o streaming. Basta usar o `<Suspense>` "embrulhando" o código que será "streamado" para o cliente - e que se tornará "não blocante".
