@@ -29,75 +29,49 @@ export default defineConfig({
         {
           label: 'Intro ao Workshop',
           autogenerate: {
-            directory: '00 - introducao',
+            directory: '00-introducao',
           },
         },
-
-        {
-          label: 'Setup do Projeto',
-          autogenerate: {
-            directory: '01 - Setup do Projeto',
-          },
-        },
-        {
-          label: 'Integrando uma Base de Dados',
-          autogenerate: {
-            directory: '02 - Roteamento Básico',
-          },
-        },
-
         {
           label: 'Middleware',
           autogenerate: {
-            directory: '03-middleware',
+            directory: '02-middleware',
           },
         },
         {
           label: 'Loading e Suspense',
           autogenerate: {
-            directory: '03a-loading-e-suspense',
+            directory: '03-loading-e-suspense',
           },
         },
         {
-          label: 'Rotas de API no Next.js',
+          label: 'Estado na URL',
           autogenerate: {
-            directory: '03a - Layouts e Páginas',
+            directory: '04-estado-na-url',
           },
         },
         {
-          label: 'Estado na URL - Query Params',
+          label: 'Rotas de API',
           autogenerate: {
-            directory: '04 - Componentes do Next',
+            directory: '05-rotas-api',
           },
         },
         {
-          label: 'Suspense e Server Components',
+          label: 'Server Actions - Avançado',
           autogenerate: {
-            directory: '05 - teoria dos server components',
+            directory: '06-server-actions-avancado',
           },
         },
         {
-          label: 'Fetch de Dados e Rotas Dinâmicas',
+          label: 'Tipos de Cache no Next.js',
           autogenerate: {
-            directory: '06 - Fetch de Dados e Rotas Dinâmicas',
-          },
-        },
-        {
-          label: 'Server Actions e Formulários',
-          autogenerate: {
-            directory: '07 - Server Actions e Formulários',
-          },
-        },
-        {
-          label: 'Responsividade da Aplicação',
-          autogenerate: {
-            directory: '08 - Responsividade da Aplicação',
+            directory: '07-cache-no-next',
           },
         },
         {
           label: 'Finalização',
           autogenerate: {
-            directory: '09 - Finalização',
+            directory: '08-finalizacao',
           },
         },
       ],
