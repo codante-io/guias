@@ -51,6 +51,12 @@ export default defineConfig({
           },
         },
         {
+          label: 'useTransition',
+          autogenerate: {
+            directory: '04a-use-transition',
+          },
+        },
+        {
           label: 'Rotas de API',
           autogenerate: {
             directory: '05-rotas-api',
