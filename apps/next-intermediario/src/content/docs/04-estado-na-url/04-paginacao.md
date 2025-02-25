@@ -362,8 +362,8 @@ export default async function JobsPagination({
     </Pagination>
   );
 }
-
 ```
 
 Maravilha! Temos nossa paginação funcionando de forma correta
+
 ---
