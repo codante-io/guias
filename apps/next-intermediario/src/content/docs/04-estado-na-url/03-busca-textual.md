@@ -2,7 +2,7 @@
 title: Busca textual na prática
 ---
 
-A primeira coisa que iremos implementar é a Busca.
+A primeira coisa que iremos implementar é uma **busca textual**. Ela deverá ser em "tempo real", isto é, os itens deverão aparecer na tela sem a necessidade de submeter um formulário ou clicar em um botão.
 
 ## Exercício 01 - Crie a UI da Busca
 
@@ -245,20 +245,20 @@ Uma biblioteca famosa é o `use-debounce`. Utilize ela para facilitar a implemen
 
 ### Resolução - Debounce
 
-Primeiro vamos instalar a biblioteca `use-debouce`. Se houver alguma dúvida, basta olhar a [documentação](https://github.com/xnimorz/use-debounce#readme). 
+Primeiro vamos instalar a biblioteca `use-debouce`. Se houver alguma dúvida, basta olhar a [documentação](https://github.com/xnimorz/use-debounce#readme).
 
 Vamos simplesmente trocar o handleChange por um `debouncedHandleChange`:
 
 ```typescript
-"use client";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useDebouncedCallback } from "use-debounce";
+'use client';
+import { Input } from '@/components/ui/input';
+import { Search } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
 
 export default function SearchBar() {
   const searchParams = useSearchParams();
-  const previousSearchText = searchParams?.get("search") || "";
+  const previousSearchText = searchParams?.get('search') || '';
   const router = useRouter();
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -266,12 +266,12 @@ export default function SearchBar() {
     const searchText = event.target.value;
 
     if (searchText) {
-      urlSearchParams.set("search", searchText);
+      urlSearchParams.set('search', searchText);
     } else {
-      urlSearchParams.delete("search");
+      urlSearchParams.delete('search');
     }
 
-    router.replace("?" + urlSearchParams.toString());
+    router.replace('?' + urlSearchParams.toString());
   }
 
   const debouncedHandleChange = useDebouncedCallback(handleChange, 500);
@@ -291,4 +291,4 @@ export default function SearchBar() {
 }
 ```
 
-Agora, as chamadas à API vão ocorrer, no máximo, a cada 500ms! 
+Agora, as chamadas à API vão ocorrer, no máximo, a cada 500ms!
