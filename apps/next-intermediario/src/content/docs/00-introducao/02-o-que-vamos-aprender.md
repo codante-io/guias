@@ -29,24 +29,29 @@ title: O que vamos aprender hoje
 ## 4. Estado na URL
 
 - O que é estado na URL
--
+- Na prática
+- Busca Textual
+- Paginação
 
-## 5. Rotas API
+## 5. useTransition
+
+- O que é useTransition
+- useTransition na prática
+
+## 6. Rotas API
 
 - Por que não são mais tão relevantes
 - Route Handlers e Métodos
-- Request e Response do Browser e do Next.js
+- Request e Response do Browser e do Next.js <!-- TODO: Criar aula -->
 
-## 6. Server Actions Avançadas
+## 7. Server Actions Avançadas
 
-- Passando Argumentos
-  - argumento
-  - bind
-  - input hidden
-- Use Action State e mudança de assinatura
-- Revalidando dados (revalidatePath vs router.refresh)
-- Libs - next-safe-action e zsa
+- Passando Argumentos para Server Actions
+- Libs - next-safe-action e zsa  <!-- TODO: Criar aqui -->
 
-## 7. Como funciona cache no Next.js
+## 8. Como funciona cache no Next.js
+<!-- TODO: Criar seção -->
 
-## 10. Finalização
+## 9. Finalização
+
+- Finalização

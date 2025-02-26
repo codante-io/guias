@@ -63,7 +63,7 @@ export default defineConfig({
           },
         },
         {
-          label: 'Server Actions - Avançado',
+          label: 'Server Functions e Server Actions',
           autogenerate: {
             directory: '06-server-actions-avancado',
           },
