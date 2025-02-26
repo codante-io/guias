@@ -63,15 +63,28 @@ Vamos ver como faz para uma rota ser dinâmica:
 - Se você não precisa de dados dinâmicos (o exemplo clássico é um blog), use rotas estáticas.
 - Se você precisa de dados dinâmicos você precisará de rotas dinâmicas.
 
-## 3. Cache de dados do fetch
+## 3. Cache de dados do *fetch*
+
+Antes de entrarmos no *cache* do *fetch* do Next.js, vale ressaltar que **de nada vale ajustar *cache*** se sua página for estática! Lembra que o *cache* de rota estática é completo e inclui o *fetch*, então tenha em mente como sua página vai se comportar antes de olhar para o *cache* do *fetch*.
+
+Algumas características do Cache com Fetch
 
 - Persiste por requests
 - Persiste por deployments
 - Opção `cache` "force-cache" ou "no-store"
 - Se for cached:
-  - Time based ou On demand
+  - Invalidação baseada em tempo ou "on demand"
 
---- Fazer exemplo com [iss location](http://api.open-notify.org/iss-now.json)
+### Como revalidar/invalidar o cache do fetch?
+
+O fetch no Next.js é um fetch com superpoderes. O Next.js reescreveu o fetch para trazer algumas coisas adicionais - especialmente no controle de cache.
+
+É possível revalidar o cache por 3 formas diferentes:
+
+- revalidatePath(), que revalida o cache de dados daquela página;
+- revalidateTag(), que revalida o cached marcado com determinada *tag*;
+- após um período de tempo que pode ser marcado diretamente no fetch:
+  `fetch('https://...', { next: { revalidate: 3600 } })`
 
 ## 4. Cache de client-side router
 
@@ -85,7 +98,7 @@ Por essa razão, não precisamos dar muita atenção a esse cache - porque raram
 
 <https://x.com/asidorenko_/status/1794409654740799636>
 
-## Alterações no Next.js 15
+## Alterações do Cache no Next.js 15
 
 O comportamento do cache se alterou de duas formas a partir do Next.js 15:
 
