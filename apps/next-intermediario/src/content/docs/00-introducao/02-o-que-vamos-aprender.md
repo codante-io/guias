@@ -52,5 +52,3 @@ title: O que vamos aprender hoje
 
 - Todos os caches do Next.js
 - Exemplos práticos
-
-
