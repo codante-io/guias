@@ -32,6 +32,34 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
+    href: 'https://guias.codante.io/next-introdutorio',
+    name: 'Next.js Introdutório',
+    description:
+      'Aprenda os fundamentos do Next.js, como criar páginas, roteamento, estilos, data fetching e mais.',
+    icon: NextJsIcon,
+    pattern: {
+      y: 32,
+      squares: [
+        [0, 2],
+        [1, 4],
+      ],
+    },
+  },
+  {
+    href: 'https://guias.codante.io/next-intermediario',
+    name: 'Next.js Intermediário',
+    description:
+      'Aprenda a criar aplicações Next.js mais complexas, com middleware, API routes, Streaming, Estado na URL e mais!',
+    icon: NextJsIcon,
+    pattern: {
+      y: 20,
+      squares: [
+        [5, 1],
+        [4, 1],
+      ],
+    },
+  },
+  {
     // full href
     href: 'https://guias.codante.io/react-intro',
     name: 'React Introdutório',
@@ -103,20 +131,6 @@ const resources: Array<Resource> = [
     },
   },
 
-  {
-    href: 'https://guias.codante.io/next-introdutorio',
-    name: 'Next.js Introdutório',
-    description:
-      'Aprenda os fundamentos do Next.js, como criar páginas, roteamento, estilos, data fetching e mais.',
-    icon: NextJsIcon,
-    pattern: {
-      y: 32,
-      squares: [
-        [0, 2],
-        [1, 4],
-      ],
-    },
-  },
   {
     href: 'https://guias.codante.io/tailwindcss',
     name: 'TailwindCSS (v4)',
