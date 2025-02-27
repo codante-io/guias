@@ -10,7 +10,7 @@ Como já falamos por aqui, vamos usar uma aplicação simples em que teremos pou
 - Uma página de `cadastro de vagas` para adicionar uma nova vaga;
 - Uma página `vaga individual` que mostrará os detalhes daquela vaga bem como um botão para apagar a vaga
 
-## Link da aplicação funcionando
+## Link da aplicação Inicial funcionando
 
 <!-- TODO: Adicionar aplicação funcionando -->
 Você poderá ver uma aplicação pronta funcionando [aqui nessa URL](https://job-board-six-gamma.vercel.app/)

@@ -15,12 +15,12 @@ title: O que vamos aprender hoje
 ## 02. Middleware
 
 - O que é _middleware_ no Next.js
-- Adicionando um Modo de Manutenção para o projeto
+- Adicionando um Modo de Manutenção para nosso projeto
 
 ## 03. Loading, Suspense e Streaming
 
 - O problema do SSR - "tudo ou nada"
-  - Data fetching tem que ser completado antes de renderizar o HTML no servidor
+  - Data fetching tem que ser finalizado antes de renderizar o HTML no servidor
   - O javascript tem que ser fully loaded para o processo de hydration
   - Todos os componentes precisam ser hydrated antes de serem interativos
 - Streaming na prática
@@ -42,16 +42,15 @@ title: O que vamos aprender hoje
 
 - Por que não são mais tão relevantes
 - Route Handlers e Métodos
-- Request e Response do Browser e do Next.js <!-- TODO: Criar aula -->
 
 ## 7. Server Actions Avançadas
 
+- Server Actions vs Server Functions
 - Passando Argumentos para Server Actions
-- Libs - next-safe-action e zsa  <!-- TODO: Criar aqui -->
 
 ## 8. Como funciona cache no Next.js
-<!-- TODO: Criar seção -->
 
-## 9. Finalização
+- Todos os caches do Next.js
+- Exemplos práticos
 
-- Finalização
+

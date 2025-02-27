@@ -2,11 +2,13 @@
 title: Apresentando o CodanteVagas
 ---
 
-Vamos criar um *job board*. Essa será uma aplicação em que um usuário será capaz de procurar vagas, cadastrar novas vagas e visualizar detalhes de vagas de emprego. Além de páginas estáticas `home` e `sobre`.
+O CodanteVagas é um _job board_. Essa é uma aplicação em que um usuário é capaz de procurar vagas, cadastrar novas vagas e visualizar detalhes de vagas de emprego. Além de páginas estáticas `home` e `sobre`.
 
-## Protótipos
+Construímos toda a aplicação no workshop passado. Neste workshop vamos incrementá-la com algumas funcionalidades mais avançadas.
 
-É mais fácil entender com os protótipos:
+## A aplicação inicial
+
+Vamos mostrar aqui a **aplicação inicial** e a **aplicação final**.
 
 ### Home
 
@@ -26,13 +28,13 @@ Na página sobre, vamos entender na prática sobre o novo roteamento da pasta `a
 
 ### Busca de Vagas
 
-Vamos para dados dinâmicos! Entender *data fetching* com o Next.js, exibição de dados e, *quem sabe*, uma busca!
+Vamos para dados dinâmicos! Entender _data fetching_ com o Next.js, exibição de dados e, _quem sabe_, uma busca!
 
 ![Jobs](./Jobs.png)
 
 ### Cadastro de Vagas
 
-Esta seção trará tudo sobre Server Actions! Vamos fazer *mutação* de dados de acordo com as melhores práticas e de forma moderna do React e deixando mais tênue a linha divisória entre *backend* e *frontend*.
+Esta seção trará tudo sobre Server Actions! Vamos fazer _mutação_ de dados de acordo com as melhores práticas e de forma moderna do React e deixando mais tênue a linha divisória entre _backend_ e _frontend_.
 
 ![New Job](./NewJob.png)
 
@@ -41,3 +43,23 @@ Esta seção trará tudo sobre Server Actions! Vamos fazer *mutação* de dados 
 Aqui vamos deixar nossa aplicação mais funcional - nosso usuário precisa de mais informações sobre a vaga - e é isso que iremos trazer aqui.
 
 ![Job](./Job.png)
+
+## A aplicação final
+
+### Middleware para página em manutenção
+
+Vamos criar uma página para modo de manutenção que será controlada por um middleware:
+
+![alt text](image.png)
+
+### Loading States e Filtros
+
+Vamos criar telas que respondem de forma mais rápida mesmo quando os dados demoram a chegar. Também vamos implementar filtro de busca
+
+![alt text](image-1.png)
+
+### Paginação
+
+Também vamos implementar uma paginação
+
+![alt text](image-2.png)
