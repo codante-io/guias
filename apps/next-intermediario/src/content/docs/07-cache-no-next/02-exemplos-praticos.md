@@ -2,11 +2,11 @@
 title: Exemplos práticos de Cache
 ---
 
-Vamos criar uma aplicação nova com *Next.js* que irá fazer o fetch da [API da ISS](http://open-notify.org/Open-Notify-API/ISS-Location-Now/).
+Vamos criar uma nova aplicação com *Next.js* que irá fazer o fetch da [API da ISS](http://open-notify.org/Open-Notify-API/ISS-Location-Now/).
 
-Ela atualiza frequentemente então é uma boa forma de entendermos o que foi e o que não foi cacheado.
+Ela atualiza frequentemente, então é uma boa forma de entendermos o que foi e o que não foi cacheado.
 
-## Entendendo Full Route Cache (página estática vs dinâmica)
+## Entendendo Full Route Cache (página estática vs. dinâmica)
 
 - Vamos entender a diferença entre dev server e production
 - Vamos ver o novo devtools da versão canary do next.js
@@ -22,7 +22,6 @@ Ela atualiza frequentemente então é uma boa forma de entendermos o que foi e o
 - Vamos revalidar o Data Cache com `revalidateTag()` e `revalidatePath()`
 - Vamos adicionar Tags ao nosso fetch
 - Vamos adicionar tempo para invalidação do cache
--
 
 ## Entendendo o Router Cache
 
@@ -32,10 +31,10 @@ Ela atualiza frequentemente então é uma boa forma de entendermos o que foi e o
 ```typescript
 // next.config.ts
 // (...)
-  experimental: {
-    staleTimes: {
-      dynamic: 30,
-      static: 180,
-    },
+experimental: {
+  staleTimes: {
+    dynamic: 30,
+    static: 180,
   },
+},
 ```

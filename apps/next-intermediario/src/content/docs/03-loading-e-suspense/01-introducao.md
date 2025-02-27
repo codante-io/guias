@@ -22,7 +22,7 @@ Ou seja, se o fetch de dados demorar, o usuário não irá ver nada até que ele
 
 ### Qual a solução então?
 
-A princípio não havia solução (mas agora há!). Ou você usava SSR com esses pontos negativos, ou você usava Client Side Rendering - que tem uma série de outros pontos negativos também.
+A princípio, não havia solução (mas agora há!). Ou você usava SSR com esses pontos negativos, ou você usava Client Side Rendering - que tem uma série de outros pontos negativos também.
 
 Agora, **entra o Streaming.**
 
@@ -55,7 +55,7 @@ Quando você usa o arquivo `loading`, algo como isso abaixo acontece:
 
 ```typescriptreact
 <Suspense fallback={<Loading />}>
-    <Page />
+ <Page />
 </Suspense>
 ```
 
@@ -77,11 +77,11 @@ Algo como:
 <ComponenteEstatico />
 <ComponenteEstatico2 />
 <Suspense fallback={<Loading />}>
-    <ListaDeUsuariosComFetchDeDados />
+ <ListaDeUsuariosComFetchDeDados />
 </Suspense>
 <ComponenteEstatico3 />
 ```
 
-No caso acima, O HTML dos componentes estáticos serão rapidamente servidos, já que não há fetch de dados. Enquanto a lista de usuários está carregando os dados, aparecerá uma _ui de loading_ apenas onde apareceriam os dados dinâmicos.
+No caso acima, o HTML dos componentes estáticos será rapidamente servido, já que não há fetch de dados. Enquanto a lista de usuários está carregando os dados, aparecerá uma _UI de loading_ apenas onde apareceriam os dados dinâmicos.
 
 Tudo vai ficar muito mais inteligível na prática.

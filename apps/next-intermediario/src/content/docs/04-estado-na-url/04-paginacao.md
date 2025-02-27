@@ -2,7 +2,7 @@
 title: Paginação na prática
 ---
 
-Vamos agora, de forma semelhante, adicionar a funcionalidade de paginação na nossa lista de vagas.
+Agora, de forma semelhante, vamos adicionar a funcionalidade de paginação na nossa lista de vagas.
 
 ## Exercício 01 - Crie a UI da Paginação
 
@@ -10,7 +10,7 @@ Você deverá criar uma UI como essa abaixo:
 
 ![alt text](image-1.png)
 
-Apenas a UI é necessária por enquanto. A implementação iremos fazer posteriormente.
+Apenas a UI é necessária por enquanto. A implementação será feita posteriormente.
 
 :::tip
 Da mesma forma que fizemos com a busca textual, vamos utilizar `shadcn/ui` para criar a UI da paginação.
@@ -61,7 +61,6 @@ export default async function JobsPagination() {
     </Pagination>
   );
 }
-
 ```
 
 Depois, vamos utilizar esse componente dentro do `jobs-list`.
@@ -113,10 +112,9 @@ export default async function JobsList({
     </div>
   );
 }
-
 ```
 
-Maravilha! Temos nossa ui de paginação sendo exibida corretamente. Agora, vamos fazer a implementação da funcionalidade.
+Maravilha! Temos nossa UI de paginação sendo exibida corretamente. Agora, vamos fazer a implementação da funcionalidade.
 
 ---
 
@@ -149,7 +147,6 @@ export default async function JobsPagination({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-
   const resolvedSearchParams = await searchParams;
   const currentPageNumber = Number(resolvedSearchParams.page ?? 1);
 
@@ -188,29 +185,28 @@ export default async function JobsPagination({
     </Pagination>
   );
 }
-
 ```
 
 ---
 
 ## Exercício 03 - Utilizando os dados da API
 
-Frequentemente, os dados de uma API são paginados. E também frequentemente os dados da paginação também são retornados pela API.
+Frequentemente, os dados de uma API são paginados, e também, frequentemente, os dados da paginação são retornados pela API.
 
 A nossa API de vagas retorna, além dos dados das vagas `data`, os dados da paginação em objetos `links` e `meta`.
 
-Vamos utilizar os dados da API para exibir apenas os itens da página correspondente ao estado na URL, bem como para deixarmos a paginação mais correta.
+Vamos utilizar os dados da API para exibir apenas os itens da página correspondente ao estado na URL, bem como para deixar a paginação mais correta.
 
 Na paginação:
 
-- Você não poderá retroceder para páginas número 0 ou negativas
-- Você não poderá avançar além da última página
+- Você não poderá retroceder para páginas com número 0 ou negativos.
+- Você não poderá avançar além da última página.
 
 Ajuste sua paginação de acordo. Como exercício extra, ajuste também o CSS para a UX ficar mais correta.
 
 ### Resolução
 
-Vamos alterar o componente `jobs-list` para resolvermos o exercício. Além de já recebermos `searchParams` como *props*, vamos também receber o objeto `meta` que é retornado em nossa API.
+Vamos alterar o componente `jobs-list` para resolver o exercício. Além de já recebermos `searchParams` como *props*, vamos também receber o objeto `meta`, que é retornado em nossa API.
 
 Antes de tudo, então, vamos definir o objeto `meta` no nosso componente.
 
@@ -221,13 +217,12 @@ export type Meta = {
   from: number;
   last_page: number;
 };
-
 ```
 
 Agora, vamos alterar o componente `jobs-list` para ajustar a paginação:
 
-- Vamos atualizar a função `fetchJobs` para retornar também o objeto `meta`
-- Vamos atualizar a função `fetchJobs` para adicionar nos parâmetros do endpoint a busca textual (que já estava feita) e a página atual (que será o estado na URL). Ambos vão ser passados como argumentos para a `fetchJobs()`
+- Vamos atualizar a função `fetchJobs` para retornar também o objeto `meta`.
+- Vamos atualizar a função `fetchJobs` para adicionar, nos parâmetros do endpoint, a busca textual (que já estava feita) e a página atual (que será o estado na URL). Ambos serão passados como argumentos para a `fetchJobs()`.
 
 ```typescript
 // vagas/jobs-list.tsx
@@ -280,13 +275,12 @@ export default async function JobsList({
     </div>
   );
 }
-
 ```
 
 Agora, como segundo passo, vamos alterar o componente `jobs-pagination` para que ele utilize os dados da API.
 
 ```typescript
-// vagas/_components/jobs-pagination.tsx  
+// vagas/_components/jobs-pagination.tsx
 import { Meta } from "@/lib/types";
 import {
   Pagination,
@@ -364,6 +358,6 @@ export default async function JobsPagination({
 }
 ```
 
-Maravilha! Temos nossa paginação funcionando de forma correta
+Maravilha! Temos nossa paginação funcionando de forma correta.
 
 ---

@@ -9,7 +9,7 @@ No exercício anterior, utilizamos fallbacks simples com mensagens de `Carregand
 Skeletons são versões simplificadas da UI que servem como placeholders enquanto o conteúdo real está carregando. Eles ajudam a:
 
 - Reduzir a percepção de tempo de carregamento
-- Prevenir layout shifts
+- Prevenir _layout shifts_
 - Dar uma ideia do conteúdo que está por vir
 - Manter a consistência visual da aplicação
 
@@ -21,7 +21,7 @@ Vamos usar a biblioteca `react-loading-skeleton` para criar nossos skeletons. Pr
 npm install react-loading-skeleton
 ```
 
-Adicione os estilos necessários importando-os no seu arquivo root layout:
+Adicione os estilos necessários importando-os no seu arquivo _root layout_:
 
 ```typescript
 // app/layout.tsx
@@ -170,14 +170,14 @@ export default function Loading() {
 
 ### Dicas para criar bons Skeletons
 
-1. Deixamos a estrutura relativamente similar: O skeleton deve refletir o layout do conteúdo real para evitar mudanças bruscas quando o conteúdo carregar.
-2. É mais fácil esperar com animações: A biblioteca `react-loading-skeleton` já inclui animações por padrão.
+1. **Deixamos a estrutura relativamente similar:** O skeleton deve refletir o layout do conteúdo real para evitar mudanças bruscas quando o conteúdo carregar.
+2. **É mais fácil esperar com animações:** A biblioteca `react-loading-skeleton` já inclui animações por padrão.
 
 ### Resultado final
 
 Com essas implementações, nossa aplicação agora tem:
 
-- Loading states
+- _Loading states_
 - Melhor feedback visual durante o carregamento
-- Transições mais suaves entre estados de loading e conteúdo
+- Transições mais suaves entre estados de _loading_ e conteúdo
 - Uma experiência mais profissional e polida

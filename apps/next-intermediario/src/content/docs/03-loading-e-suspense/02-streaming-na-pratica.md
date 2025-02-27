@@ -2,15 +2,15 @@
 title: Streaming na Prática
 ---
 
-Agora que fizemos uma breve introdução sobre Streaming, está na hora de fazermos (e observarmos) na prática o que é.
+Agora que fizemos uma breve introdução sobre Streaming, está na hora de colocarmos em prática (e observarmos) o que é.
 
 Vamos fazer uma série de exercícios mostrando como podemos fazer o loading de nossa aplicação.
 
 ### Passo 1. Deixar tudo mais lento
 
-Ok, eu criei uma "flag" na nossa API de vagas. Se você adicionar `slow=true` como parâmetro para a rota API, tudo vai demorar bem mais para carregar.
+Ok, eu criei uma "flag" na nossa API de vagas. Se você adicionar `slow=true` como parâmetro para a rota da API, tudo vai demorar bem mais para carregar.
 
-Primeiro passo, deixe a rota de `/vagas` mais lenta usando o _query parameter_.
+Primeiro passo: deixe a rota de `/vagas` mais lenta usando o _query parameter_.
 
 #### Resolução
 
@@ -19,7 +19,7 @@ Para fazer isso, vamos alterar a função `fetchJobs()` para adicionar `slow=tru
 ```typescript {3}
 async function fetchJobs() {
   const res = await fetch(
-    ' https://apis.codante.io/api/job-board/jobs?slow=true',
+    'https://apis.codante.io/api/job-board/jobs?slow=true',
     {
       cache: 'no-store',
     }
@@ -34,13 +34,13 @@ async function fetchJobs() {
 }
 ```
 
-Dá uma olhada na UX agora do seu código - péssima!!!!
+Dê uma olhada na UX do seu código agora - péssima!!!!
 
 ### Passo 2. Criar um `loading.tsx`
 
 Vamos ver como podemos melhorar nossa UX apenas adicionando um arquivo - o `loading.tsx`.
 
-Dentro do arquivo loading, vamos colocar esse código:
+Dentro do arquivo loading, vamos colocar este código:
 
 ```typescript
 // app/vagas/loading.tsx
@@ -49,9 +49,9 @@ export default function Loading() {
 }
 ```
 
-Com um arquivo e 3 linhas de código melhorou muito!
+Com um arquivo e 3 linhas de código, melhorou muito!
 
-O que acontece é que o HTML do layout + fallback é enviado para nosso navegador quase que instantaneamente. Quando os dados terminam de ser carregados no servidor, eles são adicionados e enviados ao _html_ final.
+O que acontece é que o HTML do layout + fallback é enviado para o nosso navegador quase que instantaneamente. Quando os dados terminam de ser carregados no servidor, eles são adicionados e enviados ao _html_ final.
 
 ### Passo 3. Vamos deixar a rota de vaga individual lenta
 
@@ -69,23 +69,23 @@ async function fetchJob(jobId: string) {
 }
 ```
 
-Diferentemente da primeira vez, agora já temos o `loading` funcionando então a experiência não fica tão ruim assim.
+Diferentemente da primeira vez, agora já temos o `loading` funcionando, então a experiência não fica tão ruim assim.
 
 ### Passo 4. Vamos adicionar comentários na vaga individual
 
 Mas e no caso em que há múltiplos fetches de dados de diferentes fontes?
-Imagine agora que nossa aplicação, ao acessar a vaga individual não apenas faz fetch dos dados daquela vaga, mas também faz fetch dos comentários associados a ela. Temos 2 endpoints agora:
+Imagine agora que nossa aplicação, ao acessar a vaga individual, não apenas faz o fetch dos dados daquela vaga, mas também dos comentários associados a ela. Temos 2 endpoints agora:
 
 1. Fetch da vaga individual
 2. Fetch de comentários
 
 Vamos adicionar a flag `slow` em ambos.
 
-Na API deixamos o fetch da vaga individual com 2 segundos de delay, enquanto o fetch dos comentários tem 4 segundos de delay.
+Na API, deixamos o fetch da vaga individual com 2 segundos de delay, enquanto o fetch dos comentários tem 4 segundos de delay.
 
 O que vai acontecer é que **toda a página** vai demorar no mínimo 4 segundos para carregar - mesmo com o conteúdo principal já tendo sido carregado em 2 segundos!
 
-A solução para isso é trazermos granularidade nos limites do `<Suspense>`. E é exatamente isso que iremos fazer agora.
+A solução para isso é trazer granularidade nos limites do `<Suspense>`. E é exatamente isso que faremos agora.
 
 #### Código - Carregando comentários na vaga individual
 
@@ -173,7 +173,7 @@ Tudo parece estar funcionando... mas ainda temos um problema: estamos aguardando
 
 ### Passo 5. Streaming com granularidade usando `<Suspense>`
 
-A primeira coisa que precisamos fazer é "isolar" os componentes que consomem dados. Isso é, precisamos separar os componentes que fazem fetch de dados em componentes diferentes.
+A primeira coisa que precisamos fazer é "isolar" os componentes que consomem dados. Isto é, precisamos separar os componentes que fazem fetch de dados em componentes diferentes.
 
 Vamos criar dois componentes:
 
@@ -182,7 +182,7 @@ Vamos criar dois componentes:
 
 #### Criando o componente JobDetails
 
-Vamos criar um novo arquivo para o componente JobDetails que será responsável por buscar e exibir os detalhes da vaga:
+Vamos criar um novo arquivo para o componente JobDetails, que será responsável por buscar e exibir os detalhes da vaga:
 
 ```typescript
 // app/vagas/[id]/job-details.tsx

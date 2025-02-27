@@ -33,7 +33,7 @@ Existem duas formas de renderizar páginas no Next.js (a terceira ainda está em
 
 - **Estática** (cache do HTML, HTML é criado no *build time*)
 - **Dinâmica** (sem cache, HTML é criado em *request time*)
-- **Estática Parcialmente**  (canary, portanto, não iremos nos aprofundar)
+- **Estática Parcialmente** (Partial Prerendering está em *canary*, portanto, não iremos nos aprofundar)
 
 É muito importante já colocarmos um grande aviso de cuidado:
 
@@ -96,7 +96,7 @@ Quando um usuário navega para outra rota na aplicação, o Next.js pode fazer o
 
 Por essa razão, não precisamos dar muita atenção a esse cache - porque raramente iremos ajustar alguma coisa aqui.
 
-<https://x.com/asidorenko_/status/1794409654740799636>
+<!-- <https://x.com/asidorenko_/status/1794409654740799636> -->
 
 ## Alterações do Cache no Next.js 15
 

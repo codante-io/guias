@@ -100,9 +100,9 @@ Também queremos fazer _o caminho inverso_: quando acessarmos uma URL com um par
 
 ### Resolução - Estado na URL
 
-Para cada tecla digitada devemos chamar nossa API. Isso significa que devemos "escutar" o evento `onChange`. Um primeiro problema está no fato de que não conseguimos utilizar um _event listener_ em server components.
+Para cada tecla digitada, devemos chamar nossa API. Isso significa que devemos "escutar" o evento `onChange`. Um primeiro problema está no fato de que não conseguimos utilizar um _event listener_ em server components.
 
-Para isso precisamos extrair nossa busca para um componente à parte e usar a diretiva `use client`.
+Para isso, precisamos extrair nossa busca para um componente à parte e usar a diretiva `use client`.
 
 Em segundo lugar, precisamos capturar o valor do input para transferir para a URL.
 
@@ -154,7 +154,7 @@ Agora é a hora de implementarmos a busca no nível da API. Quando nossa URL é 
 
 ### Resolução
 
-Em linhas simples o que precisamos fazer:
+Em linhas simples, o que precisamos fazer:
 
 1. Buscar os parâmetros da URL
 2. Se houver o parâmetro `search`, devemos capturá-lo
@@ -245,7 +245,7 @@ Uma biblioteca famosa é o `use-debounce`. Utilize ela para facilitar a implemen
 
 ### Resolução - Debounce
 
-Primeiro vamos instalar a biblioteca `use-debouce`. Se houver alguma dúvida, basta olhar a [documentação](https://github.com/xnimorz/use-debounce#readme).
+Primeiro, vamos instalar a biblioteca `use-debounce`. Se houver alguma dúvida, basta olhar a [documentação](https://github.com/xnimorz/use-debounce#readme).
 
 Vamos simplesmente trocar o handleChange por um `debouncedHandleChange`:
 

@@ -2,7 +2,7 @@
 title: Ainda faz sentido usar rotas API no Next.js?
 ---
 
-Sendo direto ao ponto: depois que surgiram as Server Actions / Server Functions, *não faz mas tanto sentido utilizar rotas de API*. Isso porque elas eram especialmente úteis para acessar dados do servidor diretamente de componentes frontend. Agora que componentes de cliente podem acessar *server actions* e *server functions*, não há mais necessidade de se utilizar rotas de API para isso.
+Sendo direto ao ponto: depois que surgiram as Server Actions / Server Functions, *não faz mais tanto sentido utilizar rotas de API*. Isso porque elas eram especialmente úteis para acessar dados do servidor diretamente de componentes frontend. Agora que componentes de cliente podem acessar *server actions* e *server functions*, não há mais necessidade de se utilizar rotas de API para isso.
 
 Aliás, *é muito mais fácil* usar uma `server action` do que uma rota de API para isso.
 

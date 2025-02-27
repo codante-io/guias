@@ -4,7 +4,7 @@ title: Rotas API no Next.js
 
 ## Rotas API no Next.js
 
-O Next.js foi inovador quando foi lançado justamente por lançar mão dos benefícios de uma aplicação que rodava em um servidor.
+O Next.js foi inovador quando foi lançado, justamente por lançar mão dos benefícios de uma aplicação que rodava em um servidor.
 
 Ao contrário do tradicional SPA React, uma aplicação Next.js está rodando em um servidor e possui acesso, portanto, ao ambiente *node* do servidor.
 
@@ -16,17 +16,17 @@ Com o Next.js v13+, as Rotas APIs foram renomeadas para `Route Handlers`.
 
 ### O Arquivo
 
-Uma rota API é definida da mesma forma que uma página `page`. Exceto que o nome agora deverá ser `route.ts` ou `route.js`.
+Uma rota API é definida da mesma forma que uma página `page`, exceto que o nome agora deverá ser `route.ts` ou `route.js`.
 
 :::caution
-Perceba que as rotas API são processadas inteiramente no servidor - dessa forma não aceitam `JSX`, e portanto a extensão não pode ser `jsx|tsx`.
+Perceba que as rotas API são processadas inteiramente no servidor - dessa forma, não aceitam `JSX` e, portanto, a extensão não pode ser `jsx|tsx`.
 :::
 
 ### A função
 
 Sabemos que elas são definidas dentro de um `route.ts`. Certo, mas o que é definido nesse arquivo?
 
-Necessariamente em uma rota API você deverá exportar uma (ou mais de uma) das seguintes funções assíncronas:
+Necessariamente, em uma rota API, você deverá exportar uma (ou mais de uma) das seguintes funções assíncronas:
 
 - GET
 - HEAD
@@ -52,7 +52,6 @@ export async function PUT() {}
 export async function DELETE() {}
 
 export async function PATCH() {}
-
 ```
 
 ### Os parâmetros
@@ -81,4 +80,4 @@ export async function GET(request: Request) {
 
 #### O parâmetro `context`
 
-O parâmetro `context` é um objeto que possui uma prop `params`, que é uma promise que resolve em um objeto que contém os parâmetros da rota.
+O parâmetro `context` é um objeto que possui uma propriedade `params`, que é uma promise que resolve em um objeto que contém os parâmetros da rota.
