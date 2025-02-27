@@ -6,7 +6,7 @@ Como já falamos por aqui, vamos usar a aplicação final do Workshop de Next In
 
 Para isso, você precisa baixar para sua máquina o repositório da aplicação inicial para acompanhar o Workshop.
 
-## Link do repositório Inicial 
+## Link do repositório Inicial
 
 Você poderá baixar o repositório inicial [neste link aqui](https://github.com/codante-io/ws-next-intermediario-job-board)
 
