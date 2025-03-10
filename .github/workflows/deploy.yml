@@ -41,6 +41,7 @@ jobs:
             apps/react-hook-form/node_modules/.astro
             apps/react-intro/node_modules/.astro
             apps/tailwindcss/node_modules/.astro
+            apps/next-v15/node_modules/.astro
           key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-astro-
@@ -64,6 +65,7 @@ jobs:
             apps/react-hook-form/dist/
             apps/react-intro/dist/
             apps/tailwindcss/dist/
+            apps/next-v15/dist/
           # Add more apps as needed
 
   deploy:
@@ -99,6 +101,9 @@ jobs:
           - name: 'tailwindcss'
             path: './tailwindcss/dist/'
             remote_path: '/var/www/guias/tailwindcss/'
+          - name: 'next-v15'
+            path: './next-v15/dist/'
+            remote_path: '/var/www/guias/next-v15/'
           # Add more apps as needed
 
     steps:
