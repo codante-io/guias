@@ -138,6 +138,33 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  apps/next-v15:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.9.4
+        version: 0.9.4(typescript@5.6.3)
+      '@astrojs/starlight':
+        specifier: ^0.31.1
+        version: 0.31.1(astro@5.2.1(@types/node@20.14.2)(jiti@1.21.6)(rollup@4.24.0)(typescript@5.6.3)(yaml@2.6.0))
+      '@astrojs/starlight-tailwind':
+        specifier: ^3.0.0
+        version: 3.0.0(@astrojs/starlight@0.31.1(astro@5.2.1(@types/node@20.14.2)(jiti@1.21.6)(rollup@4.24.0)(typescript@5.6.3)(yaml@2.6.0)))(@astrojs/tailwind@5.1.5(astro@5.2.1(@types/node@20.14.2)(jiti@1.21.6)(rollup@4.24.0)(typescript@5.6.3)(yaml@2.6.0))(tailwindcss@3.4.4))(tailwindcss@3.4.4)
+      '@astrojs/tailwind':
+        specifier: ^5.1.5
+        version: 5.1.5(astro@5.2.1(@types/node@20.14.2)(jiti@1.21.6)(rollup@4.24.0)(typescript@5.6.3)(yaml@2.6.0))(tailwindcss@3.4.4)
+      astro:
+        specifier: ^5.1.9
+        version: 5.2.1(@types/node@20.14.2)(jiti@1.21.6)(rollup@4.24.0)(typescript@5.6.3)(yaml@2.6.0)
+      sharp:
+        specifier: ^0.33.4
+        version: 0.33.4
+      tailwindcss:
+        specifier: ^3.4.4
+        version: 3.4.4
+      typescript:
+        specifier: ^5.4.5
+        version: 5.6.3
+
   apps/react-hook-form:
     dependencies:
       '@astrojs/check':
