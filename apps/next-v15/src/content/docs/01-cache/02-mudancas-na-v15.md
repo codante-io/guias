@@ -44,3 +44,5 @@ O que mudou da v14 para a v15 é apenas o padrão da propriedade `cache` da conf
 ### Comparação do Fetch - V15 vs V14
 
 Vamos fazer uma comparação entre as duas versões na prática. Vamos usar a API da localização da Estação Espacial para isso.
+
+<!-- TODO - Finalizar -->

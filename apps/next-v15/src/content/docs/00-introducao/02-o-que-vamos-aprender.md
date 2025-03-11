@@ -39,7 +39,6 @@ Este workshop será todo voltado para a última versão lançada do Next.js - ve
 
 - after() API
 - codemods
-- React v19
 - instrumentation
 - flags experimentais
 
