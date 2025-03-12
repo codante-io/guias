@@ -24,3 +24,9 @@ Ainda não há previsão (mas será feito) sobre Turbopack em builds de produç�
 A call stack nas mensagens de erro está mais fácil de ser entendida por "humanos". Reduziram-se mensagens de bibliotecas e de *internals*
 
 ![alt text](image.png)
+
+### Suporte para typescript no `next.config.ts`
+
+A partir de agora o arquivo de configuração do Next pode ser Typescript - e não apenas Javascript.
+
+Além disso o Next traz um type `NextConfig` para auxiliar no autocomplete.

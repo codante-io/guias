@@ -35,3 +35,9 @@ export async function GET(request: Request) {
   return new Response('Hello, world!');
 }
 ```
+
+### ESLint flat Config - V9
+
+Agora o Next vem com a versão 9 do ESLint, que traz o chamado `flatconfig` - que é em substituição ao modelo anterior que funcionava como cascata.
+
+Todas as regras e configs são definidas em um único arquivo.

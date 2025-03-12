@@ -31,16 +31,10 @@ Este workshop será todo voltado para a última versão lançada do Next.js - ve
 - O problema
 - A solução
 
-### Suporte ao ESLint v9
-
-- O que muda na v9 do ESLint?
-
 ### Outras Melhorias
 
 - after() API
-- codemods
-- instrumentation
-- flags experimentais
+- ESLint v9
 
 ### Outros Updates Recentes
 
