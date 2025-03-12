@@ -14,7 +14,7 @@ O **Client Router Cache**, que é o *cache* do router que fica no navegador do u
 
 Vamos fazer uma comparação entre as duas versões na prática usando a função `Math.random()`.
 
-### Como fazer opt in?
+### Como fazer opt in na V15?
 
 Para fazer *opt-in*, você deverá utilizar a configuração - experimental - `staleTimes`.
 
@@ -45,4 +45,6 @@ O que mudou da v14 para a v15 é apenas o padrão da propriedade `cache` da conf
 
 Vamos fazer uma comparação entre as duas versões na prática. Vamos usar a API da localização da Estação Espacial para isso.
 
-<!-- TODO - Finalizar -->
+Ambas as versões irão utilizar uma API que torna a página dinâmica (ex. headers).
+
+Note que um fetch será cacheado e outro não.

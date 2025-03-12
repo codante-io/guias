@@ -34,4 +34,4 @@ Ou seja, você não pde passar, por exemplo, a prop `method`.
 
 ### Na prática
 
-Vamos agora ver como funciona o `<Form>` na prática.
+Vamos agora, no Workshop, ver como funciona o `<Form>` na prática.

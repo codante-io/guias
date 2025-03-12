@@ -2,7 +2,7 @@
 title: Pré requisitos
 ---
 
-Para esse workshop é necessário que você conheça React e Next.js com alguma proficiência. 
+Para esse workshop é necessário que você conheça React e Next.js com alguma proficiência.
 
 Os requisitos são:
 

@@ -2,7 +2,7 @@
 title: O que vamos aprender hoje
 ---
 
-Este workshop será todo voltado para a última versão lançada do Next.js - versão 15. Vamos ver o que melhorou e quais foram as atualizações apresentadas.
+Este mini-workshop será todo voltado para a última versão lançada do Next.js - versão 15. Vamos ver o que melhorou e quais foram as atualizações apresentadas.
 
 ### Apresentação
 

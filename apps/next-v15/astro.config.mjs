@@ -38,7 +38,7 @@ export default defineConfig({
         {
           label: 'Async APIs',
           autogenerate: {
-            directory: '02-async-APIs',
+            directory: '02-async-apis',
           },
         },
         {
@@ -59,12 +59,7 @@ export default defineConfig({
             directory: '05-server-actions-seguranca',
           },
         },
-        {
-          label: 'Suporte ao ESLint v9',
-          autogenerate: {
-            directory: '06-eslint-v9',
-          },
-        },
+
         {
           label: 'Outras Melhorias',
           autogenerate: {
