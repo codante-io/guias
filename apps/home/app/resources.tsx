@@ -32,6 +32,20 @@ interface Resource {
 
 const resources: Array<Resource> = [
   {
+    href: 'https://guias.codante.io/next-v15',
+    name: 'O que há de novo no Next.js v15',
+    description:
+      'Todos os novos recursos do Next.js v15 neste Mini-Workshop didático com muito código',
+    icon: NextJsIcon,
+    pattern: {
+      y: 24,
+      squares: [
+        [1, 3],
+        [2, 4],
+      ],
+    },
+  },
+  {
     href: 'https://guias.codante.io/next-introdutorio',
     name: 'Next.js Introdutório',
     description:
