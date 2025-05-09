@@ -160,6 +160,20 @@ const resources: Array<Resource> = [
       ],
     },
   },
+  {
+    href: 'https://guias.codante.io/ia-para-devs',
+    name: 'IA para Devs',
+    description:
+      'Guia prático para desenvolvedores que querem aprender a usar Inteligência Artificial no dia a dia.',
+    icon: SiReact,
+    pattern: {
+      y: 12,
+      squares: [
+        [2, 2],
+        [3, 3],
+      ],
+    },
+  },
 ];
 
 function ResourceIcon({ icon: Icon }: { icon: Resource['icon'] }) {

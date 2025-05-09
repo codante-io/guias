@@ -18,9 +18,11 @@ Seja bem vindo ao monorepo dos Guias do Codante! Esse é um monorepo `pnpm` em q
 
    2. Siga as configs de outros guias ou a [documentação oficial](https://starlight.astro.build/)
 
-6. Para deploy, altere também o `.github/workflows/deploy.yml`
+6. Também instale o pacote `pnpm add @astrojs/tailwind` 
+7. No `src/content/docs/index.mdx`, remova o template splash. No frontmatter adicione apenas `title` and `description`. 
+8. Para deploy, altere também o `.github/workflows/deploy.yml`
    1. Altere o Cache
    2. Altere os build artifacts
    3. Altere a matriz de build
 
-7. Dentro do app `home`, adicione o link para o novo app no componente `<Resources>`.
+9. Dentro do app `home`, adicione o link para o novo app no componente `<Resources>`.

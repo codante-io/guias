@@ -42,6 +42,7 @@ jobs:
             apps/react-intro/node_modules/.astro
             apps/tailwindcss/node_modules/.astro
             apps/next-v15/node_modules/.astro
+            apps/ia-para-devs/node_modules/.astro
           key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-astro-
@@ -66,6 +67,7 @@ jobs:
             apps/react-intro/dist/
             apps/tailwindcss/dist/
             apps/next-v15/dist/
+            apps/ia-para-devs/dist/
           # Add more apps as needed
 
   deploy:
@@ -104,6 +106,9 @@ jobs:
           - name: 'next-v15'
             path: './next-v15/dist/'
             remote_path: '/var/www/guias/next-v15/'
+          - name: 'ia-para-devs'
+            path: './ia-para-devs/dist/'
+            remote_path: '/var/www/guias/ia-para-devs/'
           # Add more apps as needed
 
     steps:
