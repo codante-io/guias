@@ -136,9 +136,9 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"docs": {
-"00-intro/01-Introdução.md": {
-	id: "00-intro/01-Introdução.md";
-  slug: "00-intro/01-introdução";
+"00-intro/01-Introdução.md": {
+	id: "00-intro/01-Introdução.md";
+  slug: "00-intro/01-introdução";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
@@ -304,9 +304,9 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"07-ts-projects/01-garantindo-segurança-tipos.md": {
-	id: "07-ts-projects/01-garantindo-segurança-tipos.md";
-  slug: "07-ts-projects/01-garantindo-segurança-tipos";
+"07-ts-projects/01-garantindo-segurança-tipos.md": {
+	id: "07-ts-projects/01-garantindo-segurança-tipos.md";
+  slug: "07-ts-projects/01-garantindo-segurança-tipos";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
