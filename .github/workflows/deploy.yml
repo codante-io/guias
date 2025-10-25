@@ -131,7 +131,7 @@ jobs:
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --quiet --delete
-          path: deploy/${{ matrix.app.id }}/${{ matrix.app.outputDir }}/
+          path: deploy/${{ matrix.app.id }}/${{ matrix.app.folder }}/${{ matrix.app.outputDir }}/
           remote_path: ${{ matrix.app.remote }}
           remote_host: ${{ env.DEPLOY_HOST }}
           remote_user: ${{ secrets.USERNAME }}
