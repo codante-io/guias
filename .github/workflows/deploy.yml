@@ -127,11 +127,22 @@ jobs:
           name: ${{ matrix.app.id }}-build
           path: deploy/${{ matrix.app.id }}
 
+      - name: Locate build output (${{ matrix.app.id }})
+        id: locate-build
+        run: |
+          set -euo pipefail
+          DIR=$(find "deploy/${{ matrix.app.id }}" -type d -path "*/${{ matrix.app.outputDir }}" -print -quit)
+          if [ -z "$DIR" ]; then
+            echo "No directory named '${{ matrix.app.outputDir }}' found in artifact" >&2
+            exit 1
+          fi
+          echo "dir=$DIR" >> "$GITHUB_OUTPUT"
+
       - name: Deploy ${{ matrix.app.id }}
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --quiet --delete
-          path: deploy/${{ matrix.app.id }}/${{ matrix.app.folder }}/${{ matrix.app.outputDir }}/
+          path: ${{ steps.locate-build.outputs.dir }}/
           remote_path: ${{ matrix.app.remote }}
           remote_host: ${{ env.DEPLOY_HOST }}
           remote_user: ${{ secrets.USERNAME }}
