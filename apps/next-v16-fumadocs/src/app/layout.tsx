@@ -21,7 +21,8 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           search={{
             options: {
               type: 'static',
-              api: '/api/search',
+              // Use relative path so it works with basePath deployments
+              api: 'api/search',
             },
           }}
         >

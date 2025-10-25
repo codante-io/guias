@@ -9,9 +9,87 @@ on:
       - main
 
 jobs:
-  build:
+  detect-changes:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.detect.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
+      - name: Determine changed apps
+      🙁
+      - name: Determine changed apps
+        id: detect
+        run: |
+          node <<'NODE'
+          const { execSync } = require('child_process');
+
+          const apps = [
+            { id: 'home', folder: 'apps/home', package: 'home', outputDir: 'dist', remote: '/var/www/guias/home/' },
+            { id: 'next-auth', folder: 'apps/next-auth', package: 'next-auth', outputDir: 'dist', remote: '/var/www/guias/next-auth/' },
+            { id: 'next-introdutorio', folder: 'apps/next-introdutorio', package: 'next-introdutorio', outputDir: 'dist', remote: '/var/www/guias/next-introdutorio/' },
+            { id: 'next-intermediario', folder: 'apps/next-intermediario', package: 'next-intermediario', outputDir: 'dist', remote: '/var/www/guias/next-intermediario/' },
+            { id: 'ts-no-react', folder: 'apps/ts-no-react', package: 'ts-no-react', outputDir: 'dist', remote: '/var/www/guias/ts-no-react/' },
+            { id: 'zod', folder: 'apps/zod', package: 'zod', outputDir: 'dist', remote: '/var/www/guias/zod/' },
+            { id: 'react-hook-form', folder: 'apps/react-hook-form', package: 'react-hook-form', outputDir: 'dist', remote: '/var/www/guias/react-hook-form/' },
+            { id: 'react-intro', folder: 'apps/react-intro', package: 'react-intro', outputDir: 'dist', remote: '/var/www/guias/react-intro/' },
+            { id: 'tailwindcss', folder: 'apps/tailwindcss', package: 'tailwindcss', outputDir: 'dist', remote: '/var/www/guias/tailwindcss/' },
+            { id: 'next-v15', folder: 'apps/next-v15', package: 'next-v15', outputDir: 'dist', remote: '/var/www/guias/next-v15/' },
+            { id: 'next-v16-fumadocs', folder: 'apps/next-v16-fumadocs', package: 'next-v16-fumadocs', outputDir: 'out', remote: '/var/www/guias/next-v16/' },
+            { id: 'ia-para-devs', folder: 'apps/ia-para-devs', package: 'ia-para-devs', outputDir: 'dist', remote: '/var/www/guias/ia-para-devs/' }
+          ];
+
+          const before = process.env.GITHUB_EVENT_BEFORE;
+          let range;
+          if (!before || /^0+$/.test(before)) {
+            range = 'HEAD^...HEAD';
+          } else {
+            range = `${before}...HEAD`;
+          }
+
+          let files = [];
+          try {
+            files = execSync(`git diff --name-only ${range}`)
+              .toString()
+              .trim()
+              .split('\n')
+              .filter(Boolean);
+          } catch (error) {
+            files = execSync('git show --pretty="" --name-only HEAD')
+              .toString()
+              .trim()
+              .split('\n')
+              .filter(Boolean);
+          }
+
+          const sharedPatterns = [
+            /^package\.json$/,
+            /^pnpm-lock\.yaml$/,
+            /^pnpm-workspace\.yaml$/,
+            /^tsconfig\.json$/,
+            /^tsconfig\.base\.json$/,
+            /^\.github\/workflows\//
+          ];
+          const sharedChanged = files.some((file) => sharedPatterns.some((pattern) => pattern.test(file)));
+
+          const changed = apps.filter((app) => {
+            if (sharedChanged) return true;
+            return files.some((file) => file.startsWith(`${app.folder}/`));
+          });
+
+          process.stdout.write(`matrix=${JSON.stringify(changed)}`);
+          NODE
+
+  build:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.matrix != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        app: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
 
@@ -24,118 +102,37 @@ jobs:
         with:
           cache: 'pnpm'
 
-      - name: Cache Next.js build files
-        uses: actions/cache@v4
-        with:
-          path: |
-            apps/home/.next/cache
-            apps/next-v16-fumadocs/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-
+      - run: pnpm install --frozen-lockfile
 
-      - name: Cache Astro build files
-        uses: actions/cache@v4
-        with:
-          path: |
-            apps/next-auth/node_modules/.astro
-            apps/next-introdutorio/node_modules/.astro
-            apps/next-intermediario/node_modules/.astro
-            apps/ts-no-react/node_modules/.astro
-            apps/zod/node_modules/.astro
-            apps/react-hook-form/node_modules/.astro
-            apps/react-intro/node_modules/.astro
-            apps/tailwindcss/node_modules/.astro
-            apps/next-v15/node_modules/.astro
-            apps/ia-para-devs/node_modules/.astro
-          key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-astro-
+      - name: Build ${{ matrix.app.id }}
+        run: pnpm --filter ${{ matrix.app.package }} run build
 
-      - run: pnpm install
-
-      - name: Build Projects
-        run: pnpm -r run build
-
-      - name: Upload build artifacts
+      - name: Upload build artifact (${{ matrix.app.id }})
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts
-          path: |
-            apps/home/dist/
-            apps/next-auth/dist/
-            apps/next-introdutorio/dist/
-            apps/next-intermediario/dist/
-            apps/ts-no-react/dist/
-            apps/zod/dist/
-            apps/react-hook-form/dist/
-            apps/react-intro/dist/
-            apps/tailwindcss/dist/
-            apps/next-v15/dist/
-            apps/next-v16-fumadocs/out/
-            apps/ia-para-devs/dist/
-          # Add more apps as needed
+          name: ${{ matrix.app.id }}-build
+          path: ${{ matrix.app.folder }}/${{ matrix.app.outputDir }}/
 
   deploy:
+    needs: [detect-changes, build]
+    if: needs.detect-changes.outputs.matrix != '[]'
     runs-on: ubuntu-latest
-    needs: build
     strategy:
       matrix:
-        app:
-          - name: 'home'
-            path: './home/dist/'
-            remote_path: '/var/www/guias/home/'
-          - name: 'next-auth'
-            path: './next-auth/dist/'
-            remote_path: '/var/www/guias/next-auth/'
-          - name: 'next-introdutorio'
-            path: './next-introdutorio/dist/'
-            remote_path: '/var/www/guias/next-introdutorio/'
-          - name: 'next-intermediario'
-            path: './next-intermediario/dist/'
-            remote_path: '/var/www/guias/next-intermediario/'
-          - name: 'ts-no-react'
-            path: './ts-no-react/dist/'
-            remote_path: '/var/www/guias/ts-no-react/'
-          - name: 'zod'
-            path: './zod/dist/'
-            remote_path: '/var/www/guias/zod/'
-          - name: 'react-hook-form'
-            path: './react-hook-form/dist/'
-            remote_path: '/var/www/guias/react-hook-form/'
-          - name: 'react-intro'
-            path: './react-intro/dist/'
-            remote_path: '/var/www/guias/react-intro/'
-          - name: 'tailwindcss'
-            path: './tailwindcss/dist/'
-            remote_path: '/var/www/guias/tailwindcss/'
-          - name: 'next-v15'
-            path: './next-v15/dist/'
-            remote_path: '/var/www/guias/next-v15/'
-          - name: 'next-v16'
-            path: './next-v16-fumadocs/out/'
-            remote_path: '/var/www/guias/next-v16/'
-          - name: 'ia-para-devs'
-            path: './ia-para-devs/dist/'
-            remote_path: '/var/www/guias/ia-para-devs/'
-          # Add more apps as needed
-
+        app: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
     steps:
-      - name: Download build artifacts
+      - name: Download artifact (${{ matrix.app.id }})
         uses: actions/download-artifact@v4
         with:
-          name: build-artifacts
-          path: .
+          name: ${{ matrix.app.id }}-build
+          path: deploy/${{ matrix.app.id }}
 
-      - name: List All Files after downloading artifacts (excluding node_modules)
-        run: find . -type d -name node_modules -prune -o -type f -print
-
-      - name: Deploy with rsync
+      - name: Deploy ${{ matrix.app.id }}
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --quiet --delete
-          path: ${{ matrix.app.path }}
-          remote_path: ${{ matrix.app.remote_path }}
+          path: deploy/${{ matrix.app.id }}/${{ matrix.app.outputDir }}/
+          remote_path: ${{ matrix.app.remote }}
           remote_host: ${{ env.DEPLOY_HOST }}
           remote_user: ${{ secrets.USERNAME }}
           remote_key: ${{ secrets.SSH_KEY }}
