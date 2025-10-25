@@ -93,6 +93,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Restore Next.js cache (${{ matrix.app.id }})
+        if: ${{ contains(matrix.app.folder, 'next-') }}
+        uses: actions/cache@v4
+        with:
+          path: ${{ matrix.app.folder }}/.next/cache
+          key: ${{ runner.os }}-${{ matrix.app.id }}-next-${{ hashFiles('pnpm-lock.yaml', format('{0}/next.config.*', matrix.app.folder)) }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.app.id }}-next-
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -131,7 +140,15 @@ jobs:
         id: locate-build
         run: |
           set -euo pipefail
-          DIR=$(find "deploy/${{ matrix.app.id }}" -type d -path "*/${{ matrix.app.outputDir }}" -print -quit)
+          PREFERRED="deploy/${{ matrix.app.id }}/${{ matrix.app.folder }}/${{ matrix.app.outputDir }}"
+          ALT="deploy/${{ matrix.app.id }}/${{ matrix.app.outputDir }}"
+          if [ -d "$PREFERRED" ]; then
+            DIR="$PREFERRED"
+          elif [ -d "$ALT" ]; then
+            DIR="$ALT"
+          else
+            DIR=$(find "deploy/${{ matrix.app.id }}" -type d -name "${{ matrix.app.outputDir }}" -print -quit)
+          fi
           if [ -z "$DIR" ]; then
             echo "No directory named '${{ matrix.app.outputDir }}' found in artifact" >&2
             exit 1
