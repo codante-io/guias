@@ -19,11 +19,9 @@ jobs:
           fetch-depth: 0
 
       - name: Determine changed apps
-      🙁
-      - name: Determine changed apps
         id: detect
         run: |
-          node <<'NODE'
+          node <<'NODE' > changed-apps.json
           const { execSync } = require('child_process');
 
           const apps = [
@@ -79,8 +77,10 @@ jobs:
             return files.some((file) => file.startsWith(`${app.folder}/`));
           });
 
-          process.stdout.write(`matrix=${JSON.stringify(changed)}`);
+          process.stdout.write(JSON.stringify(changed));
           NODE
+          MATRIX=$(cat changed-apps.json)
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
 
   build:
     needs: detect-changes
