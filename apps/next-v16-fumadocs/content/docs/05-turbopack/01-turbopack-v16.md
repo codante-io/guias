@@ -2,7 +2,7 @@
 title: Turbopack como bundler padrão
 ---
 
-O Next.js 16 torna o Turbopack o bundler padrão para qualquer projeto, substituindo o Webpack nas rotas App e Pages. O ganho percebido é abertura de servidores de desenvolvimento consideravelmente mais rápida e builds de produção mais estáveis, com diagnósticos mais detalhados.
+O Next.js 16 torna o Turbopack o bundler padrão para qualquer projeto, substituindo o Webpack nas rotas App e Pages. O ganho percebido é abertura de servidores de desenvolvimento consideravelmente mais rápida e builds de produção mais estáveis, com diagnósticos mais detalhados. Legal demais!
 
 ## O que muda na prática
 
@@ -20,9 +20,9 @@ const nextConfig = {
   experimental: {
     turbopackFileSystemCacheForDev: true,
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
 ```
 
 Esse cache guarda artefatos compilados entre execuções do `next dev`, o que reduz o tempo de setup em times que alternam frequentemente entre branches.
