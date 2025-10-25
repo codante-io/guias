@@ -150,6 +150,10 @@ jobs:
             DIR=$(find "deploy/${{ matrix.app.id }}" -type d -name "${{ matrix.app.outputDir }}" -print -quit)
           fi
           if [ -z "$DIR" ]; then
+            # Some artifacts upload the contents of the output directory directly.
+            DIR="deploy/${{ matrix.app.id }}"
+          fi
+          if [ ! -d "$DIR" ]; then
             echo "No directory named '${{ matrix.app.outputDir }}' found in artifact" >&2
             exit 1
           fi
