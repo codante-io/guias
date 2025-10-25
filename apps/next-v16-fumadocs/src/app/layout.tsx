@@ -17,7 +17,16 @@ export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider
+          search={{
+            options: {
+              type: 'static',
+              api: '/api/search',
+            },
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );

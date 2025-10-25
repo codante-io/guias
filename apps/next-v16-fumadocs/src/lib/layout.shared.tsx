@@ -12,11 +12,6 @@ export function baseOptions(): BaseLayoutProps {
         url: '/docs/00-introducao/01-introducao',
         icon: <BookOpen className="size-4" />,
       },
-      {
-        text: 'Repositório',
-        url: 'https://github.com/codante-io/guias/tree/main/apps/next-v16',
-        icon: <Github className="size-4" />,
-      },
     ],
   };
 }
