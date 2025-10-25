@@ -36,6 +36,7 @@ jobs:
             { id: 'tailwindcss', folder: 'apps/tailwindcss', package: 'tailwindcss', outputDir: 'dist', remote: '/var/www/guias/tailwindcss/' },
             { id: 'next-v15', folder: 'apps/next-v15', package: 'next-v15', outputDir: 'dist', remote: '/var/www/guias/next-v15/' },
             { id: 'next-v16-fumadocs', folder: 'apps/next-v16-fumadocs', package: 'next-v16-fumadocs', outputDir: 'out', remote: '/var/www/guias/next-v16/' },
+            { id: 'codando-com-ia', folder: 'apps/codando-com-ia', package: 'codando-com-ia', outputDir: 'out', remote: '/var/www/guias/codando-com-ia/' },
             { id: 'ia-para-devs', folder: 'apps/ia-para-devs', package: 'ia-para-devs', outputDir: 'dist', remote: '/var/www/guias/ia-para-devs/' }
           ];
 
@@ -94,7 +95,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Restore Next.js cache (${{ matrix.app.id }})
-        if: ${{ contains(matrix.app.folder, 'next-') }}
+        if: ${{ matrix.app.outputDir == 'out' }}
         uses: actions/cache@v4
         with:
           path: ${{ matrix.app.folder }}/.next/cache

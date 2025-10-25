@@ -1,0 +1,16 @@
+{
+  "title": "Codando com IA",
+  "description": "Guia do Codante sobre IA generativa",
+  "defaultOpen": true,
+  "pages": [
+    "index",
+    "./00-introducao",
+    "./01-cache-componentes",
+    "./02-apis-cache",
+    "./03-proxy-e-rotas",
+    "./04-build-adapters",
+    "./05-turbopack",
+    "./06-devtools-mcp",
+    "./07-migracao-estructural"
+  ]
+}
