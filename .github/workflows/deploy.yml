@@ -29,7 +29,7 @@ jobs:
             { id: 'next-auth', folder: 'apps/next-auth', package: 'next-auth', outputDir: 'dist', remote: '/var/www/guias/next-auth/' },
             { id: 'next-introdutorio', folder: 'apps/next-introdutorio', package: 'next-introdutorio', outputDir: 'dist', remote: '/var/www/guias/next-introdutorio/' },
             { id: 'next-intermediario', folder: 'apps/next-intermediario', package: 'next-intermediario', outputDir: 'dist', remote: '/var/www/guias/next-intermediario/' },
-            { id: 'ts-no-react', folder: 'apps/ts-no-react', package: 'ts-no-react', outputDir: 'dist', remote: '/var/www/guias/ts-no-react/' },
+            { id: 'ts-no-react', folder: 'apps/ts-no-react', package: 'docs-workshop', outputDir: 'dist', remote: '/var/www/guias/ts-no-react/' },
             { id: 'zod', folder: 'apps/zod', package: 'zod', outputDir: 'dist', remote: '/var/www/guias/zod/' },
             { id: 'react-hook-form', folder: 'apps/react-hook-form', package: 'react-hook-form', outputDir: 'dist', remote: '/var/www/guias/react-hook-form/' },
             { id: 'react-intro', folder: 'apps/react-intro', package: 'react-intro', outputDir: 'dist', remote: '/var/www/guias/react-intro/' },
