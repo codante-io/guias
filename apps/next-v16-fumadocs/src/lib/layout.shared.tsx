@@ -6,12 +6,6 @@ export function baseOptions(): BaseLayoutProps {
     nav: {
       title: 'Next.js v16',
     },
-    links: [
-      {
-        text: 'Introdução',
-        url: '/docs/00-introducao/01-introducao',
-        icon: <BookOpen className="size-4" />,
-      },
-    ],
+    links: [],
   };
 }

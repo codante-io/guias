@@ -1,0 +1,10 @@
+{
+  "title": "Outros Updates",
+  "pages": [
+    "01-turbopack-v16",
+    "02-build-adapters",
+    "03-file-system-caching",
+    "04-turbopack",
+    "05-proxy-routes"
+  ]
+}

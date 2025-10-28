@@ -4,13 +4,11 @@
   "defaultOpen": true,
   "pages": [
     "index",
-    "./00-introducao",
-    "./01-cache-componentes",
-    "./02-apis-cache",
-    "./03-proxy-e-rotas",
-    "./04-build-adapters",
-    "./05-turbopack",
-    "./06-devtools-mcp",
-    "./07-migracao-estructural"
+    "./introducao",
+    "./cache-componentes",
+    "./devtools-mcp",
+    "./next-evals",
+    "./outros-updates",
+    "./migrando-para-a-v16"
   ]
 }

@@ -15,6 +15,9 @@ const config = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    turbopackFileSystemCacheForDev: true,
+  },
 };
 
 export default withMDX(config);

@@ -10,7 +10,7 @@ Uma das novidades mais comentadas do Next.js 16 é o **Next.js Devtools**, um pa
 npx @next/devtools@latest
 ```
 
-Com o dev server rodando (`pnpm dev`, `npm run dev` ou `next dev`), execute o comando acima em outro terminal. Uma janela web é aberta mostrando:
+Com o dev server rodando (`pnpm dev`, `npm run dev`, `bun run dev` ou `next dev`), execute o comando acima em outro terminal. Uma janela web é aberta mostrando:
 
 - Árvore de componentes com suporte a Server Components.
 - Server Actions e form actions sendo monitoradas em tempo real.

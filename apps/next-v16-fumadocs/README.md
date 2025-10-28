@@ -8,7 +8,11 @@ Todo o conteúdo foi migrado do app Starlight (`apps/next-v16`) para MDX, preser
 ```bash
 # na raiz do monorepo
 pnpm install
-pnpm dev --filter next-v16-fumadocs
+
+# no diretório do app
+cd apps/next-v16-fumadocs
+bun install
+bun run dev
 ```
 
 - O servidor sobe em `http://localhost:3000`.
@@ -26,9 +30,9 @@ pnpm dev --filter next-v16-fumadocs
 
 ## Scripts úteis
 
-- `pnpm dev --filter next-v16-fumadocs` – ambiente de desenvolvimento.
-- `pnpm build --filter next-v16-fumadocs` – build pronto para deploy.
-- `pnpm lint --filter next-v16-fumadocs` – validação com ESLint configurado pelo CLI do Fumadocs.
+- `bun run dev` – ambiente de desenvolvimento.
+- `bun run build` – build pronto para deploy.
+- `bun run lint` – validação com ESLint configurado pelo CLI do Fumadocs.
 
 ## Referências
 
