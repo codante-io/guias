@@ -31,20 +31,20 @@ interface Resource {
 }
 
 const resources: Array<Resource> = [
-  {
-    href: 'https://guias.codante.io/codando-com-ia',
-    name: 'Codando com IA',
-    description:
-      'Guia sobre fluxos de trabalho com IA generativa aplicado a produtos web usando Next.js + Fumadocs.',
-    icon: UsersIcon,
-    pattern: {
-      y: 18,
-      squares: [
-        [1, 1],
-        [2, 2],
-      ],
-    },
-  },
+  // {
+  //   href: 'https://guias.codante.io/codando-com-ia',
+  //   name: 'Codando com IA',
+  //   description:
+  //     'Guia sobre fluxos de trabalho com IA generativa aplicado a produtos web usando Next.js + Fumadocs.',
+  //   icon: UsersIcon,
+  //   pattern: {
+  //     y: 18,
+  //     squares: [
+  //       [1, 1],
+  //       [2, 2],
+  //     ],
+  //   },
+  // },
   {
     href: 'https://guias.codante.io/next-v16',
     name: 'O que há de novo no Next.js v16',
