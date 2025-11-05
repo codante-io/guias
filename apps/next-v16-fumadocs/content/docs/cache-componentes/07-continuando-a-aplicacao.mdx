@@ -1,0 +1,290 @@
+---
+title: "Continuando a Aplicação"
+---
+
+Vamos continuar nossa aplicação do Astro Hub.
+
+A nossa aplicação irá ter 3 seções principais:
+
+1. Posição da ISS (Estação Espacial Internacional) - dados em tempo real
+2. Pessoas no Espaço - dados atualizados em horas (`hours`)
+3. Blog de notícias espaciais - dados atualizados em dias (`days`)
+
+
+## Começando pelo Layout geral e Navbar
+
+Vamos criar 3 páginas: 
+
+1. Home
+2. About
+3. Blog
+
+
+### Criando a Navbar
+
+Vamos criar nossa navbar:
+
+```tsx title="app/components/navbar.tsx"
+import Link from 'next/link';
+
+export default async function Navbar() {
+  return (
+    <div className="p-4 bg-blue-950 text-white font-medium ">
+      <div className="max-w-3xl flex mx-auto justify-between">
+        <Link className="font-bold text-xl" href="/">
+          Astro Hub
+        </Link>
+        <div className="flex gap-8 [&>a]:hover:underline">
+          <Link prefetch={true} href="/about">
+            Sobre
+          </Link>
+          <Link href="/blog">Blog</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+```
+
+... e importá-la no nosso layout principal:
+
+```tsx title="app/layout.tsx"
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+import Navbar from './components/navbar'; // [!code ++]
+
+
+export const metadata: Metadata = {
+  title: 'Astro Hub',
+  description: 'Acompanhe a posição da ISS e notícias espaciais em tempo real',
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`antialiased bg-indigo-50`}
+      >
+        <Navbar /> {/* [!code ++] */}
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+
+### Criando as Páginas About e Blog
+
+Vamos criar duas páginas estáticas simples (e sim, o conteúdo do texto foi todo criado por IA 🤖): 
+
+```tsx title="app/sobre/page.tsx"
+export default function AboutPage() {
+  return (
+    <main className="text-center p-24">
+      <h1 className="text-3xl mb-10">Sobre o Astro Hub</h1>
+      <div className="max-w-3xl mx-auto text-left space-y-6">
+        <p className="text-lg">
+          O Astro Hub é uma plataforma dedicada a explorar os mistérios do
+          espaço e fornecer informações em tempo real sobre atividades
+          astronômicas. Nossa missão é democratizar o acesso ao conhecimento
+          sobre o universo, tornando dados complexos e fascinantes acessíveis a
+          todos, desde entusiastas de astronomia até pesquisadores
+          profissionais.
+        </p>
+        <p className="text-lg">
+          Através de uma interface intuitiva, você pode acompanhar a posição
+          atual da Estação Espacial Internacional (ISS) enquanto orbita nosso
+          planeta. Oferecemos dados precisos e atualizados continuamente,
+          permitindo que você descubra quando o laboratório orbital passa sobre
+          sua localização geográfica e tenha a oportunidade de observá-lo no céu
+          noturno.
+        </p>
+        <p className="text-lg">
+          Além disso, o Astro Hub mantém você informado sobre os exploradores
+          espaciais atualmente em órbita. Você pode conhecer os nomes,
+          nacionalidades e curiosidades sobre os astronautas que estão
+          trabalhando na ISS, compreendendo melhor o trabalho científico
+          realizado no espaço e a colaboração internacional que torna essas
+          missões possíveis.
+        </p>
+        <p className="text-lg">
+          Acreditamos que a exploração espacial é um esforço coletivo da
+          humanidade e que compartilhar essas informações inspira as próximas
+          gerações a sonhar com as estrelas e contribuir para o futuro da
+          ciência e tecnologia aeroespacial.
+        </p>
+      </div>
+    </main>
+  );
+}
+```
+
+```tsx title="app/blog/page.tsx"
+export default function BlogPage() {
+  const posts = [
+    {
+      id: 1,
+      title: 'A Estação Espacial Internacional: Uma Perspectiva Orbital',
+      excerpt:
+        'Conheça os detalhes fascinantes da ISS, sua história, estrutura e o importante trabalho científico realizado em microgravidade.',
+      date: '5 de Novembro, 2025',
+      author: 'Maria Cosmos',
+      category: 'Exploração Espacial',
+    },
+    {
+      id: 2,
+      title: 'Astronautas Brasileiros: Sonhos que Alcançam as Estrelas',
+      excerpt:
+        'Descubra a história inspiradora dos astronautas brasileiros e como eles contribuem para a pesquisa espacial internacional.',
+      date: '3 de Novembro, 2025',
+      author: 'João Astro',
+      category: 'Histórias',
+    },
+    {
+      id: 3,
+      title: 'Como Observar a ISS: Guia Completo para Entusiastas',
+      excerpt:
+        'Aprenda técnicas e dicas práticas para observar a Estação Espacial Internacional do seu quintal sem equipamento especial.',
+      date: '1 de Novembro, 2025',
+      author: 'Laura Stargazer',
+      category: 'Guias',
+    },
+  ];
+
+  return (
+    <main className="p-24">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold mb-4 text-center">
+          Blog do Astro Hub
+        </h1>
+        <p className="text-center text-gray-600 mb-12">
+          Explore artigos sobre exploração espacial, astronomia e inovação
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            <article
+              key={post.id}
+              className="border rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer bg-gray-50"
+            >
+              <div className="mb-4">
+                <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded">
+                  {post.category}
+                </span>
+              </div>
+
+              <h2 className="text-xl font-bold mb-3 text-gray-900">
+                {post.title}
+              </h2>
+
+              <p className="text-gray-600 mb-4 line-clamp-2">{post.excerpt}</p>
+
+              <div className="flex justify-between items-center text-sm text-gray-500 border-t pt-4">
+                <div>
+                  <p className="font-semibold text-gray-700">{post.author}</p>
+                  <p>{post.date}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
+```
+
+
+
+## Componente Posição da ISS
+
+```tsx title="app/components/iss-position.tsx"
+import { RefreshCcw } from 'lucide-react';
+
+export async function ISSPosition() {
+  const data = await fetch('http://api.open-notify.org/iss-now.json', {}).then(
+    (res) => res.json()
+  );
+
+  return (
+    <section className="mb-10 bg-linear-150 from-gray-500 to-gray-600 rounded-3xl p-10 text-white">
+      <h2 className="font-bold text-2xl flex gap-2">
+        Posição Atual da ISS
+        <form action="">
+          <button className="cursor-pointer">
+            <RefreshCcw className="size-5 text-gray-300" />
+          </button>
+        </form>
+      </h2>
+
+      <div className="grid grid-cols-3 gap-10 mt-06 text-center mt-10">
+        <div className="bg-gray-900 rounded-xl p-4">
+          <h3 className="font-bold text-2xl text-blue-300 mb-2">Latitude</h3>
+          <p>{data.iss_position.latitude}</p>
+        </div>
+        <div className="bg-gray-900 rounded-xl p-4">
+          <h3 className="font-bold text-2xl text-blue-300 mb-2">Longitude</h3>
+          <p>{data.iss_position.longitude}</p>
+        </div>
+        <div className="bg-gray-900 rounded-xl p-4">
+          <h3 className="font-bold text-lg text-blue-300 mb-2">
+            Última Atualização
+          </h3>
+          <p>{new Date(data.timestamp * 1000).toLocaleTimeString()}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+## Componente Pessoas no Espaço
+
+```tsx title="app/components/people-in-space.tsx"
+'use cache';
+
+export default async function PeopleInSpace() {
+  const data = await fetch('http://api.open-notify.org/astros.json').then(
+    (res) => res.json()
+  );
+
+  return (
+    <section className="mb-10 bg-linear-150 from-gray-500 to-gray-600 rounded-3xl p-10 text-white">
+      <div className="mb-12 bg-gray-800 rounded-2xl p-6">
+        <h2 className="font-bold text-2xl text-blue-300">
+          Pessoas a Bordo da ISS
+        </h2>
+        <ol className="list-decimal ml-8 mt-4">
+          {data.people
+            .filter((person: { craft: string }) => person.craft === 'ISS')
+            .map((person: { name: string }) => (
+              <li key={person.name} className=" ">
+                {person.name}
+              </li>
+            ))}
+        </ol>
+      </div>
+
+      <div className="mb-12 bg-gray-800 rounded-2xl p-6">
+        <h2 className="font-bold text-2xl text-blue-300">
+          Pessoas à Bordo da Tiangong
+        </h2>
+        <ol className="list-decimal ml-8 mt-4">
+          {data.people
+            .filter((person: { craft: string }) => person.craft === 'Tiangong')
+            .map((person: { name: string }) => (
+              <li key={person.name}>{person.name}</li>
+            ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+```

@@ -1,4 +1,12 @@
 {
   "title": "Cache Components",
-  "pages": ["01-cache-componentes", "02-apis-cache-dados-invalidacao"]
+  "pages": [
+    "01-como-chegamos-aqui",
+    "02-muito-importante",
+    "03-instalando-nosso-app",
+    "04-o-astro-hub",
+    "05-cache-life-cache-tag",
+    "06-use-cache-private",
+    "07-continuando-a-aplicacao"
+  ]
 }

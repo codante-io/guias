@@ -1,0 +1,293 @@
+---
+title: cacheLife, cacheTag, revalidateTag e updateTag
+---
+
+Duas APIs que eram experimentais agora estão estáveis no Next.js 16.
+
+- `cacheLife`: permite que você crie perfis de cache reutilizáveis para controlar a validade dos dados em cache.
+- `cacheTag`: Permite marcar componentes com tags para invalidação seletiva do cache.
+
+
+## Cache Life
+
+O `cacheLife` é tanto uma função como uma nova configuração no Next.js. O `cacheLife` é definido no arquivo de configuração do Next.js (`next.config.ts`).
+
+O `cacheLife` permite que você defina perfis de cache reutilizáveis para controlar a validade dos dados em cache. Esses perfis controlam como os dados cacheados (associados a tags via `revalidateTag`) são revalidados ou expirados. Em resumo, ele determina se dados `"stale"` (antigos) podem ser servidos enquanto uma revalidação em background ocorre, ou se eles expiram imediatamente.
+
+### Perfis Padrão
+
+O Next.js 16 vem com alguns perfis de cache padrão que você pode usar diretamente:
+
+| Perfil   | Caso de Uso                                | stale (client-side router)     | revalidate (server)     | expire   |
+|----------|--------------------------------------------|-----------:|---------------:|----------:|
+| default  | Conteúdo padrão                            | 5 minutos  | 15 minutos    | 1 ano     |
+| seconds  | Dados em tempo real                        | 30 segundos| 1 segundo     | 1 minuto  |
+| minutes  | Conteúdo atualizado frequentemente         | 5 minutos  | 1 minuto      | 1 hora    |
+| hours    | Conteúdo atualizado múltiplas vezes por dia| 5 minutos  | 1 hora        | 1 dia     |
+| days     | Conteúdo atualizado diariamente            | 5 minutos  | 1 dia         | 1 semana  |
+| weeks    | Conteúdo atualizado semanalmente           | 5 minutos  | 1 semana      | 30 dias   |
+| max      | Conteúdo estável que raramente muda        | 5 minutos  | 30 dias       | 1 ano     |
+
+#### Stale vs Revalidate vs Expire
+
+- `stale`: Tempo durante o qual o *App Router no browser* pode reutilizar o que já renderizou/prefetchou sem falar com o servidor. Esse valor é usado na navegação no lado do cliente (client-side routing).
+- `revalidate`: Tempo após o qual os dados em cache são revalidados em segundo plano. Os dados antigos podem ser servidos, mas uma revalidação será disparada para atualizar o cache.
+- `expire`: Tempo após o qual os dados em cache são considerados expirados e não podem mais ser servidos. Ou seja, após esse tempo, o usuário irá esperar pela nova versão dos dados.
+
+<Callout>
+Cuidado com [caches muito curtos](https://nextjs.org/docs/messages/blocking-route#short-lived-caches)! 
+
+Usar o cacheLife de `seconds` faz com que não seja possível a prerenderização no servidor - e isso irá lançar um erro. Para resolver você precisa:
+
+1. Aumentar o tempo de cache para `minutes`; ou
+2. Envolver o componente que usa esse cache com `<Suspense>`.
+</Callout>
+
+### Na prática
+
+Para testarmos, vamos criar um perfil de cache para a nossa ISS que atualiza a cada minuto, mas permite servir dados "stale" por 30 segundos enquanto uma revalidação ocorre.
+
+```ts title="next.config.ts"
+import type { NextConfig } from 'next';
+const nextConfig: NextConfig = {
+  cacheComponents: true,
+  cacheLife: { // [!code ++]
+    iss: { // [!code ++]
+      stale: 300, // 5 minutos // [!code ++]
+      revalidate: 60, // 1 minuto // [!code ++]
+      expire: 300, // 5 minutos // [!code ++]
+    } // [!code ++]
+  },
+};
+```
+
+No nosso componente que busca a posição da ISS, vamos marcar o componente com o `cacheLife` `iss` para usar esse perfil de cache.
+
+```tsx title="app/components/iss-position.tsx"
+import { cacheLife } from 'next/cache';
+
+export async function ISSPosition() {
+  'use cache';
+  cacheLife('iss'); // [!code ++]
+  const data = await fetch('http://api.open-notify.org/iss-now.json', {}).then(
+    (res) => res.json()
+  );
+
+  return (
+    <pre className="text-left max-w-sm mx-auto bg-gray-100 p-10 rounded-lg border">
+      {JSON.stringify(data, null, 2)}
+    </pre>
+  );
+}
+
+```
+
+## Cache Tag
+
+Além de podermos definir perfis de cache que se invalidam com o tempo (`cacheLife`), também podemos marcar componentes com tags específicas (`cacheTag`). Essas tags permitem que você invalide seletivamente partes do cache quando os dados subjacentes mudam.
+
+Para isso, usamos a função `cacheTag` dentro do componente que queremos marcar.
+
+### Exemplo no nosso App
+
+```tsx title="app/components/iss-position.tsx"
+import { cacheLife, cacheTag } from 'next/cache';
+
+export async function ISSPosition() {
+  'use cache';
+  cacheLife('iss'); // [!code --]
+  cacheTag('iss'); // [!code ++]
+  const data = await fetch('http://api.open-notify.org/iss-now.json', {}).then(
+    (res) => res.json()
+  );
+
+  return (
+    <pre className="text-left max-w-sm mx-auto bg-gray-100 p-10 rounded-lg border">
+      {JSON.stringify(data, null, 2)}
+    </pre>
+  );
+}
+```
+
+Agora, nesse caso ao usarmos o `cacheTag` ao invés do `cacheLife`, o cache deverá ser controlado *manualmente* via `revalidateTag` ou `updateTag`. Diferente do `cacheLife`, que é um controle automático baseado em tempo. 
+
+## Revalidate Tag
+
+O `revalidateTag` é uma função que permite invalidar dados cacheados sob demanda para uma tag de cache específica. No Next.js 16, ela foi atualizada e agora **requer um segundo argumento** obrigatório: um perfil de `cacheLife`.
+
+### Comportamento
+
+O `revalidateTag` é ideal para conteúdo onde um **pequeno atraso nas atualizações é aceitável**, como posts de blog, catálogos de produtos ou documentação. Quando você chama `revalidateTag`, os **dados são marcados como "stale" (antigos)**, e na próxima vez que um recurso com aquela tag for visitado, ele usará a semântica **stale-while-revalidate** - ou seja, o conteúdo antigo é servido enquanto os dados frescos são buscados em segundo plano.
+
+### Sintaxe
+
+```ts
+revalidateTag(tag: string, profile: string | { expire?: number }): void;
+```
+
+**Parâmetros:**
+
+- `tag`: A tag de cache associada aos dados que você quer revalidar (máximo 256 caracteres, case-sensitive)
+- `profile`: Um perfil de `cacheLife` (recomendado: `"max"`) ou um objeto com propriedade `expire` para comportamento customizado
+
+### Onde usar
+
+- **Server Actions**: ✅ Funciona
+- **Route Handlers**: ✅ Funciona
+- **Client Components**: ❌ Não funciona (apenas em ambientes de servidor)
+
+### Exemplos
+
+#### Server Action
+
+```ts title="app/actions.ts"
+'use server'
+import { revalidateTag } from 'next/cache'
+
+export default async function submit() {
+  await addPost()
+  revalidateTag('posts', 'max') // Recomendado para a maioria dos casos
+}
+```
+
+
+
+#### Outras opções de perfil
+
+```ts
+// Usando perfis built-in
+revalidateTag('news-feed', 'hours')
+revalidateTag('analytics', 'days')
+
+// Customizando inline
+revalidateTag('products', { revalidate: 3600 }) // 1 hora
+```
+
+
+<Callout>
+**Forma antiga (deprecated):** A forma `revalidateTag(tag)` com um único argumento ainda funciona se você suprimir erros de TypeScript, mas esse comportamento pode ser removido em versões futuras. **Atualize para a assinatura de dois argumentos.**
+</Callout>
+
+### Quando usar `revalidateTag`
+
+Use `revalidateTag` quando:
+
+- Você está em uma **Server Action** ou **Route Handler**
+- Você quer invalidar apenas entradas de cache marcadas com tags específicas
+- Você quer **stale-while-revalidate** (servir conteúdo antigo enquanto revalida em background)
+- É aceitável uma **pequena inconsistência eventual** nos dados
+
+
+## Update Tag
+
+O `updateTag` é uma nova função do Next.js 16 projetada especificamente para **Server Actions** e fornece semântica de **read-your-own-writes** (leia-suas-próprias-escritas). Isso significa que o usuário vê suas mudanças **imediatamente**, sem servir conteúdo antigo do cache.
+
+### Diferença principal do `revalidateTag`
+
+Enquanto o `revalidateTag` serve conteúdo antigo enquanto revalida em background, o `updateTag` **expira imediatamente** os dados cacheados, e a próxima requisição **aguarda** pelos dados frescos - garantindo que o usuário veja as mudanças instantaneamente.
+
+### Sintaxe
+
+```ts
+updateTag(tag: string): void;
+```
+
+**Parâmetro:**
+
+- `tag`: A tag de cache associada aos dados que você quer atualizar (máximo 256 caracteres, case-sensitive)
+
+### Onde usar
+
+- **Server Actions**: ✅ Funciona
+- **Route Handlers**: ❌ **Não funciona** (use `revalidateTag` com `{ expire: 0 }`)
+- **Client Components**: ❌ Não funciona (apenas em ambientes de servidor)
+
+### Exemplo prático
+
+```ts title="app/actions.ts"
+'use server'
+import { updateTag } from 'next/cache'
+import { redirect } from 'next/navigation'
+
+export async function createPost(formData: FormData) {
+  const title = formData.get('title')
+  const content = formData.get('content')
+  
+  // Criar o post no banco de dados
+  const post = await db.post.create({
+    data: { title, content },
+  })
+  
+  // Invalidar tags de cache para que o novo post seja imediatamente visível
+  updateTag('posts')              // Afeta páginas que mostram lista de posts
+  updateTag(`post-${post.id}`)    // Afeta a página de detalhe do post
+  
+  // Redirecionar para o novo post - usuário verá dados frescos, não cacheados
+  redirect(`/posts/${post.id}`)
+}
+```
+
+### Exemplo de atualização de perfil
+
+```ts title="app/actions.ts"
+'use server'
+import { updateTag } from 'next/cache'
+
+export async function updateUserProfile(userId: string, profile: Profile) {
+  // Atualizar banco de dados
+  await db.users.update(userId, profile)
+  
+  // Expirar cache E imediatamente ler dados frescos
+  updateTag(`user-${userId}`)
+  
+  // Usuário vê suas mudanças instantaneamente
+}
+```
+
+### Quando usar `updateTag`
+
+Use `updateTag` quando:
+
+- Você está em uma **Server Action**
+- Você precisa de **invalidação imediata de cache** (read-your-own-writes)
+- Você quer garantir que a próxima requisição veja dados atualizados
+- O usuário espera ver suas mudanças **imediatamente**
+
+**Casos de uso perfeitos:**
+
+- Envio de formulários
+- Atualizações de configurações de usuário
+- Edições de perfil
+- Modificações de carrinho de compras
+- Qualquer interação onde o usuário **deve** ver suas mudanças instantaneamente
+
+### Erro ao usar fora de Server Actions
+
+```ts title="app/api/posts/route.ts"
+import { updateTag } from 'next/cache'
+
+export async function POST() {
+  updateTag('posts') // ❌ Erro: updateTag só pode ser chamado de dentro de Server Actions
+  
+  // Use revalidateTag em Route Handlers
+  revalidateTag('posts', 'max') // ✅ Correto
+}
+```
+
+
+## Na prática - Adicionando um botão para atualizar a posição da ISS
+
+Vamos adicionar um botão na nossa aplicação que, quando clicado, atualiza a posição da ISS. Para isso, usaremos uma Server Action que chama `updateTag` para garantir que o usuário veja a nova posição imediatamente.
+
+```tsx title="app/page.tsx"
+      <form
+        action={async () => {
+          'use server';
+          updateTag('iss');
+        }}
+      >
+        <button>Revalidar o Cache</button>
+      </form>
+```
+
+Toda vez que clicarmos no botão *revalidar cache*, a posição da ISS será atualizada imediatamente para o usuário.

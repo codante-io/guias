@@ -1,0 +1,23 @@
+---
+title: "use cache: private / use cache: remote"
+---
+
+O `use cache` pré-renderiza os componentes no build time. De forma que, quando o Next.js encontra APIs como `cookies()`, `headers()` ou `searchParams`, ele não consegue pré-renderizar esses componentes, já que essas APIs são de contextos dinâmicos. 
+
+## use cache: remote
+
+Se você tem um componente que depende de dados dinâmicos (como cookies, headers ou searchParams), mas esses dados podem ser compartilhados entre usuários diferentes, você pode usar a diretiva:
+
+`use cache: remote`
+
+## use cache: private
+
+Se você tem um componente que depende de dados dinâmicos que são específicos para cada usuário (como cookies ou headers de autenticação personalizados), você pode usar a diretiva:
+
+`use cache: private`  
+
+
+Note que usar `use cache: private` não significa os dados serão pré-renderizados em build time (já que a pré-renderização é apenas para componentes compartilháveis entre usuários). Significa que os dados serão cacheados de forma privada para cada usuário.
+
+<Callout>Não iremos utilizar na nossa aplicação essas diretivas pois ainda estão muito recentes.</Callout>
+
