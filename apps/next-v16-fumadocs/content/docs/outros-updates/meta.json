@@ -1,12 +1,11 @@
 {
   "title": "Outros Updates",
   "pages": [
-    "01-turbopack-v16",
-    "02-build-adapters",
+    "01-turbopack",
+    "02-react-compiler-support",
     "03-file-system-caching",
-    "04-turbopack",
-    "05-proxy-routes",
-    "06-enhanced-routing",
-    "07-react-compiler-support"
+    "04-proxy-routes",
+    "05-enhanced-routing",
+    "06-concurrent-dev-build"
   ]
 }

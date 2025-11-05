@@ -83,28 +83,8 @@ Com o File System Cache ativado para builds, você obtém:
 - **Menor uso de CPU** durante builds subsequentes
 - **Economia de recursos** em pipelines CI/CD
 
-### Comparação de Performance
+<Callout type="warning">
+Lembre que essa é uma API experimental. 
 
-| Tipo de Build | Sem Cache | Com Cache |
-|---------------|-----------|-----------|
-| Primeira execução | ~120s | ~120s |
-| Rebuild (sem mudanças) | ~120s | ~5s |
-| Rebuild (pequenas mudanças) | ~120s | ~15s |
-| Rebuild (mudanças grandes) | ~120s | ~80s |
-
-### Limpeza do Cache de Build
-
-O cache de build é armazenado na pasta `.next/cache`. Para limpar:
-
-- Remova a pasta `.next` completamente
-- Use `rm -rf .next/cache` para limpar apenas o cache
-- O cache será automaticamente recriado no próximo build
-
-## Benefícios práticos
-
-Com o File System Cache ativado (tanto para dev quanto para build), você pode observar:
-
-- Redução significativa no tempo de inicialização do `next dev`
-- Compilações incrementais quase instantâneas após a primeira compilação
-- Builds de produção muito mais rápidos em rebuilds
-- Maior produtividade em workflows de desenvolvimento que exigem múltiplas reinicializações do servidor
+Não recomendo usar para produção - apenas para desenvolvimento.
+</Callout>

@@ -1,4 +1,8 @@
 {
   "title": "Introdução",
-  "pages": ["01-introducao", "02-quem-sou-eu", "03-o-que-vamos-aprender-hoje", "04-pre-requisitos"]
+  "pages": [
+    "02-quem-sou-eu",
+    "03-o-que-vamos-aprender-hoje",
+    "04-pre-requisitos"
+  ]
 }

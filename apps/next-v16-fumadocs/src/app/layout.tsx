@@ -10,7 +10,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://codante.io'),
   title: 'Next.js v16 · Codante',
-  description: 'Conteúdo do mini workshop “O que há de novo no Next.js v16” migrado para Fumadocs + Next.js.',
+  description:
+    'Conteúdo do mini workshop "O que há de novo no Next.js v16" migrado para Fumadocs + Next.js.',
+  icons: {
+    icon: 'https://fav.farm/%F0%9F%93%84',
+  },
 };
 
 export default function Layout({ children }: LayoutProps<'/'>) {

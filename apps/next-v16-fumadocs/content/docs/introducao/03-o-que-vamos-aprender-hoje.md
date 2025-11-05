@@ -29,12 +29,11 @@ E falando de IA, a Vercel lançou uma página dedicada a avaliar os melhores mod
 
 ## 4. Outros Updates
 
-- Build Adapters
-- File System CAching
 - Turbopack
 - Proxy.ts
-- Enhanced Routing
-- React Compiler Support
+- Routing e Navegação
+- File System Caching
+- Suporte ao React Compiler
 
 ## 5. Migrando para V16
 

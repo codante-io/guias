@@ -1,0 +1,99 @@
+---
+title: Proxy routes com proxy.ts
+---
+
+# Proxy Routes com proxy.ts
+
+No Next.js 16, `middleware.ts` foi renomeado para `proxy.ts`, com o objetivo de tornar mais explícito seu papel na camada de rede da aplicação.
+
+Isso aconteceu porque o _middleware foi criado para ser uma camada muito leve entre request e response_. Os desenvolvedores estavam utilizando-o para colocar lógicas pesadas e complexas, como autenticação, dentro do middleware. Para clareza, então, o arquivo foi renomeado para `proxy`.
+
+## O que mudou?
+
+Nada, só o nome.
+
+### De middleware.ts para proxy.ts
+
+O arquivo `proxy.ts` substitui `middleware.ts` e deixa claro que este código opera na **fronteira de rede** da aplicação, lidando com roteamento e proxy de requisições, não com lógica de middleware tradicional no estilo Express.
+
+```ts filename="proxy.ts"
+import { NextRequest, NextResponse } from 'next/server';
+
+export default function proxy(request: NextRequest) {
+  return NextResponse.redirect(new URL('/home', request.url));
+}
+```
+
+### Migração
+
+**O que fazer:**
+
+- Renomeie `middleware.ts` → `proxy.ts`
+- Renomeie a função exportada para `proxy`
+- A lógica permanece a mesma
+
+**Antes (middleware.ts):**
+
+```ts
+export function middleware(request: NextRequest) {
+  // lógica de roteamento
+}
+```
+
+**Depois (proxy.ts):**
+
+```ts
+export default function proxy(request: NextRequest) {
+  // mesma lógica de roteamento
+}
+```
+
+## Por que a mudança?
+
+### 1. Clareza de Propósito
+
+O termo "middleware" causava confusão, pois desenvolvedores esperavam comportamento similar ao middleware do Express (autenticação, logging, validação). No Next.js, este arquivo sempre foi focado em:
+
+- Rewrites e redirects a nível de rede
+- Roteamento no edge
+- Headers e modificações de requisição
+
+### 2. Foco no Roteamento
+
+O nome `proxy.ts` deixa mais claro que este código:
+
+- Roda na **camada de rede** (como nginx ou CDN)
+- É para **roteamento e proxy**, não para lógica de aplicação
+- Executa no **Node.js runtime** por padrão
+
+### 3. Segurança
+
+A mudança também sinaliza que `proxy.ts` **não deve ser usado como mecanismo de segurança** principal. Lógica de autenticação, autorização e validação deve estar dentro das Server Actions e componentes da aplicação.
+
+## Casos de Uso Recomendados
+
+### ✅ Use proxy.ts para:
+
+- Redirects e rewrites
+- Headers customizados
+- Roteamento baseado em geolocalização
+- A/B testing a nível de roteamento
+- Rate limiting no edge
+
+### ❌ Não use proxy.ts para:
+
+- Autenticação e autorização (use Server Components)
+- Validação de dados (use Server Actions)
+- Logging de aplicação (use instrumentação)
+- Lógica de negócio (use funções do servidor)
+
+## Runtime
+
+<Callout>O Next migrou de um runtime `edge` para o runtime `node`, que é mais poderoso.</Callout>
+
+`proxy.ts` roda no **Node.js runtime** por padrão, proporcionando:
+
+- Runtime único e previsível para interceptação de requisições
+- Melhor desempenho para a maioria dos casos de uso
+- Acesso completo às APIs do Node.js
+

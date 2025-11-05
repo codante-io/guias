@@ -2,68 +2,86 @@
 title: Next Evals (AI)
 ---
 
-O Next.js 16 introduz o Next Evals, uma nova funcionalidade para avaliação de aplicações com inteligência artificial, permitindo testes automatizados e análises de performance e qualidade de código.
+Next.js [Evals](https://nextjs.org/evals) é uma iniciativa de benchmark que avalia a performance de modelos de IA e agentes de codificação em tarefas relacionadas ao Next.js, como geração de código e migrações.
 
-## O que é Next Evals
+![alt text](image.png)
 
-Next Evals é uma API experimental do Next.js 16 que permite criar e executar avaliações automatizadas usando modelos de IA para:
+## O que é Next.js Evals?
 
-- **Testar funcionalidades** da sua aplicação
-- **Avaliar qualidade de código** e padrões
-- **Verificar conformidade** com práticas recomendadas
-- **Analisar performance** e otimizações
-- **Validar UX** e interações do usuário
+Lançado junto com o Next.js 16, o Next.js Evals é um conjunto de testes padronizados que mede a capacidade de modelos de IA e agentes de codificação em realizar tarefas reais de desenvolvimento Next.js.
 
-## Características principais
+Os testes avaliam:
 
-- Integração nativa com o ecossistema Next.js
-- Suporte para múltiplos provedores de IA (OpenAI, Anthropic, etc.)
-- Execução de testes automatizados e validações
-- Relatórios detalhados de avaliação
-- Configuração flexível via arquivos de configuração
+- **Taxa de Sucesso**: Percentual de tarefas completadas com sucesso
+- **Tempo de Execução**: Velocidade média para completar cada tarefa
+- **Uso de Tokens**: Quantidade de tokens consumidos durante a execução
+- **Qualidade do Código**: Precisão e aderência às melhores práticas do Next.js
 
-## Configuração
+## Modelos Avaliados
 
-Para começar a usar o Next Evals, você precisa:
+O benchmark testa uma ampla variedade de modelos de IA, incluindo:
 
-1. Instalar as dependências necessárias
-2. Criar um arquivo de configuração `evals.config.ts`
-3. Definir suas avaliações e critérios
-4. Executar as avaliações
+### Top Performers (Taxa de Sucesso > 40%)
 
-```ts
-// evals.config.ts
-import { defineConfig } from 'next-evals';
+- **gpt-5-codex**: 42% de sucesso
+- **claude-opus-4.1**: 40% de sucesso
+- **glm-4.6**: 40% de sucesso
 
-export default defineConfig({
-  provider: 'openai',
-  apiKey: process.env.OPENAI_API_KEY,
-  evaluations: [
-    {
-      name: 'Homepage Performance',
-      description: 'Testa se a homepage carrega em menos de 2 segundos',
-      // configuração da avaliação
-    },
-  ],
-});
-```
+### Modelos de Alta Performance (38-40%)
 
-## Casos de uso
+- **grok-4-fast-reasoning**: 38% com apenas 6.02s de tempo médio
+- **grok-4**: 38% de sucesso
+- **kimi-k2-turbo**: 38% com 4.13s de tempo médio
+- **v0-1.5-md**: 38% de sucesso
 
-- **Testes automatizados**: Executar suites de testes com validação por IA
-- **Code review**: Análise automática de pull requests
-- **Performance monitoring**: Verificação contínua de métricas
-- **Acessibilidade**: Validação de padrões WCAG
-- **SEO**: Verificação de otimizações de busca
+### Modelos Populares
 
-## Benefícios
+- **claude-sonnet-4.5**: 32% de sucesso, 11.14s
+- **claude-sonnet-4**: 32% de sucesso, 10.27s
+- **gemini-2.5-pro**: 36% de sucesso
+- **gpt-4o**: 26% de sucesso
 
-- Redução do tempo de QA manual
-- Feedback contínuo sobre qualidade
-- Detecção precoce de regressões
-- Validação consistente de padrões
-- Integração com CI/CD pipelines
+## Agentes de Codificação
 
-## Próximos passos
+Além dos modelos, o Next.js Evals também avalia agentes completos de codificação:
 
-Explore a documentação oficial do Next Evals para mais informações sobre configuração avançada, integração com ferramentas de CI/CD e casos de uso específicos.
+| Agente              | Taxa de Sucesso |
+| ------------------- | --------------- |
+| Claude              | 42%             |
+| Cursor (Sonnet 4.5) | 38%             |
+| Copilot (Sonnet 4)  | 38%             |
+| Cursor (Composer-1) | 32%             |
+| Codex               | 30%             |
+| Gemini              | 28%             |
+
+## Por que os Evals são Importantes?
+
+1. **Transparência**: Fornece dados objetivos sobre a capacidade real dos modelos em tarefas de desenvolvimento
+2. **Escolha Informada**: Ajuda desenvolvedores a escolher o melhor modelo/agente para suas necessidades
+3. **Benchmark da Indústria**: Define um padrão para avaliar assistentes de IA focados em Next.js
+4. **Evolução Contínua**: Os testes são atualizados regularmente para refletir as versões mais recentes do Next.js
+
+## Informações sobre os Testes
+
+- **Última execução**: 21 de Outubro de 2025
+- **Versão do Next.js**: 15.5.6
+- **Número de testes**: 50 por modelo
+- **Repositório**: [github.com/vercel/next-evals-oss](https://github.com/vercel/next-evals-oss)
+
+## Como Interpretar os Resultados
+
+### Taxa de Sucesso
+
+Indica quantas tarefas o modelo conseguiu completar corretamente. Taxas acima de 30% são consideradas boas para tarefas complexas de desenvolvimento.
+
+### Tempo de Execução
+
+Modelos mais rápidos são ideais para desenvolvimento iterativo, enquanto modelos mais lentos podem ser melhores para tarefas que exigem maior profundidade de análise.
+
+### Uso de Tokens
+
+Importante para considerar custos operacionais. Modelos que usam menos tokens são mais econômicos, especialmente em uso contínuo.
+
+## Acesse os Resultados
+
+Visite [nextjs.org/evals](https://nextjs.org/evals) para ver os resultados completos e atualizados, com detalhes sobre cada modelo e agente testado.
